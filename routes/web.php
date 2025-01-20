@@ -10,6 +10,12 @@ Route::get('/footer', function () {
     return view('footer'); 
 });
 
-Route::get('/contact', function () {
-    return view('contact'); 
+Route::get('/portfolio/create', function () {
+    return view('portfolio/create'); 
+});
+Route::get('/portfolio/edit', function () {
+    return view('portfolio/edit'); 
+});
+Route::get('/portfolio/index', function () {
+    return view('portfolio/index'); 
 });
