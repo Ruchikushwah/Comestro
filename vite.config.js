@@ -12,6 +12,7 @@ export default defineConfig({
     outDir: 'public/build', // Ensure this matches your desired path
     manifest: true,
   },
+  base:'/build/',
 
 
 });
