@@ -1,5 +1,5 @@
 <header class="bg-white  text-gray-700">
-    <div class="px-20 flex items-center justify-between py-5 border-b">
+    <div class="px-20 flex items-center justify-between py-3 border-b">
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
             <span class="self-center text-2xl font-semibold whitespace-nowrap ">
