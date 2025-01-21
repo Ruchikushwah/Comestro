@@ -19,3 +19,8 @@ Route::get('/portfolio/edit', function () {
 Route::get('/portfolio/index', function () {
     return view('portfolio/index'); 
 });
+
+Route::get('/about', function () {
+    return view('about/about'); 
+});
+
