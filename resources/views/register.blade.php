@@ -1,14 +1,15 @@
-@vite('resources/css/app.css')
+@extends('layout')
+@section('content')
 <div class="bg-slate-200 h-screen flex items-center justify-center">
 
     <div class="max-w-4xl bg-white rounded-lg shadow-lg flex ">
-        
+
         <div class=" flex-col justify-center items-center bg-purple-100 text-white w-1/2 p-8">
-             <img src="/software.png" class=" mt-12">
-            </div>
+            <img src="/software.png" class=" mt-12">
+        </div>
         <div class="w-full md:w-1/2 p-8">
             <h1 class="text-2xl font-bold text-gray-800 mb-4">Sign Up Here...</h1>
-             <form action="" method="POST" class=" gap-4 mt-4">
+            <form action="" method="POST" class=" gap-4 mt-4">
                 @csrf
                 <div>
                     <label for="name" class="">Full Name</label>
@@ -24,16 +25,17 @@
 
                 </div>
                 <button type="submit" class="w-full bg-purple-100   py-2 rounded-lg font-semibold mt-4">
-                Register
+                    Register
                 </button>
             </form>
 
-    
+
             <p class="text-gray-500 text-sm text-center mt-4">
                 Already have an account? <a href="/auth/login" class="text-black font-medium">Log In</a>
             </p>
-           
+
         </div>
     </div>
 
 </div>
+@endsection
