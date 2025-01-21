@@ -66,7 +66,7 @@
         </p>
         <p class="text-md text-gray-700 leading-relaxed">
 
-            LearnSyntax is located at Thana Chowk, a bustling part of Purnea, Bihar, near the well-known Dog Hospital. Our office is easily accessible, making it convenient for local businesses and clients to collaborate with us. Purnea, with its blend of history and modernization, is quickly becoming a hub for tech startups and innovation in Eastern India.
+            Comestro sofware company is located at Thana Chowk, a bustling part of Purnea, Bihar, near the well-known Dog Hospital. Our office is easily accessible, making it convenient for local businesses and clients to collaborate with us. Purnea, with its blend of history and modernization, is quickly becoming a hub for tech startups and innovation in Eastern India.
 
             Our presence in Purnea allows us to tap into local talent while delivering Software solutions that compete on a global scale. We are proud to contribute to the local economy, providing job opportunities and empowering businesses in the region with our state-of-the-art technology services.
         </p>
