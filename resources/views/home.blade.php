@@ -1,17 +1,17 @@
 @extends('layout')
 @section('content')
 <div class="bg-[#FAFAFA] flex  justify-between items-center h-[600px] px-10 gap-5">
-    <div class="flex flex-1 flex-col gap-5 px-5">
+    <div class="flex flex-1 flex-col gap-5 px-5 left-20">
 
-        <h2 class="text-4xl font-semibold" >Build Your Dream Software</h2>
+        <h2 class="text-4xl font-semibold">Build Your Dream Software</h2>
 
-       <p class="text-xl text-gray-600"> Transform your ideas into powerful software solutions.<br> Our expert team is here to help you create scalable, efficient,<br> and user-friendly platforms tailored to your needs.</p>
-       <div class="hidden md:block">
+        <p class="text-xl text-gray-600 font-inter"> Transform your ideas into powerful software solutions.<br> Our expert team is here to help you create scalable, efficient,<br> and user-friendly platforms tailored to your needs.</p>
+        <div class="hidden md:block">
             <a href="#get-started" class="bg-[#0071bc] text-white px-4 py-3 rounded hover:bg-[#0071bc] text-lg">
-               Let's get Started
+                Let's get Started
             </a>
         </div>
-        
+
 
     </div>
     <div class="flex flex-1">
@@ -19,6 +19,7 @@
     </div>
 
 </div>
+
 <div class="w-full h-[600px] bg-[#E7DAED] px-20 border-b">
     <h2 class="text-4xl font-bold text-center mb-4 py-10">Services We Offer</h2>
     <div class="grid grid-cols-4 ">
@@ -27,8 +28,8 @@
             <div class="text-purple-500 bg-opacity-35 text-4xl mb-4 self-start">
                 <i class="fas fa-cog"></i>
             </div>
-            <h3 class="text-xl font-semibold mb-2 self-start">Service Title</h3> 
-            <p class="text-gray-600 text-center">
+            <h3 class="text-xl font-semibold mb-2 self-start">Service Title</h3>
+            <p class="text-gray-600 text-center font-inter text-sm">
                 Brief description of the service provided. Make it concise and clear.
             </p>
         </div>
@@ -63,11 +64,11 @@
             </p>
         </div>
         <!-- Service Card 5 -->
-         
-        
+
+
     </div>
 </div>
-<div class=" flex justify-between items-center ">
+<div class=" flex justify-between items-center  py-10">
     <div>
         <img src="\02-image-free-img.jpg" alt="">
     </div>
@@ -83,7 +84,7 @@
     <h2 class="text-2xl font-light mb-5"> Why Customers Love <br>
         <span class="text-4xl font-semibold "> working with Us</span>
     </h2>
-    <p class="text-center text-2xl  tracking-wide font-medium text-gray-400 mb-2">Without any doubt I recommend Alcaline Solutions as one of<br> the best web design and digital marketing agencies. One of <br>the best agencies I’ve came across so far. Wouldn’t be <br>hesitated to introduce their work to someone else.</p>
+    <p class="text-center text-xl  tracking-wide font-inter text-gray-400 mb-2">Without any doubt I recommend Alcaline Solutions as one of<br> the best web design and digital marketing agencies. One of <br>the best agencies I’ve came across so far. Wouldn’t be <br>hesitated to introduce their work to someone else.</p>
     <div class="max-w-sm mx-auto p-4 bg-white flex gap-16 items-center justify-center">
         <div class="flex flex-col items-center">
             <!-- Image Section -->
@@ -233,7 +234,7 @@
 
 
 <div class="flex flex-1 items-center justify-center    h-64 bg-[#fff2e1ce] flex-col">
-    <h2 class="text-4xl font-semibold text-gray-700 py-5">Brands that trust us</h2>
+    <h2 class="text-4xl font-inter text-gray-700 py-5 ">Brands that trust us</h2>
     <div class="gap-8 flex">
 
         <a href="" class="px-4 py-5">
@@ -248,9 +249,15 @@
         <a href="" class="px-4 py-5">
             <img src="\comestro.png" alt="" class="w-22 h-14">
         </a>
-        <a href="" class="px-4 py-5">
-            <img src="\comestro.png" alt="" class="w-22 h-14">
+        <a href="#" class="text-2xl font-bold px-4 py-5">
+            <img src="logo.png"  alt="" class="w-22 h-14">
         </a>
+        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <span class="self-center text-2xl font-semibold whitespace-nowrap ">
+                <img src="{{ asset('assets/LearnSyntax.png') }}" class="md:h-8" alt="">
+            </span>
+        </a>
+        
         <a href="" class="px-4 py-5">
             <img src="\comestro.png" alt="" class="w-22 h-14">
         </a>
