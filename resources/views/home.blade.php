@@ -24,12 +24,12 @@
     <h2 class="text-4xl font-bold text-center mb-4 py-10">Services We Offer</h2>
     <div class="grid grid-cols-4 ">
         <!-- Single Service Card -->
-        <div class="flex flex-col items-center justify-center p-8  h-[287px] w-[333px] border-2 hover:border-[#704264]  rounded bg-white">
+        <div class="flex flex-col items-center justify-center p-8  h-[250px] w-[320px] border-2 hover:border-[#704264]  rounded bg-white">
             <div class="text-purple-500 bg-opacity-35 text-4xl mb-4 self-start">
                 <i class="fas fa-cog"></i>
             </div>
             <h3 class="text-xl font-semibold mb-2 self-start">Service Title</h3>
-            <p class="text-gray-600 text-center font-inter text-sm">
+            <p class="text-gray-600  font-inter text-sm">
                 Brief description of the service provided. Make it concise and clear.
             </p>
         </div>
@@ -63,23 +63,8 @@
                 Brief description of the service provided. Make it concise and clear.
             </p>
         </div>
-        <!-- Service Card 5 -->
-
-
     </div>
 </div>
-<div class=" flex justify-between items-center  py-10">
-    <div>
-        <img src="\02-image-free-img.jpg" alt="">
-    </div>
-    <div>
-        <h2></h2>
-
-    </div>
-
-
-</div>
-
 <div class="flex items-center justify-center h-[700px] py-6 gap-5 text-center flex-col">
     <h2 class="text-2xl font-light mb-5"> Why Customers Love <br>
         <span class="text-4xl font-semibold "> working with Us</span>
@@ -223,16 +208,7 @@
         </div>
 
     </div>
-
 </div>
-</div>
-
-
-
-
-
-
-
 <div class="flex flex-1 items-center justify-center    h-64 bg-[#fff2e1ce] flex-col">
     <h2 class="text-4xl font-inter text-gray-700 py-5 ">Brands that trust us</h2>
     <div class="gap-8 flex">
@@ -250,16 +226,10 @@
             <img src="\comestro.png" alt="" class="w-22 h-14">
         </a>
         <a href="#" class="text-2xl font-bold px-4 py-5">
-            <img src="logo.png"  alt="" class="w-22 h-14">
+            <img src="logo.png" alt="" class="w-22 h-14">
         </a>
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <span class="self-center text-2xl font-semibold whitespace-nowrap ">
-                <img src="{{ asset('assets/LearnSyntax.png') }}" class="md:h-8" alt="">
-            </span>
-        </a>
-        
         <a href="" class="px-4 py-5">
-            <img src="\comestro.png" alt="" class="w-22 h-14">
+            <img src="/logo (1).png" alt="" class="w-22 h-14">
         </a>
     </div>
 
@@ -275,6 +245,4 @@
 
     </div>
 </div>
-
-
 @endsection
