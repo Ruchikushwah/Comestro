@@ -22,6 +22,11 @@ class ProblemCateogryApiController extends Controller
         return response()->json(['data' => ProblemCategory::all()]);
     }
 
+    // to show the specified problem_category:
+    public function show($id){
+        $problemCategory = ProblemCategory::findOrFail($id);
+        return response()->json(['data' => $problemCategory]);
+    }
     
 
 }

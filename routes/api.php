@@ -10,3 +10,4 @@ Route::get('/user', function (Request $request) {
 
 Route::POST('/support',[ProblemCateogryApiController::class, 'store'])->name('problem.store');
 Route::get('/support',[ProblemCateogryApiController::class, 'index'])->name('support.index');
+Route::get('/support/{id}',[ProblemCateogryApiController::class, 'show'])->name('support.show');
