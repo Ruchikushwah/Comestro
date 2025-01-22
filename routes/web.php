@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+Route::get('/support',function(){
+    return view('support.generate-ticket');
+})->name('support.generate.ticket');
+
 Route::get('/footer', function () {
     return view('footer'); 
 });
@@ -28,8 +32,14 @@ Route::get('/about', function () {
 Route::get('services',function () {
     return view('services');
 });
+
 Route::get('contactus',function () {
     return view('contactus');
+});
+
+
+Route::get('/get-touch',function(){
+    return view('get-touch');
 });
 
 
