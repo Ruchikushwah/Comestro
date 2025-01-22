@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('geneate_tickets', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('problem_category_id')->constrained('problem_categories')->onDelete('cascade');
             $table->text('description');
