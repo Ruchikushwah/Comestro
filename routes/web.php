@@ -28,6 +28,11 @@ Route::get('/about', function () {
 Route::get('services',function () {
     return view('services');
 });
+Route::get('contactus',function () {
+    return view('contactus');
+});
+
+
 Route::prefix("auth")->group(function () {
     Route::controller(AuthController::class)->group(function () {
         Route::match(["get", "post"], "/login", "login")->name("auth.login");

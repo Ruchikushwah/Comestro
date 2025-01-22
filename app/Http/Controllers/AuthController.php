@@ -19,7 +19,8 @@ class AuthController extends Controller
             $credentials = $req->only('email', 'password');
 
             if (Auth::attempt($credentials)) {
-                return redirect()->route('home')->with('success', 'Login Successfull');
+                return redirect()->route('home')->with('success', 'Login Successful');
+
             }
             return back()->withErrors(['email' => 'Invalid credentials']);
         }
@@ -33,14 +34,13 @@ class AuthController extends Controller
                 'name' => 'required|max:255',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
-                'contact' => 'required'
+                
             ]);
 
             $user = new User();
             $user->name = $req->name;
             $user->email = $req->email;
             $user->password = $req->password;
-            $user->contact = $req->contact;
             $user->save();
 
             return redirect()->route('auth.login')->with('success', 'Registration Successfull');
