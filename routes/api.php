@@ -9,3 +9,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::POST('/support',[ProblemCateogryApiController::class, 'store'])->name('problem.store');
+Route::get('/support',[ProblemCateogryApiController::class, 'index'])->name('support.index');

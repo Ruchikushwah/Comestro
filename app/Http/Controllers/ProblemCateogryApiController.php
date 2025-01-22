@@ -17,6 +17,11 @@ class ProblemCateogryApiController extends Controller
         return response()->json(['data' => $problem, 'success' => true, 'msg' => 'Problem Category added successfully']);
     }
 
+    // to show all of the problem_categories:
+    public function index(){
+        return response()->json(['data' => ProblemCategory::all()]);
+    }
+
     
 
 }
