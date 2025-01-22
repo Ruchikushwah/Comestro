@@ -11,13 +11,10 @@
                 Let's get Started
             </a>
         </div>
-
-
     </div>
-    <div class="flex flex-1">
-        <img src="\image__2_-removebg-preview.png" alt="">
+    <div class="flex flex-1 bg-cover">
+        <img src="/image__2_-removebg-preview.png" alt="">
     </div>
-
 </div>
 
 <div class="w-full h-[600px] bg-[#E7DAED] px-20 border-b">
@@ -65,7 +62,52 @@
         </div>
     </div>
 </div>
-<div class="flex items-center justify-center h-[700px] py-6 gap-5 text-center flex-col">
+
+<div class="flex justify-between items-center  px-10 gap-5 py-5 mb-5">
+    <div class="w-[500px] h-[400px]  gap-10 ">
+        <div class="gap-4">
+            <h2 class="text-4xl flex font-inter"> Leading companies trust us</h2>
+            <h2 class="text-3xl font-semibold font-inter"> to develop software</h2>
+        </div>
+
+        <p class="font-inter text-xl"> We add development capacity to tech teams. Our value isn’t limited to building teams but is equally distributed across the project lifecycle. We are a custom software development company that guarantees the successful delivery of your project.
+            See more Informations</p>
+    </div>
+    <div class="">
+        <img src="\download.png" alt="">
+    </div>
+</div>
+
+<div class="w-full h-64">
+    <h2 class="text-2xl font-semibold text-center">Brands that trust us
+    </h2>
+    <div class="flex flex-1 items-center justify-center  py-10   bg-[#E7DAED] flex-col">
+
+        <div class="gap-8 flex items-center">
+
+            <a href="" class="px-4 py-5">
+                <img src="\learnSyntax.png" alt="" class="w-18 h-8">
+            </a>
+            <a href="" class="px-4 py-5">
+                <img src="\image.jpeg" alt="" class="w-22 h-14">
+            </a>
+            <a href="" class="px-4 py-5">
+                <img src="\image (3).png" alt="" class="w-22 h-14">
+            </a>
+            <a href="" class="px-4 py-5">
+                <img src="\logo (2).png" alt="" class="w-22 h-14">
+            </a>
+            <a href="#" class="text-2xl font-bold px-4 py-5">
+                <img src="logo.png" alt="" class="w-22 h-14">
+            </a>
+            <a href="" class="px-4 py-5">
+                <img src="/logo (1).png" alt="" class="w-22 h-14">
+            </a>
+        </div>
+
+    </div>
+</div>
+<div class="flex items-center justify-center h-[600px] py-6 gap-5 text-center flex-col">
     <h2 class="text-2xl font-light mb-5"> Why Customers Love <br>
         <span class="text-4xl font-semibold "> working with Us</span>
     </h2>
@@ -147,7 +189,7 @@
                 <svg class="w-4 h-4 text-yellow-300 ms-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
-                <svg class="w-4 h-4 ms-1 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <svg class="w-4 h-4 ms-1 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
             </div>
@@ -174,7 +216,7 @@
                 <svg class="w-4 h-4 text-yellow-300 ms-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
-                <svg class="w-4 h-4 ms-1 text-gray-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
+                <svg class="w-4 h-4 ms-1 text-yellow-300" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 20">
                     <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
                 </svg>
             </div>
@@ -209,29 +251,51 @@
 
     </div>
 </div>
-<div class="flex flex-1 items-center justify-center    h-64 bg-[#fff2e1ce] flex-col">
-    <h2 class="text-4xl font-inter text-gray-700 py-5 ">Brands that trust us</h2>
-    <div class="gap-8 flex">
+<div class=" w-full h-[600px] flex items-center gap-2 justify-center flex-col mb-6  bg-[#F7F7FA] ">
+    <h2 class="text-2xl">Our design and
+    </h2>
+    <p class="text-2xl font-bold tracking-wide   border-b mb-2"> development approach</p>
+    <div class="grid grid-cols-2 px-20 gap-8">
+        <div class="w-[600px] h-[230px] border flex gap-2">
+            <div class="bg-black">
+                <img src="\15af7b7deecea6146e74ca0b934e7068.png" alt="" class="w-20 h-18 ">
+            </div>
+            <div>
+                <h2 class="text-xl font-semibold">UX Driven Engineering</h2>
+                <p>Unlike other companies, we are a UX first development company. <br>Projects are driven by designers and they make sure design and <br>experiences translate to code.</p>
+            </div>
 
-        <a href="" class="px-4 py-5">
-            <img src="\comestro.png" alt="" class="w-22 h-14">
-        </a>
-        <a href="" class="px-4 py-5">
-            <img src="\comestro.png" alt="" class="w-22 h-14">
-        </a>
-        <a href="" class="px-4 py-5">
-            <img src="\comestro.png" alt="" class="w-22 h-14">
-        </a>
-        <a href="" class="px-4 py-5">
-            <img src="\comestro.png" alt="" class="w-22 h-14">
-        </a>
-        <a href="#" class="text-2xl font-bold px-4 py-5">
-            <img src="logo.png" alt="" class="w-22 h-14">
-        </a>
-        <a href="" class="px-4 py-5">
-            <img src="/logo (1).png" alt="" class="w-22 h-14">
-        </a>
+        </div>
+        <div class="w-[600px] h-[230px] border  flex gap-2 py-5">
+            <div class="bg-[#67E9F1]">
+                <img src="\092f229ed5482774ce2043eee60e0d61.png" alt="" class="w-20 h-18">
+            </div>
+            <div>
+                <h2 class="text-xl font-semibold">Developing Shared Understanding</h2>
+                
+                <p>Unlike other companies, we are a UX first development company.<br> Projects are driven by designers and they make sure design and<br> experiences translate to code.</p>
+            </div>
+
+        </div>
     </div>
+</div>
+<div class=" w-full h-[600px] flex items-center gap-2 justify-center flex-col mb-6 border  ">
+    <h2 class="text-2xl">Our</h2>
+    <p class="text-2xl font-bold tracking-wide   border-b mb-2">Tech Stack</p>
+    <div class="grid grid-cols-4 gap-6">
+        <img src="\mysql.png" alt="" class="w-22 h-20">
+        <img src="\mysql.png" alt="" class="w-22 h-20">
+        <img src="\mysql.png" alt="" class="w-22 h-20">
+        <img src="\mysql.png" alt="" class="w-22 h-20">
+
+
+    </div>
+
+</div>
+<div class="flex items-center gap-2 justify-center flex-col">
+    <h2 class="text-2xl font-inter">How development </h2>
+    <p class="text-2xl font-bold tracking-wide   border-b mb-2"> through Alcaline works</p>
+
 
 </div>
 <div class="w-full h-[300px] mt-10 border-b">
@@ -245,4 +309,5 @@
 
     </div>
 </div>
+
 @endsection
