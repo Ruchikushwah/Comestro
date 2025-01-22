@@ -1,5 +1,10 @@
 @extends('layout')
 @section('content')
+
+@extends('layout')
+@section('content')
+
+
     <div class="bg-[#FAFAFA] flex  justify-between items-center h-[600px] px-10 gap-5">
         <div class="flex flex-1 flex-col gap-5 px-5 left-20">
 
@@ -404,4 +409,7 @@
 
         </div>
     </div>
+@endsection
+
+
 @endsection

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
@@ -19,11 +20,12 @@ class AuthController extends Controller
             $credentials = $req->only('email', 'password');
 
             if (Auth::attempt($credentials)) {
-                return redirect()->route('home')->with('success', 'Login Successful');
-
+                return redirect()->route('auth.login')->with('success', 'Login Successful');
             }
+
             return back()->withErrors(['email' => 'Invalid credentials']);
         }
+
         return view("login");
     }
 
@@ -34,18 +36,17 @@ class AuthController extends Controller
                 'name' => 'required|max:255',
                 'email' => 'required|email|unique:users',
                 'password' => 'required|min:6',
-                
             ]);
 
             $user = new User();
             $user->name = $req->name;
             $user->email = $req->email;
-            $user->password = $req->password;
+            $user->password = Hash::make($req->password); // Hash password
             $user->save();
 
-            return redirect()->route('auth.login')->with('success', 'Registration Successfull');
+            return redirect()->route('auth.login')->with('success', 'Registration Successful');
         }
+
         return view("register");
     }
-
 }
