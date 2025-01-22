@@ -7,6 +7,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/support',function(){
+    return view('support.generate-ticket');
+})->name('support.generate.ticket');
+
 Route::get('/footer', function () {
     return view('footer'); 
 });
