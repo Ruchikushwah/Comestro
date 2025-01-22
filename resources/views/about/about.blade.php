@@ -4,15 +4,16 @@
 @endsection
 @section('content')
 <div class="flex px-10">
-    <div class="grid grid-cols-5 p-6 mt-20">
-        <h1 class=" font-semobold text-2xl mt-6">
+    <div class="grid grid-cols-5 p-6 mt-4">
+        <h1 class="text-3xl font-semibold">About Us</h2>
+        <h2 class=" font-semobold text-2xl">
             At Comestro Tech Lab Private Limited Solutions,we strive<br>
             to empower businesses with cutting-edge software solutions <br>
             designed to drive innovation and digital transformation.<br>
             Our mission is to create scalable, reliable, and secure technology<br>
             products that solve real-world problems and enable our clients to<br>
             achieve their goals with confidence
-        </h1>
+        </h2>
     </div>
     <div class="grid grid-cols-7">
         <img src="/software.png" alt="Software Solutions" class="w-full">
