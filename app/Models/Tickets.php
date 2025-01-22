@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class GeneateTicket extends Model
+class Tickets extends Model
 {
-    protected $guarded = [];
+    //
 }
-
