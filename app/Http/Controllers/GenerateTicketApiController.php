@@ -8,6 +8,10 @@ use illuminate\Support\Str;
 
 class GenerateTicketApiController extends Controller
 {
+    public function index(){
+        return response()->json(['data' => Tickets::all()]);
+    }
+
     public function store(Request $request){
 
         // generating unique ticket number here:
@@ -21,7 +25,5 @@ class GenerateTicketApiController extends Controller
         $ticket->save();
     }
 
-    public function index(){
-        return response()->json(['data' => Tickets::all()]);
-    }
+    
 }
