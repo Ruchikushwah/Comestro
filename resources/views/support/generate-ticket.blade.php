@@ -114,7 +114,7 @@
             <h2 class="text-2xl font-bold text-blue-500">Check Your Ticket Status</h2>
             <form action="/check-ticket" method="GET" class="mt-4 space-y-4">
                 <div>
-                    <label for="ticket-id" class="block text-sm font-medium text-gray-700">Enter Ticket ID</label>
+                    <label for="ticket-id" class="block text-sm font-medium text-gray-700">Enter Ticket Number</label>
                     <input type="text" name="ticket-id" id="ticket-id" required
                         class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue">
                 </div>

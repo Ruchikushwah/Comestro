@@ -13,5 +13,5 @@ Route::post('/support',[ProblemCateogryApiController::class, 'store'])->name('pr
 Route::get('/support',[ProblemCateogryApiController::class, 'index'])->name('support.index');
 Route::get('/support/{id}',[ProblemCateogryApiController::class, 'show'])->name('support.show');
 
-Route::post('/support/tickets',[GenerateTicketApiController::class, 'store']);
-Route::get('/support/tickets', [GenerateTicketApiController::class, 'index']);
+Route::post('/support/generate_tickets',[GenerateTicketApiController::class, 'store']);
+Route::get('/support/call_tickets', [GenerateTicketApiController::class, 'index']);
