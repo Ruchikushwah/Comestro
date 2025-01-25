@@ -1,10 +1,7 @@
 @extends('layout')
 @section('content')
     <div class="w-full px-10 mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <div class="flex justify-between">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">My Tickets</h2>
-            <a class="text-2xl font-semibold text-blue-500 mb-4">Create new ticket</a>
-        </div>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">View Tickets</h2>
         <table class="w-full table-auto border-collapse">
             <thead>
                 <tr class="bg-gray-200 text-left">
