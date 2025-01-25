@@ -18,9 +18,13 @@ class AuthController extends Controller
             ]);
 
             $credentials = $req->only('email', 'password');
+            
 
             if (Auth::attempt($credentials)) {
-                return redirect()->route('auth.login')->with('success', 'Login Successful');
+
+                session(['user_id' => Auth::id()]);
+
+                return redirect()->route('support.generate.ticket')->with('success', 'Login Successful');
             }
 
             return back()->withErrors(['email' => 'Invalid credentials']);
@@ -43,7 +47,7 @@ class AuthController extends Controller
             $user->email = $req->email;
             $user->password = Hash::make($req->password); // Hash password
             $user->save();
-
+            
             return redirect()->route('auth.login')->with('success', 'Registration Successful');
         }
 

@@ -71,25 +71,13 @@
         <!-- Ticket Form -->
         <section id="ticket-form">
             <h2 class="text-2xl font-bold text-blue-500">Generate a Support Ticket</h2>
-            <form action="/submit-ticket" method="POST" enctype="multipart/form-data"
-                class="mt-4 space-y-4 bg-gray-50 p-6 rounded shadow">
-                <div class='mb-3'>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-                    <input type="text" name="name" id="name" required
-                        class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue">
-                </div>
-                <div class='mb-3'>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
-                    <input type="email" name="email" id="email" required
-                        class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue">
-                </div>
+            <form id="generateTickets" class="mt-4 space-y-4 bg-gray-50 p-6 rounded shadow">
+                @csrf
+                <input type="hidden" name="user_id" value="{{ session('user_id') }}">
                 <div class='mb-3'>
                     <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-                    <select name="category" id="category" required
+                    <select type='text' name="prob_cat_id" id="callingProblemCategory" required
                         class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue">
-                        <option value="Technical Issue">Technical Issue</option>
-                        <option value="Payment Issue">Payment Issue</option>
-                        <option value="Content Issue">Content Issue</option>
                     </select>
                 </div>
                 <div class='mb-3'>
@@ -97,11 +85,21 @@
                     <textarea name="description" id="description" required rows="4"
                         class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue"></textarea>
                 </div>
-                <div class='mb-3'>
-                    <label for="attachment" class="block text-sm font-medium text-gray-700">Attachment (optional)</label>
-                    <input type="file" name="attachment" id="attachment"
-                        class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue">
+                <div class="flex-space-x-4">
+                    <w class="2/3">
+                        <div class='mb-3'>
+                            <label for="attachment" class="block text-sm font-medium text-gray-700">Attachment
+                                (optional)</label>
+                            <input type="file" id="attachment_upload" name="attachment"
+                                class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue">
+                        </div>
+                    </w>
+                    <w class="1/3">
+                        <img src="" id="attachment_preview" alt=""
+                            class="w-full h-auto object-cover rounded">
+                    </w>
                 </div>
+
                 <div class='mb-3'>
                     <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-opacity-90">Submit
                         Ticket</button>
@@ -125,4 +123,63 @@
             </form>
         </section>
     </div>
+@endsection
+
+@section('js')
+    <script>
+        $(document).ready(function() {
+
+            // ajax for calling problems:
+            $.ajax({
+                type: "get",
+                url: "/api/support",
+                success: function(response) {
+                    let select = $('#callingProblemCategory');
+                    select.empty();
+                    let problems = response.data;
+
+                    problems.forEach((probs) => {
+                        select.append(`<option value=${probs.id}>${probs.name}</option>`);
+                    });
+                },
+            });
+
+            // ajax for generating tickets:
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#attachment_preview').attr('src', e.target.result);
+                    }
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $('#attachment_upload').change(function() {
+                readURL(this);
+            });
+
+
+            $('#generateTickets').submit(function(e) {
+                e.preventDefault();
+
+                $.ajax({
+                    type: 'post',
+                    url: '/api/support/generate_tickets',
+                    data: new FormData(this),
+                    dataType: "JSON",
+                    contentType: false,
+                    cache: false,
+                    processData: false,
+                    success: function(response) {
+                        alert(response.msg);
+                        $('#generateTickets').trigger('reset');
+                        window.open('/support', '_self');
+                    },
+                });
+            });
+        });
+    </script>
 @endsection
