@@ -6,12 +6,22 @@ use App\Models\Tickets;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use illuminate\Support\Str;
+use Illuminate\Support\Carbon;
 
 class GenerateTicketApiController extends Controller
 {
+
     public function index()
     {
-        return response()->json(['data' => Tickets::all()]);
+            // Eager load the user and problemCategory relationships
+        $tickets = Tickets::with(['user', 'problemCategory'])->get();
+
+        $tickets->transform(function ($ticket) {
+            $ticket->formatted_created_at = Carbon::parse($ticket->created_at)->format('d-m-Y g:i A');
+            return $ticket;
+        });
+
+        return response()->json(['data' => $tickets]);
     }
 
 
@@ -38,7 +48,7 @@ class GenerateTicketApiController extends Controller
         }
 
         $ticket->ticket_number = $ticketNumber;
-        $ticket->user_id = $request->input('user_id') ?: Auth::id();  
+        $ticket->user_id = $request->input('user_id') ?: Auth::id();
         $ticket->problem_category_id = $request->prob_cat_id;
         $ticket->description = $request->description;
 

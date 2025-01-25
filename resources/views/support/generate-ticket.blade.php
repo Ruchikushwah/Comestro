@@ -1,52 +1,24 @@
 @extends('layout')
 @section('content')
-    {{-- <div class="flex justify-center items-center">
-        <div class="flex flex-col w-1/2 mt-6">
-            <h2 class="text-center px-3 py-2 bg-[#0071bc] text-white">Generate Complain Ticket</h2>
-            <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg space-y-4 w-full">
-                <div class='mb-3'>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Your Name</label>
-                    <input type="text" name="name" id="name" placeholder="Your Name" required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-teal-500 focus:border-teal-500" />
-                </div>
-
-                <div class='mb-3'>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Your Email</label>
-                    <input type="email" name="email" id="email" placeholder="Your Email" required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-teal-500 focus:border-teal-500" />
-                </div>
-
-                <div class='mb-3'>
-                    <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
-                    <select name="category" id="category" required
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 bg-white focus:ring-teal-500 focus:border-teal-500">
-                        <option value="Technical Issue">Technical Issue</option>
-                        <option value="Payment Issue">Payment Issue</option>
-                        <option value="Content Issue">Content Issue</option>
-                    </select>
-                </div>
-
-                <div class='mb-3'>
-                    <label for="description" class="block text-sm font-medium text-gray-700">Describe Your Issue</label>
-                    <textarea name="description" id="description" placeholder="Describe your issue" required rows="4"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-teal-500 focus:border-teal-500"></textarea>
-                </div>
-
-                <div class='mb-3'>
-                    <label for="attachment" class="block text-sm font-medium text-gray-700">Attachment (optional)</label>
-                    <input type="file" name="attachment" id="attachment"
-                        class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-teal-500 focus:border-teal-500" />
-                </div>
-
-                <div class='mb-3'>
-                    <button type="submit"
-                        class="w-full bg-blue-500 text-white py-2 px-4 rounded-md shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                        Generate Ticket
-                    </button>
-                </div>
-            </form>
-        </div>
-    </div> --}}
+    <div class="max-w-6xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Ticket Information</h2>
+        <table class="min-w-full table-auto border-collapse">
+            <thead>
+                <tr class="bg-gray-200 text-left">
+                    <th class="px-4 py-2 border-b">ID</th>
+                    <th class="px-4 py-2 border-b">Ticket Number</th>
+                    <th class="px-4 py-2 border-b">User ID</th>
+                    <th class="px-4 py-2 border-b">Subject</th>
+                    <th class="px-4 py-2 border-b">Description</th>
+                    <th class="px-4 py-2 border-b">Status</th>
+                    <th class="px-4 py-2 border-b">Raised On</th>
+                </tr>
+            </thead>
+            <tbody id="CallingTickets">
+                                
+            </tbody>
+        </table>
+    </div>
 
     <div class="max-w-4xl mx-auto p-6 space-y-8">
         <!-- FAQ Section -->
@@ -145,7 +117,6 @@
             });
 
             // ajax for generating tickets:
-
             function readURL(input) {
                 if (input.files && input.files[0]) {
                     var reader = new FileReader();
@@ -179,6 +150,31 @@
                         window.open('/support', '_self');
                     },
                 });
+            });
+
+            //ajax for calling tickets:
+            $.ajax({
+                type: "get",
+                url: "api/support/call_tickets",
+                success: function(response) {
+                    let TicketTable = $('#CallingTickets');
+                    TicketTable.empty();
+                    let tickets = response.data;
+
+                    tickets.forEach((ticket) => {
+                        TicketTable.append(`
+                             <tr class="bg-white">
+                                <td class="px-4 py-2 border-b">${ticket.id}</td>
+                                <td class="px-4 py-2 border-b">${ticket.ticket_number}</td>
+                                <td class="px-4 py-2 border-b">${ticket.user_id.name}</td>
+                                <td class="px-4 py-2 border-b">${ticket.problem_category_id.name}</td>
+                                <td class="px-4 py-2 border-b">${ticket.description}</td>
+                                <td class="px-4 py-2 border-b">${ticket.status}</td>
+                                <td class="px-4 py-2 border-b">${ticket.formatted_created_at}</td>
+                            </tr> 
+                        `);
+                    });
+                },
             });
         });
     </script>
