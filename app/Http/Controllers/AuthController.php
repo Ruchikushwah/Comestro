@@ -67,32 +67,16 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
         if (!$user || $user->otp !== $request->otp || now()->greaterThan($user->otp_expires_at)) {
             return back()->withErrors(['otp' => 'Invalid or expired OTP.']);
-            if ($req->isMethod("post")) {
-                $req->validate([
-                    'email' => 'required|email',
-                    'password' => 'required|min:6',
-                ]);
-
-                $credentials = $req->only('email', 'password');
-
-
-                if (Auth::attempt($credentials)) {
-
-                    session(['user_id' => Auth::id()]);
-
-                    return redirect()->route('support.generate.ticket')->with('success', 'Login Successful');
-                }
-
-                return back()->withErrors(['email' => 'Invalid credentials']);
-            }
+        }
 
             $user->otp = null;
             $user->otp_expires_at = null;
             $user->save();
 
             Auth::login($user);
-            return redirect()->route('crm.lead')->with('success', 'Logged in successfully.');
-        }
+            session(['user_id' => Auth::id()]);
+            return redirect()->route('support.generate.ticket')->with('success', 'Logged in successfully.');
+        
     }
     public function sendOtp(Request $request)
     {
