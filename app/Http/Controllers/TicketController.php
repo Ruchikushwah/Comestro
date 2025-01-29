@@ -9,6 +9,7 @@ class TicketController extends Controller
 {
     public function view($id){
         $tickets = Tickets::where('id',$id)->first();
+            // dd($tickets->id);
         return view('support.ticket_view',compact("tickets"));
     }
 }
