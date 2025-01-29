@@ -14,15 +14,13 @@
 </head>
 
 <body>
-
-
-
     <header>
         @include('header')
     </header>
 
     <main>
-        @yield('content') <!-- Render section('content') here -->
+       @section('content')
+       @show
     </main>
 
     <footer>
