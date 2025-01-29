@@ -176,7 +176,7 @@
                                 <td class="px-4 py-2 border-b">${ticket.status}</td>
                                 <td class="px-4 py-2 border-b">${ticket.formatted_created_at}</td>
                                 <td class="px-4 py-2 border-b">
-                                    <button type='button' view-id=${ticket.id}>View</button>    
+                                <td> <a href='/support/view/${ticket.id}' class='bg-yellow-500 px-2 py-1 rounded'>View</a>  
                                 </td>
                             </tr> 
                         `);

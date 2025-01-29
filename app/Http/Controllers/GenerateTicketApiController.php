@@ -13,7 +13,7 @@ class GenerateTicketApiController extends Controller
 
     public function index()
     {
-            // Eager load the user and problemCategory relationships
+        // Eager load the user and problemCategory relationships
         $tickets = Tickets::with(['user', 'problemCategory'])->get();
 
         $tickets->transform(function ($ticket) {
@@ -59,5 +59,16 @@ class GenerateTicketApiController extends Controller
             "success" => true,
             "msg" => "Your ticket generated successfully"
         ]);
+    }
+
+
+    public function show(int $id)
+    {
+        $data = Tickets::where("id", $id)->with("ProblemCategory", "User")->first();
+        if ($data) {
+            return response()->json($data);
+        } else {
+            return response()->json(['success' => false]);
+        }
     }
 }
