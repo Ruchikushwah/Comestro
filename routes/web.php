@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\TicketController;
+use App\Livewire\Contact\CreateContact;
+use App\Livewire\Contact\ManageContact;
 use App\Livewire\Lead\CreateLead;
 use App\Livewire\Lead\ManageLead;
 use Illuminate\Support\Facades\Auth;
@@ -61,11 +63,19 @@ Route::prefix("crm")->group(function () {
     Route::get("/lead", function () {
         return view("crm.lead", ['userName' => Auth::user()->name]);
     })->name("crm.lead")->middleware('auth');
+    Route::get("/contact", function () {
+        return view("crm.contact", ['userName' => Auth::user()->name]);
+    })->name("crm.contact")->middleware('auth');
 });
 
 Route::get('/create-lead', CreateLead::class)->name('create-lead');
 Route::get('/create-lead/edit/{id}', CreateLead::class)->name('create-lead.edit');
 Route::get('/manage-leads', ManageLead::class)->name('lead.manage-leads');
+
+Route::get('/create-contact', CreateContact::class)->name('create-contact');
+Route::get('/create-contact/edit/{id}', CreateContact::class)->name('create-contact.edit');
+Route::get('/manage-contact', ManageContact::class)->name('contact.manage-contact');
+
 
 
 Route::prefix('auth')->controller(AuthController::class)->group(function () {

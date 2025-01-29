@@ -75,7 +75,7 @@ class AuthController extends Controller
 
             Auth::login($user);
             session(['user_id' => Auth::id()]);
-            return redirect()->route('support.generate.ticket')->with('success', 'Logged in successfully.');
+            return redirect()->route('crm.lead')->with('success', 'Logged in successfully.');
         
     }
     public function sendOtp(Request $request)
