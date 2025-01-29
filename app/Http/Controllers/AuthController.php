@@ -67,6 +67,23 @@ class AuthController extends Controller
         $user = User::where('email', $request->email)->first();
         if (!$user || $user->otp !== $request->otp || now()->greaterThan($user->otp_expires_at)) {
             return back()->withErrors(['otp' => 'Invalid or expired OTP.']);
+        if ($req->isMethod("post")) {
+            $req->validate([
+                'email' => 'required|email',
+                'password' => 'required|min:6',
+            ]);
+
+            $credentials = $req->only('email', 'password');
+            
+
+            if (Auth::attempt($credentials)) {
+
+                session(['user_id' => Auth::id()]);
+
+                return redirect()->route('support.generate.ticket')->with('success', 'Login Successful');
+            }
+
+            return back()->withErrors(['email' => 'Invalid credentials']);
         }
 
         $user->otp = null;
@@ -149,5 +166,15 @@ class AuthController extends Controller
     {
         Auth::logout();
         return redirect()->route('login')->with('success', 'You have been logged out.');
+            $user = new User();
+            $user->name = $req->name;
+            $user->email = $req->email;
+            $user->password = Hash::make($req->password); // Hash password
+            $user->save();
+            
+            return redirect()->route('auth.login')->with('success', 'Registration Successful');
+        }
+
+        return view("register");
     }
 }

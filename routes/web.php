@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\TicketController;
 use App\Livewire\Lead\CreateLead;
 use App\Livewire\Lead\ManageLead;
 use Illuminate\Support\Facades\Auth;
@@ -80,3 +81,6 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::post('send-otp', 'sendOtp')->name('auth.sendOtp');
     Route::get('/logout',  'logout')->name('auth.logout');
 });
+
+
+Route::get('/support/view/{id}',[TicketController::class, 'view'])->name('support.ticket.view');
