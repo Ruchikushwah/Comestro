@@ -83,4 +83,4 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
 });
 
 
-Route::get('/support/view/{id}',[TicketController::class, 'view'])->name('support.ticket.view');
+Route::get('/support/view/{id}', [TicketController::class, 'view'])->name('support.ticket.view');
