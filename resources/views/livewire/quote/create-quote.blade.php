@@ -1,5 +1,4 @@
-@extends('crm.layout')
-@section('content')
+
     <div class="w-full mx-auto p-6 bg-gray-200 shadow-md rounded-md">
         @if (session()->has('message'))
             <div class="mb-2 text-green-600 font-semibold">
@@ -180,5 +179,5 @@
             </div>
         </form>
     </div>
-@endsection
+
 

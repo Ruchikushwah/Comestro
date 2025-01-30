@@ -28,11 +28,11 @@ class ManageQuote extends Component
 
     public function render()
     {
-        $quotes = Quote::Query()
-            ->where('subject', 'like', '%' . $this->search . '%')
-            ->orWhere('deal_name', 'like', '%' . $this->search . '%') // Replace with actual email column
-            ->orderBy($this->sortField, $this->sortDirection)
-            ->paginate(10);
+        $quotes = Quote::all();
+            // ->where('subject', 'like', '%' . $this->search . '%')
+            // ->orWhere('deal_name', 'like', '%' . $this->search . '%') // Replace with actual email column
+            // ->orderBy($this->sortField, $this->sortDirection)
+            // ->paginate(10);
         return view('livewire.quote.manage-quote', ['quotes' => $quotes]);
     }
 }
