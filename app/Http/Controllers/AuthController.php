@@ -100,7 +100,7 @@ class AuthController extends Controller
                 $message->to($user->email)
                     ->subject('Your OTP Code');
             });
- 
+
      
             // Redirect with success message
             return redirect()->back()->with(['otp_sent' => true, 'email' => $email]);
