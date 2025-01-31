@@ -8,9 +8,11 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/support',function(){
-    return view('support.generate-ticket');
+Route::middleware('auth')->get('/support',function(){
+    return view('support.manage_tickets');
 })->name('support.generate.ticket');
+
+
 
 Route::get('/footer', function () {
     return view('footer'); 
