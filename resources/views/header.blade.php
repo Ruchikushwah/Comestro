@@ -13,7 +13,7 @@
             <a href="#services" class="hover:text-blue-500 text-lg">Services</a>
             <a href="#portfolio" class="hover:text-blue-500 text-lg">Portfolio</a>
             <a href="#contact" class="hover:text-blue-500 text-lg">Contact</a>
-            <a href="{{ route('support.generate.ticket') }}" class="hover:text-blue-500 text-lg">Support</a>
+            <a href="{{ route('support.tickets.manage') }}" class="hover:text-blue-500 text-lg">Support</a>
         </nav>
 
         <!-- Call-to-Action Button -->

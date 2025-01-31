@@ -26,6 +26,7 @@
                 {{-- header for the tickets and relocate url goes here --}}
                 <div class="flex font-bold text-xl justify-between bg-white px-5 py-2">
                     <h2>My Ticket Detail</h2>
+                    {{-- <p>ticket ID: {{ $id }}</p> --}}
                     <a href="/support" class="text-blue-500">Back</a>
                 </div>
 
@@ -44,7 +45,7 @@
                             <p class="text-sm"><strong>Name:</strong> khobabe</p>
                             <p class="text-sm"><strong>Email:</strong> khobabe007@gmail.com</p>
                             <p class="text-sm"><strong>Domain:</strong> Comestro.com</p>
-                            <p class="text-sm"><strong>Main produ:</strong> comestro.com: Shared Hosting Service</p>
+                            <p class="text-sm"><strong>Main product:</strong> comestro.com: Shared Hosting Service</p>
                         </div>
                         <div>
                             <strong>Description:</strong>
