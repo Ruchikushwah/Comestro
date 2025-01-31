@@ -13,6 +13,7 @@ class Contact extends Model
      * The attributes that are mass assignable.
      */
     protected $fillable = [
+        'contact_owner',
         'first_name',
         'last_name',
         'account_name',
