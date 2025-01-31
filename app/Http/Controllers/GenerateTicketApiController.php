@@ -16,7 +16,7 @@ class GenerateTicketApiController extends Controller
 
         $userId = $request->user_id ?: Auth::id();
 
-        $tickets = Tickets::with(['user', 'problemCategory'])->where('user_id' , $userId)->get();
+        $tickets = Tickets::with(['user', 'problemCategory'])->where('user_id', $userId)->get();
 
         $tickets->transform(function ($ticket) {
             $ticket->formatted_created_at = Carbon::parse($ticket->created_at)->format('d-m-Y g:i A');
@@ -64,13 +64,14 @@ class GenerateTicketApiController extends Controller
     }
 
 
+    // to view the specified tickets:
     public function show(int $id)
     {
-        $data = Tickets::where("id", $id)->with("ProblemCategory", "User")->first();
-        if ($data) {
-            return response()->json($data);
+        $tickets = Tickets::where("id", $id)->with("ProblemCategory", "User")->first();
+        if ($tickets) {
+            return response()->json(["data" => $tickets, "success" => true]);
         } else {
-            return response()->json(['success' => false]);
+            return response()->json(['success' => false, "msg" => "Tickets not found"]);
         }
     }
 }

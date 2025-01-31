@@ -11,7 +11,7 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/support/call_tickets', [GenerateTicketApiController::class, 'index']);
 Route::post('/support/generate_tickets',[GenerateTicketApiController::class, 'store']);
-Route::post('/support/view/${id}',[GenerateTicketApiController::class, 'show']);
+Route::post('/support/view_tickets/${id}',[GenerateTicketApiController::class, 'show']);
 Route::post('/support',[ProblemCateogryApiController::class, 'store'])->name('problem.store');
 Route::get('/support',[ProblemCateogryApiController::class, 'index'])->name('support.index');
 Route::get('/support/{id}',[ProblemCateogryApiController::class, 'show'])->name('support.show');
