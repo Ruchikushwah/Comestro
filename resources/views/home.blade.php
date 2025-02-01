@@ -2,9 +2,9 @@
 @section('content')
 
 
-<div class="bg-[#FAFAFA] flex flex-wrap md:flex-nowrap justify-between items-center min-h-[700px] px-5 md:px-10 gap-5 ">
+<div class="bg-[#FAFAFA] flex flex-wrap md:flex-nowrap justify-between items-center min-h-[700px] px-5 md:px-10 gap-5  mt-16">
     <div class="flex flex-1 flex-col gap-5 px-5 md:px-10 md:text-left">
-        <h2 class="text-3xl md:text-2xl font-semibold">Build Your Dream Software</h2>
+        <h2 class="text-3xl md:text-xl font-semibold">Build Your Dream Software</h2>
 
         <p class="text-lg md:text-xl text-gray-600 font-inter">
             Transform your ideas into powerful software solutions.<br>
@@ -18,13 +18,10 @@
             </a>
         </div>
     </div>
-
     <div class="flex flex-1 justify-center md:justify-end">
-        <img src="/image__2_-removebg-preview.png" alt="Software illustration" class="max-w-full md:max-w-[80%]">
+        <img src="/image__2_-removebg-preview.png" alt="Software illustration" class="max-w-full md:max-w-[]">
     </div>
 </div>
-
-
 
 <div class="bg-gray-50 font-sans py-5">
     <!-- Header Section -->
@@ -32,13 +29,12 @@
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">Services we offer</h1>
         <img src="https://dashboard.codeparrot.ai/api/image/Z5xHFOxZjZ9DnCA7/slider-n.png" alt="slider nodes" class="w-32 mt-2">
     </div>
-
     <!-- Carousel Section -->
     <div class="relative w-full max-w-7xl mx-auto overflow-hidden py-4">
         <!-- Carousel Wrapper -->
         <div class="flex transition-transform duration-300 ease-in-out" style="gap: 20px;">
             <!-- Card 1 -->
-            <div class="min-w-[333px] w-full h-[287px] bg-white rounded-lg shadow-lg relative overflow-hidden">
+            <div class="min-w-[333px] w-full h-[287px] bg-white rounded-lg relative overflow-hidden">
                 <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://dashboard.codeparrot.ai/api/image/Z5xHFOxZjZ9DnCA7/card-wra.png');"></div>
                 <div class="relative z-10 p-6 flex flex-col gap-4">
                     <div class="flex flex-col gap-3">
@@ -52,7 +48,7 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="min-w-[333px]  w-full h-[287px] bg-white rounded-lg shadow-lg relative overflow-hidden">
+            <div class="min-w-[333px]  w-full h-[287px] bg-white rounded-lg relative overflow-hidden">
                 <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://dashboard.codeparrot.ai/api/image/Z5xHFOxZjZ9DnCA7/card-wra-2.png');"></div>
                 <div class="relative z-10 p-6 flex flex-col gap-4">
                     <div class="flex flex-col gap-3">

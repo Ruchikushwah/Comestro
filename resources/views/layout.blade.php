@@ -26,67 +26,106 @@
     </main>
 
 
-    <footer class="  py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-                <!-- About Section -->
 
+    <footer class="bg-gray-200 text-gray-700 border-t">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                <!-- Apps and Extensions -->
                 <div>
-
-                    <img src="\comestro.png" alt="" class="lg:h-16 h-10">
-                    <p class="text-gray-900 md:text-md text-sm mt-4 py-2">
-                        At comestro, we specialize in building robust and scalable software solutions tailored to industry needs.
-                        ensuring high performance, security, and user-friendly experiences.
-                        With a focus on real-world applications, we integrate cutting-edge technologies to create efficient, reliable,
-                        and innovative software that empowers businesses and individuals to achieve their goals.
-                    </p>
-
-                </div>
-
-                <!-- Links Section -->
-                <div class="md:pl-12">
-                    <h3 class="text-lg font-semibold mb-4">Menu</h3>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="#" class="">About</a>
-                        </li>
-                        <li>
-                            <a href="#" class="">Courses</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="">Contact Us</a>
-                        </li>
-
-                        <li>
-                            <a href="#" class="">Privacy & Policy</a>
-                        </li>
-                        <li>
-                            <a href="#" class="">Terms & Conditions</a>
-                        </li>
+                    <h3 class="font-semibold text-lg">Apps and Extensions</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-600">Mobile Apps</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Desktop Apps</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Developer Center</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Google Workspace Integration</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Microsoft 365 Integration</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Apps for Apple Watch</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Product Integrations</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Browser Extensions</a></li>
                     </ul>
                 </div>
-                <!-- Contact Information -->
+
+                <!-- Learn -->
                 <div>
-                    <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                    <p class="text-gray-700">{{ env('APP_NAME') }} </p>
-                    <p class="text-gray-700">Purnea, Bihar, India</p>
-                    <p class="text-gray-700">Email: info@LearnSyntax.com</p>
-                    <p class="text-gray-700">Phone: +919546805580</p>
+                    <h3 class="font-semibold text-lg">Learn</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-600">Training & Certification</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Academy</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Blog</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Knowledge Base</a></li>
+                    </ul>
+                </div>
+
+                <!-- Community -->
+                <div>
+                    <h3 class="font-semibold text-lg">Community</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-600">User Community</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Customer Stories</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Influence</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Find a Partner</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Startups</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Affiliate Program</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div>
+                    <h3 class="font-semibold text-lg">Company</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-blue-600">About Us</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Press</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Events</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Newsroom</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Service Status</a></li>
+                        <li><a href="#" class="hover:text-blue-600">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Sales -->
+                <div>
+                    <h3 class="font-semibold text-lg">Contact</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><span class="font-semibold">Phone</span></li>
+                        <li><a href="#" class="text-blue-600">9546805880</a></li>
+                        <li><a href="#" class="text-blue-600">1800 572 3535</a></li>
+                        <li><span class="font-semibold">Email</span></li>
+                        <li><a href="#" class="text-blue-600">comestro@gmail.com</a></li>
+                    </ul>
                 </div>
             </div>
 
-
-        </div>
-
-
-        <footer class="bg-gray-900 text-white py-8">
-            <div class="container mx-auto px-8 text-center">
-                <p class="text-sm">&copy; 2025 [Comestro techlab Pvt. Ltd.]. All rights reserved.</p>
+            <!-- Social Links -->
+            <div class="flex justify-center mt-8 space-x-4">
+                
+                <a href="#" class=" hover:text-gray-800 text-2xl"><i class="fa-brands fa-x-twitter"></i></i></a>
+                <a href="#" class=" hover:text-gray-800 text-2xl"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-gray-800 text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-gray-800 text-2xl"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-gray-800 text-2xl"><i class="fa-brands fa-github"></i></a>
             </div>
-        </footer>
 
+            <!-- Bottom Links -->
+            <div class="mt-6 border-t pt-6 text-center text-sm space-x-4 ">
+                <a href="#" class="hover:text-blue-600"> Home</a>
+                <a href="#" class="hover:text-blue-600">Contact Us</a>
+                <a href="#" class="hover:text-blue-600">service</a>
+                <a href="#" class="hover:text-blue-600">support</a>
+                <a href="#" class="hover:text-blue-600">CRM</a>
+                <a href="#" class="hover:text-blue-600">Privacy Policy</a>
+                <a href="#" class="hover:text-blue-600">Cookie Policy</a>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-4 text-center text-sm bg-gray-800 text-white py-5">
+                © 2025, Comestro Techlabs Pvt. Ltd. All Rights Reserved.
+            </div>
+        </div>
     </footer>
+
+
+
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>

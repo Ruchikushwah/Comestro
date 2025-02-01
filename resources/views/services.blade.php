@@ -1,21 +1,22 @@
  @extends('layout')
  @section('content')
- <div class=" h-[300px] w-full bg-purple-200 ">
-    <div class=" flex flex-1 items-center justify-between px-20"> 
-        <div class=" flex">
-            <img src="/software.png" class=" h-[300px] w-[300px] " alt="">
-            
-        </div>
-        <div class=" ">
-            <p >Web Development</p>
-        </div>
+ <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+ <div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900 to-purple-600 ">
 
-    </div>
+     <div class="absolute top-[-130px] left-[-130px] rounded-full bg-blue-600 w-[300px] h-[300px] flex items-center justify-center text-white">
 
+     </div>
  </div>
- <div class="flex justify-center items-center min-h-screen bg-gray-50 font-inter ">
+
+
+
+
+
+
+
+ <!-- <div class="flex justify-center items-center min-h-screen bg-gray-50 font-inter ">
      <div class="max-w-2xl text-left">
-        
+
          <p class="text-lg text-gray-900 mb-4  ">
              Web development refers to the process of creating, building, and maintaining websites and web applications that are accessible via the internet or an intranet. It involves a combination of technical, creative, and problem-solving skills to create functional, interactive, and user-friendly websites.
          </p>
@@ -37,7 +38,7 @@
 
 
      </div>
- </div>
+ </div> -->
 
 
 

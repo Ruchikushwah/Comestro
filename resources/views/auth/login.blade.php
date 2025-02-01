@@ -11,7 +11,7 @@
 <body>
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-    <div class="bg-white shadow-lg rounded-lg flex w-full max-w-4xl">
+    <div class="bg-white shadow-sm rounded-lg flex w-full max-w-4xl">
         <!-- Left Side - Sign In -->
         <div class="w-1/2 p-8">
             <img src="/comestro.png" alt="Logo" class="h-10 mb-4">
