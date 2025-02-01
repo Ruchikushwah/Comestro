@@ -1,6 +1,6 @@
 @extends('layout')
 @section('content')
-    <div class="w-full px-10 mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <div class="w-full min-h-screen px-10 mx-auto bg-white p-6 rounded-lg shadow-lg">
         <div class="flex justify-between">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">My Tickets</h2>
             <a class="text-2xl font-semibold text-blue-500 mb-4">Create new ticket</a>
@@ -24,7 +24,7 @@
         </table>
     </div>
 
-    <div class="max-w-4xl mx-auto p-6 space-y-8">
+    {{-- <div class="max-w-4xl mx-auto p-6 space-y-8">
         <!-- FAQ Section -->
         <section>
             <h2 class="text-2xl font-bold text-blue-500">Frequently Asked Questions</h2>
@@ -98,7 +98,7 @@
                 </div>
             </form>
         </section>
-    </div>
+    </div> --}}
 @endsection
 
 @section('js')
@@ -160,6 +160,9 @@
             $.ajax({
                 type: "get",
                 url: "api/support/call_tickets",
+                data: {
+                    user_id: {{ session('user_id') }}
+                },
                 success: function(response) {
                     let TicketTable = $('#CallingTickets');
                     TicketTable.empty();
@@ -170,14 +173,12 @@
                              <tr>
                                 <td class="px-4 py-2 border-b">${ticket.id}</td>
                                 <td class="px-4 py-2 border-b">${ticket.ticket_number}</td>
-                                <td class="px-4 py-2 border-b">${ticket.user_id.name}</td>
+                                <td class="px-4 py-2 border-b">${ticket.user_id}</td>
                                 <td class="px-4 py-2 border-b">${ticket.problem_category_id.name}</td>
                                 <td class="px-4 py-2 border-b">${ticket.description}</td>
                                 <td class="px-4 py-2 border-b">${ticket.status}</td>
                                 <td class="px-4 py-2 border-b">${ticket.formatted_created_at}</td>
-                                <td class="px-4 py-2 border-b">
-                                <td> <a href='/support/view/${ticket.id}' class='bg-yellow-500 px-2 py-1 rounded'>View</a>  
-                                </td>
+                                <td> <a href='/support/view/${ticket.id}' class='text-red-500 px-2 py-1 rounded'>View</a></td>
                             </tr> 
                         `);
                     });

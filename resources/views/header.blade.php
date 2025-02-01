@@ -5,7 +5,42 @@
                 <img src="/comestro.png" class="md:h-10 h-10 " alt="">
             </span>
         </a>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex space-x-8 font-semibold ">
+            <a href="#about" class="hover:text-blue-500 text-lg">About Us</a>
+            <a href="#services" class="hover:text-blue-500 text-lg">Services</a>
+            <a href="#contact" class="hover:text-blue-500 text-lg">Contact</a>
+
+            <a href="{{ route('support.tickets.manage') }}" class="hover:text-blue-500 text-lg">Support</a>
+
+            <a href="{{ route('support.generate.ticket') }}" class="hover:text-blue-500 text-lg">Support</a>
+            <a href="{{ route('crm.lead') }}" class="hover:text-blue-500 text-lg">CRM</a>
+
+        </nav>
+
+        <!-- Call-to-Action Button -->
+        <div class="hidden md:block">
+            <a href="#get-started" class="bg-[#0071bc] text-white px-4 py-3 rounded hover:bg-[#0071bc] text-lg">
+                Get Started
+            </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="md:hidden focus:outline-none">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden bg-gray-800 md:hidden">
+        <nav class="space-y-2 px-6 py-4">
+            <a href="#services" class="block hover:text-blue-500">Services</a>
+            <a href="#portfolio" class="block hover:text-blue-500">Portfolio</a>
+            <a href="#about" class="block hover:text-blue-500">About Us</a>
+            <a href="#contact" class="block hover:text-blue-500">Contact</a>
             <a href="#get-started" class="block bg-[#f15a24] text-center text-white px-4 py-2 rounded hover:bg-[#f15a24]">
                 Get Started
             </a>

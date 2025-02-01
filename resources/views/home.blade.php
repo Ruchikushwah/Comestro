@@ -2,7 +2,7 @@
 @section('content')
 
 
-<div class="bg-[#FAFAFA] flex flex-wrap md:flex-nowrap justify-between items-center min-h-[700px] px-5 md:px-10 gap-5  mt-16">
+{{-- <div class="bg-[#FAFAFA] flex flex-wrap md:flex-nowrap justify-between items-center min-h-[700px] px-5 md:px-10 gap-5 ">
     <div class="flex flex-1 flex-col gap-5 px-5 md:px-10 md:text-left">
         <h2 class="text-3xl md:text-xl font-semibold">Build Your Dream Software</h2>
 
@@ -19,11 +19,37 @@
         </div>
     </div>
     <div class="flex flex-1 justify-center md:justify-end">
-        <img src="/image__2_-removebg-preview.png" alt="Software illustration" class="max-w-full md:max-w-[]">
+        <img src="/image__2_-removebg-preview.png" alt="Software illustration" class="max-w-full md:max-w-[80%]">
     </div>
-</div>
+</div> --}}
+<section class="py-10 bg-white text-black">
+    <div class="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-12">
+        <div class="lg:w-1/2 space-y-6 text-center lg:text-left">
+            <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+                Great <span class="text-indigo-600">Product</span> is <br> 
+                built by <span class="text-black font-extrabold">great </span><span class="text-indigo-600">Teams</span>
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600">
+                Transform your ideas into powerful software solutions.<br>
+                Our expert team is here to help you create scalable, efficient,<br>
+                and user-friendly platforms tailored to your needs.
+            </p>
+            <div class="flex justify-center lg:justify-start">
+                <a href="#get-started" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition">
+                    Let's Get Started
+                </a>
+            </div>
+        </div>
+        <div class="lg:w-1/2 flex justify-center">
+            <img src="/image__2_-removebg-preview.png" 
+                 alt="Development Approach" class="w-full max-w-md rounded-lg ">
+        </div>
+    </div>
+</section>
 
-<div class="bg-gray-50 font-sans py-5">
+
+
+{{-- <div class="bg-gray-50 font-sans py-5">
     <!-- Header Section -->
     <div class="flex flex-col items-center justify-center ">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-900 text-center">Services we offer</h1>
@@ -102,10 +128,15 @@
             <span class="w-3 h-3 bg-gray-300 rounded-full cursor-pointer dot"></span>
         </div>
     </div>
-</div>
+</div> --}}
 
-<div class="flex flex-1 items-center justify-center h-56 bg-blue-50 flex-col">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-inter text-gray-700 py-4">Brands that trust us</h2>
+
+
+<h2 class="text-2xl sm:text-3xl md:text-4xl  font-bold  text-center text-gray-700 py-4 mt-10">Brands That Trust Us</h2>
+
+
+<div class="flex flex-1 items-center justify-center h-56 bg-blue-50 flex-col ">
+
     <div class="gap-4 sm:gap-8 flex flex-wrap justify-center">
         <a href="" class="px-2 py-3 sm:px-4 sm:py-5">
             <img src="\image.jpeg" alt="" class="w-22 h-10 sm:w-22 sm:h-14">
@@ -126,7 +157,12 @@
             <img src="/logo (1).png" alt="" class="w-22 h-10 sm:w-22 sm:h-14">
         </a>
     </div>
-</div>
+</div> 
+
+
+
+
+
 
 <div class="bg-gray-50 text-gray-900 py-8">
     <section class="py-12">

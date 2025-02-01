@@ -7,9 +7,19 @@ use Illuminate\Http\Request;
 
 class TicketController extends Controller
 {
-    public function view($id){
-        $tickets = Tickets::where('id',$id)->first();
-            // dd($tickets->id);
-        return view('support.ticket_view',compact("tickets"));
+    // public function viewSpecifiedTicketPage($id){
+    //     $tickets = Tickets::where('id',$id)->first();
+    //     return view('support.ticket_view',compact("tickets"));
+    // }
+
+    public function manageTickets(){
+        return view('support.manage_tickets');
     }
+
+    public function viewTicket($id){
+        return view('support.ticket_view',compact('id'));
+    }
+    
+
+
 }
