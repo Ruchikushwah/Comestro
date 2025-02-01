@@ -16,9 +16,9 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::get('/support', function () {
-    return view('support.generate-ticket');
-})->name('support.generate.ticket');
+// Route::middleware('auth')->get('/support',function(){
+//     return view('support.manage_tickets');
+// })->name('support.generate.ticket');
 
 Route::get('/footer', function () {
     return view('footer');
@@ -102,4 +102,9 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
 });
 
 
+
+Route::middleware('auth')->get('/support',[TicketController::class, 'manageTickets'])->name('support.tickets.manage');
+Route::get('/support/view/{id}',[TicketController::class, 'viewTicket'])->name('support.tickets.view');
+
 Route::get('/support/view/{id}', [TicketController::class, 'view'])->name('support.ticket.view');
+

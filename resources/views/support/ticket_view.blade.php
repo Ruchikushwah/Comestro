@@ -1,72 +1,108 @@
 @extends('layout')
 @section('content')
-    <div class="min-h-screen bg-gray-100 p-6">
-        <div class="w-full mx-auto bg-white rounded-lg shadow-md p-6">
-            <div class="flex justify-between">
-                <h1 class="text-2xl font-bold text-blue-600 mb-6">Ticket Details</h1>
-                <a href="" class="text-2xl font-bold text-blue-500 mb-6">Back</a>
+    <div class="flex min-h-screen bg-gray-100 p-6">
+        <div class="flex flex-1 gap-5">
+
+            {{-- left side section for the personal  --}}
+            <div class="w-4/12">
+                <h2 class="flex gap-1 mb-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                        <path fill-rule="evenodd"
+                            d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <span class="text-xl font-bold">Your information</span>
+                </h2>
+                <ul>
+                    <li class="font-bold">comestro</li>
+                    <li>purnea bihar, 854301</li>
+                    <li>India</li>
+                </ul>
             </div>
 
-            <!-- Ticket Details Table -->
-            <div class="overflow-hidden border border-gray-300 rounded-lg">
-                <table class="w-full border-collapse">
-                    {{-- <tbody>
-                        <!-- Example Key-Value Pair -->
-                        <tr class="bg-gray-50">
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Ticket ID</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">#12345</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Ticket number</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">#12345</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Subject</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">Technical Issue</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Description</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">
-                                Unable to log in to my account, receiving an error code.
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Created By</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">John Doe</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Ticket Status</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">Open</td>
-                        </tr>
-                        <tr>
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Created At</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">2025-01-25 10:30 AM</td>
-                        </tr>
-                        <tr class="bg-gray-50">
-                            <td class="p-4 font-medium text-gray-700 border-b border-gray-300">Updated At</td>
-                            <td class="p-4 text-gray-800 border-b border-gray-300">2025-01-25 11:45 AM</td>
-                        </tr>
-                    </tbody> --}}
-                    <tbody id="viewSpecifiedTicket">
+            {{-- right side section for the ticket details and the messages --}}
+            <div class="w-8/12 bg-green-100">
 
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Attachment Section -->
-            <div class="mt-6">
-                <h2 class="text-lg font-semibold text-blue-600 mb-2">Attachment</h2>
-                <div class="border border-gray-300 p-4 rounded-lg">
-                    <img src="https://via.placeholder.com/300x200" alt="Attachment Preview"
-                        class="w-full h-auto rounded mb-4">
-                    <a href="https://via.placeholder.com/300x200" target="_blank"
-                        class="text-blue-600 hover:underline font-medium">Download Attachment</a>
+                {{-- header for the tickets and relocate url goes here --}}
+                <div class="flex font-bold text-xl justify-between bg-white px-5 py-2">
+                    <h2>My Ticket Detail</h2>
+                    {{-- <p>ticket ID: {{ $id }}</p> --}}
+                    <a href="/support" class="text-blue-500">Back</a>
                 </div>
-            </div>
 
-            <!-- Back Button -->
-            <div class="mt-6">
-                <a href="/tickets" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Back to Tickets</a>
+                {{-- tickets goes here --}}
+                <div class="flex flex-col flex-1 p-4">
+                    <div class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4  ">
+                        <div class="flex flex-col gap-3">
+                            <p class="text-lg font-semibold">Ticket: tkt-1234567890</p>
+                            <p class="text-sm"><strong>Status:</strong> <span class="text-red-500">Closed</span></p>
+                            <p class="text-sm"><strong>Department:</strong> technical</p>
+                            <p class="text-sm"><strong>Subject:</strong> technical issue</p>
+                            <p class="text-sm"><strong>Create Date:</strong> Fri Jan 20, 2025, 10:00 AM</p>
+                        </div>
+
+                        <div class="flex flex-col gap-3">
+                            <p class="text-sm"><strong>Name:</strong> khobabe</p>
+                            <p class="text-sm"><strong>Email:</strong> khobabe007@gmail.com</p>
+                            <p class="text-sm"><strong>Domain:</strong> Comestro.com</p>
+                            <p class="text-sm"><strong>Main product:</strong> comestro.com: Shared Hosting Service</p>
+                        </div>
+                        <div>
+                            <strong>Description:</strong>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facilis facere laborum, quis in
+                                nisi incidunt explicabo modi odit reiciendis quia deserunt iure, molestiae assumenda quod
+                                fuga neque consectetur quibusdam amet?Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit. Dolorem labore odit expedita cupiditate quae iste laudantium, commodi natus optio
+                                ratione explicabo quis nemo error voluptatem ab repellendus facere praesentium? Mollitia?
+                            </p>
+                        </div>
+                        <div>
+                            <strong>Attachment:</strong>
+                            <img src="https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                {{-- messages goes here --}}
+                <div class="">
+                    {{-- clients message --}}
+                    <h2 class="bg-blue-500 text-white w-full px-3 py-2 text-lg">Friday, August 15, 2025, 10:04 pm - Client</h2>
+                    <div class="px-10 py-5 bg-white">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae beatae eum
+                            ullam dolor, aspernatur saepe id quaerat ipsam a doloribus rerum sapiente ipsum quibusdam ab,
+                            deserunt officiis itaque ducimus vel!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae beatae eum
+                            ullam dolor, aspernatur saepe id quaerat ipsam a doloribus rerum sapiente ipsum quibusdam ab,
+                            deserunt officiis itaque ducimus vel!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae beatae eum
+                            ullam dolor, aspernatur saepe id quaerat ipsam a doloribus rerum sapiente ipsum quibusdam ab,
+                            deserunt officiis itaque ducimus vel!</p>
+                    </div>
+                    {{-- admins message --}}
+                    <h2 class="bg-red-500 text-white w-full px-3 py-2 text-lg">Mon, August 18, 2025, 02:04 pm - Admin</h2>
+                    <div class="px-10 py-5 bg-white">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae beatae eum
+                            ullam dolor, aspernatur saepe id quaerat ipsam a doloribus rerum sapiente ipsum quibusdam ab,
+                            deserunt officiis itaque ducimus vel!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae beatae eum
+                            ullam dolor, aspernatur saepe id quaerat ipsam a doloribus rerum sapiente ipsum quibusdam ab,
+                            deserunt officiis itaque ducimus vel!</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae beatae eum
+                            ullam dolor, aspernatur saepe id quaerat ipsam a doloribus rerum sapiente ipsum quibusdam ab,
+                            deserunt officiis itaque ducimus vel!</p>
+                    </div>
+                </div>
+
+                {{-- message sending input goes here --}}
+                <div class="mt-10 px-10 py-5">
+                    <form action="">
+                        <div class="mt-3">
+                            <textarea name="message" rows="7" cols="90" class="mt-5 px-10 py-5 border-2 rounded-lg" placeholder="Enter your message here..."></textarea>
+                            <button type="button" class="bg-blue-500 px-3 py-1 rounded text-white text-lg">Send</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -74,13 +110,13 @@
 
 @section('js')
     <script>
-        $document.ready(function(){
-            //calling specified ticket here:
-            $.ajax({
-                type:"GET",
-                url:"",
-                
-            });
-        });
+        // $document.ready(function() {
+        //     //calling specified ticket here:
+        //     $.ajax({
+        //         type: "GET",
+        //         url: "",
+
+        //     });
+        // });
     </script>
 @endsection
