@@ -3,19 +3,20 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Tickets extends Model
 {
     protected $guarded = [];
     
-    public function user()
+    public function user():BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function problemCategory():HasOne
+    public function problemCategory():BelongsTo
     {
-        return $this->hasOne(ProblemCategory::class, 'id', 'problem_category_id');
+        return $this->belongsTo(ProblemCategory::class, 'problem_category_id');
     }
 }

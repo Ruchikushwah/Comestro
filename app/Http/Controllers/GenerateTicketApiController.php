@@ -65,9 +65,14 @@ class GenerateTicketApiController extends Controller
 
 
     // to view the specified tickets:
-    public function show(int $id)
+    public function show(int $id, Request $request)
     {
-        $tickets = Tickets::where("id", $id)->with("ProblemCategory", "User")->first();
+        $userId = $request->query('user_id'); //getting user id from the ajax request
+
+        $tickets = Tickets::where("id", $id)
+            ->where("user_id", $userId)
+            ->with("problemCategory", "user")
+            ->first();
         if ($tickets) {
             return response()->json(["data" => $tickets, "success" => true]);
         } else {
