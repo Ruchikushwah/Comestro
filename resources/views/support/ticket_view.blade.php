@@ -134,12 +134,13 @@
                             <p class="text-sm"><strong>Status:</strong> <span class="text-red-500">${ticket.status}</span></p>
                             <p class="text-sm"><strong>Department:</strong> ${ticket.department}</p>
                             <p class="text-sm"><strong>Subject:</strong> ${ticket.problem_category.name}</p>
-                            <p class="text-sm"><strong>Create Date:</strong> Fri Jan 20, 2025, 10:00 AM</p>
+                            <p class="text-sm"><strong>Create Date:</strong> ${ticket.formatted_created_at}</p>
                         </div>
 
                         <div class="flex flex-col gap-3">
                             <p class="text-sm"><strong>Name:</strong> ${ticket.user.name}</p>
                             <p class="text-sm"><strong>Email:</strong> ${ticket.user.email}</p>
+                            <p class="text-sm"><strong>Mobile:</strong> ${ticket.user.contact}</p>
                             <p class="text-sm"><strong>Domain:</strong> ${ticket.domain}</p>
                             <p class="text-sm"><strong>Main product:</strong> comestro.com: ${ticket.mainProduct}</p>
                         </div>

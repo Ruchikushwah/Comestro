@@ -13,7 +13,6 @@ class GenerateTicketApiController extends Controller
 
     public function index(Request $request)
     {
-
         $userId = $request->user_id ?: Auth::id();
 
         $tickets = Tickets::with(['user', 'problemCategory'])->where('user_id', $userId)->get();
@@ -74,6 +73,7 @@ class GenerateTicketApiController extends Controller
             ->with("problemCategory", "user")
             ->first();
         if ($tickets) {
+            $tickets->formatted_created_at = Carbon::parse($tickets->created_at)->format('l, d-m-Y g:i A');
             return response()->json(["data" => $tickets, "success" => true]);
         } else {
             return response()->json(['success' => false, "msg" => "Tickets not found"]);
