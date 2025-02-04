@@ -13,7 +13,6 @@ class GenerateTicketApiController extends Controller
 
     public function index(Request $request)
     {
-
         $userId = $request->user_id ?: Auth::id();
 
         $tickets = Tickets::with(['user', 'problemCategory'])->where('user_id', $userId)->get();
@@ -65,10 +64,16 @@ class GenerateTicketApiController extends Controller
 
 
     // to view the specified tickets:
-    public function show(int $id)
+    public function show(int $id, Request $request)
     {
-        $tickets = Tickets::where("id", $id)->with("ProblemCategory", "User")->first();
+        $userId = $request->query('user_id'); //getting user id from the ajax request
+
+        $tickets = Tickets::where("id", $id)
+            ->where("user_id", $userId)
+            ->with("problemCategory", "user")
+            ->first();
         if ($tickets) {
+            $tickets->formatted_created_at = Carbon::parse($tickets->created_at)->format('l, d-m-Y g:i A');
             return response()->json(["data" => $tickets, "success" => true]);
         } else {
             return response()->json(['success' => false, "msg" => "Tickets not found"]);
