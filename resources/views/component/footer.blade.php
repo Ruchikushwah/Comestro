@@ -47,10 +47,9 @@
                     <h3 class="font-semibold text-lg">Contact</h3>
                     <ul class="mt-4 space-y-2 text-sm">
                         <li><span class="font-semibold">Phone</span></li>
-                        <li><a href="#" class="text-blue-600">9546805580</a></li>
-                        <li><a href="#" class="text-blue-600">1800 572 3535</a></li>
+                        <li><a href="#" class="text-blue-600">(+91) 9546805580</a></li>
                         <li><span class="font-semibold">Email</span></li>
-                        <li><a href="#" class="text-blue-600">comestro@gmail.com</a></li>
+                        <li><a href="#" class="text-blue-600">info@comestro.com</a></li>
                     </ul>
                 </div>
             </div>

@@ -2,8 +2,8 @@
     <div class="container mx-auto max-w-6xl">
         <!-- Title Section -->
         <div class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-gray-800 mb-4">WHY CHOOSE US</h1>
-            <p class="text-lg text-gray-600">Comestro: Innovating Beyond Limits in Web & Software Development</p>
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">WHY CHOOSE US</h1>
+            <p class="text-md text-gray-600">Comestro: Innovating Beyond Limits in Web & Software Development</p>
         </div>
 
         <!-- Main Grid -->

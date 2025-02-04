@@ -2,7 +2,7 @@
     <section class="py-12">
         <div class="container mx-auto text-center">
             <h2 class="text-2xl font-semibold text-gray-700 mb-2">Our design and</h2>
-            <h1 class="text-4xl font-semibold text-blue-600">Development Approach</h1>
+            <h1 class="text-4xl font-semibold text-[#0071bc]">Development Approach</h1>
         </div>
     </section>
 
