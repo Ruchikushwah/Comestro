@@ -13,8 +13,9 @@
             <a href="#contact" class="hover:text-blue-500 text-lg">Contact</a>
 
             <a href="{{ route('support.tickets.manage') }}" class="hover:text-blue-500 text-lg">Support</a>
+            
 
-            <a href="{{ route('support.generate.ticket') }}" class="hover:text-blue-500 text-lg">Support</a>
+           
             <a href="{{ route('crm.lead') }}" class="hover:text-blue-500 text-lg">CRM</a>
 
         </nav>
