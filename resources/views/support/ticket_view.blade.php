@@ -114,6 +114,7 @@
 @section('js')
     <script>
         $(document).ready(function() {
+
             //calling specified ticket here:
             let ticketId = {{ $id }}; //getting ticket_id from the blade
             let userId = {{ auth()->id() }}; //getting user_id of the logged-in user 
@@ -166,9 +167,46 @@
                         </div>
                     `);
                 }
-
-
             });
+            // calling ticket ends here;
+
+            // calling messages:
+            function fetchMessages() {
+                $.ajax({
+                    url: `/api/messages/${ticketId}`,
+                    type: "GET",
+                    success: function(response) {
+                        let callMessages = $('#callMessages');
+                        callMessages.empty();
+
+                        let message = response.data;
+                        let lastSender = null;
+
+                        message.forEach((msg) => {
+                            let messageTime = new Date(msg.created_at).toLocaleString();
+                            let sender = msg.sender_type;
+
+                            if (sender !== lastSender) {
+                                let headerColor = sender === "user" ? "bg-blue-500" : "bg-red-500";
+                                let senderText = sender === "user" ? "Client" : "Admin";
+
+                                callMessages.append(`<h2 class="${headerColor} text-white w-full px-3 py-2 text-lg">${messageTime} - ${senderText}</h2>`);
+                                lastSender = sender;
+                            }
+
+                            callMessages.append(`
+                                <div class='px-10 py-5 bg-white'>
+                                    <p>${msg.message}</p>    
+                                </div>`);
+                        });
+                    },
+                    error: function(err) {
+                        console.log("Error fetching messages:", err);
+                    },
+                });
+            }
+            fetchMessages();
+
         });
     </script>
 @endsection
