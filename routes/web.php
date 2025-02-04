@@ -106,4 +106,3 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
 Route::middleware('auth')->get('/support', [TicketController::class, 'manageTickets'])->name('support.tickets.manage');
 Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');
 
-Route::get('/support/view/{id}', [TicketController::class, 'view'])->name('support.ticket.view');
