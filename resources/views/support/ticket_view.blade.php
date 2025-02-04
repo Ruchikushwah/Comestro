@@ -26,7 +26,7 @@
                 {{-- header for the tickets and relocate url goes here --}}
                 <div class="flex font-bold text-xl justify-between bg-white px-5 py-2">
                     <h2>My Ticket Detail</h2>
-                    <p>{{ $id }}</p>
+                    <p>ticket id = {{ $id }}</p>
                     {{-- <p>{{ $user_id }}</p> --}}
                     <a href="/support" class="text-blue-500">Back</a>
                 </div>
@@ -117,16 +117,25 @@
             //calling specified ticket here:
             let ticketId = {{ $id }}; //getting ticket_id from the blade
             let userId = {{ auth()->id() }}; //getting user_id of the logged-in user 
+            $('#ticketImage').hide();
 
             $.ajax({
                 type: "GET",
                 url: `/api/support/view_tickets/${ticketId}`,
-                data: {user_id:userId}, //sending user_id in the request
+                data: {
+                    user_id: userId
+                }, //sending user_id in the request
                 success: function(response) {
-                    console.log("user id in blade file :", userId);
-                    console.log(response);
+                    // console.log("user id in blade file :", userId);
+                    // console.log(response);
                     let ticket = response.data;
-                    console.log(ticket);
+
+                    if (ticket.attachment) {
+                        $('#ticketImage').attr('src', `/Problem_image/${ticket.attachment}`).show();
+                        $('#noAttachmentMessage').hide();
+                    } else {
+                        $('#noAttachmentMessage').show();
+                    }
 
                     $('#ticketDetails').html(`
                         <div class="flex flex-col gap-3">
@@ -152,7 +161,8 @@
                         </div>
                         <div>
                             <strong>Attachment:</strong>
-                            <img src="https://kinsta.com/wp-content/uploads/2021/02/what-is-a-url.jpg" alt="">
+                            <img id='ticketImage' src="" alt=""  />
+                            <p id='noAttachmentMessage'>No Attachment file is provided</p>
                         </div>
                     `);
                 }
