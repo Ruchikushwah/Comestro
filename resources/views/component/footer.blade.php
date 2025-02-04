@@ -76,7 +76,7 @@
 
             <!-- Copyright -->
             <div class="mt-4 text-center text-sm bg-gray-900 py-4 text-gray-100">
-                © 2025, comestro Techlabs Pvt. Ltd. All Rights Reserved.
+                © 2025, Comestro Techlabs Pvt. Ltd. All Rights Reserved.
             </div>
         </div>
     </footer>
