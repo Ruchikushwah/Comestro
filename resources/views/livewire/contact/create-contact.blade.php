@@ -1,11 +1,11 @@
 <div class="w-full p-6">
     <div class="w-full mx-auto p-6 bg-slate-100 shadow-lg rounded-lg">
         @if (session()->has('message'))
-        <div class="mb-4 text-green-600 font-semibold">
+        <div class="mb-4 text-slate-600 font-semibold">
             {{ session('message') }}
         </div>
         @endif
-        <form wire:submit.prevent="save" class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <form wire:submit.prevent="save" class="grid grid-cols-2 lg:grid-cols-4 gap-6 ">
             <!-- Contact Owner -->
             <div class="col-span-2 lg:col-span-4">
                 <label for="contact_owner" class="block text-sm font-medium text-gray-700">Contact Owner</label>

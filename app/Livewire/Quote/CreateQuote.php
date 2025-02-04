@@ -12,7 +12,7 @@ class CreateQuote extends Component
     public $billing_street, $billing_city, $billing_state, $billing_code, $billing_country;
     public $shipping_street, $shipping_city, $shipping_state, $shipping_code, $shipping_country;
     protected $rules = [
-        'subject' => 'nullable|string',
+        'subject' => 'required|string',
         'quote_stage' => 'nullable|string',
         'team' => 'nullable|string',
         'carrier' => 'nullable|string',
@@ -35,7 +35,7 @@ class CreateQuote extends Component
     public function mount($id = null)
     {
         if ($id) {
-            // Load lead data if $id is provided
+            
             $quote = Quote::find($id);
             if ($quote) {
                 $this->quote_id = $quote->id;
@@ -49,7 +49,7 @@ class CreateQuote extends Component
                 $this->billing_street = $quote->billing_street;
                 $this->billing_city = $quote->billing_city;
                 $this->billing_state = $quote->billing_state;
-                $this->billin_code = $quote->billin_code;
+                $this->billing_code = $quote->billing_code;
                 $this->billing_country= $quote->billing_country;
                 $this->shipping_street = $quote->shipping_street;
                 $this->shipping_city = $quote->shipping_city;
