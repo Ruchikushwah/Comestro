@@ -4,6 +4,7 @@
         <div class="flex justify-between">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">My Tickets</h2>
             <a class="text-2xl font-semibold text-blue-500 mb-4">Create new ticket</a>
+            <a href="{{ route('auth.logout') }}" class='text-red-500'>logout</a>
         </div>
         <table class="w-full table-auto border-collapse">
             <thead>
@@ -99,6 +100,7 @@
             </form>
         </section>
     </div> --}}
+
 @endsection
 
 @section('js')
@@ -156,7 +158,7 @@
                 });
             });
 
-            //ajax for calling tickets:
+            //ajax for calling tickets for the specified users:
             $.ajax({
                 type: "get",
                 url: "api/support/call_tickets",
