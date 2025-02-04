@@ -6,10 +6,10 @@
 @endsection
 @section('content')
 
-<section class="py-10 bg-white text-black">
+<section class="py-10 bg-white text-black mt-8">
     <div class="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-12">
         <div class="lg:w-2/3 text-center lg:text-left space-y-6">
-            <h2 class="text-2xl md:text-5xl font-bold text-indigo-800 leading-tight">
+            <h2 class="text-xl md:text-4xl font-bold text-indigo-800 leading-tight">
                 About Us
             </h2>
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed">

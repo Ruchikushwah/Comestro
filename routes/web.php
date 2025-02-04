@@ -50,10 +50,10 @@ Route::get('contact-us', function () {
 });
 
 Route::get('/get-touch', function () {
-    return view('get-touch');
+    return view('component.get-touch');
 });
-Route::get('/code', function () {
-    return view('code');
+Route::get('/brands', function () {
+    return view('brands');
 });
 
 Route::prefix("crm")->group(function () {
@@ -103,7 +103,6 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
 
 
 
-Route::middleware('auth')->get('/support',[TicketController::class, 'manageTickets'])->name('support.tickets.manage');
-Route::get('/support/view/{id}',[TicketController::class, 'viewTicket'])->name('support.tickets.view');
-
+Route::middleware('auth')->get('/support', [TicketController::class, 'manageTickets'])->name('support.tickets.manage');
+Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');
 
