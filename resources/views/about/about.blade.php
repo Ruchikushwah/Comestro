@@ -2,13 +2,13 @@
 @section('content')
 
 
-<div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-purple-900 px-10 ">
+<div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-purple-900 px-[8%] ">
 
     <div class="w-full h-[500px] flex items-center justify-between gap-10">
         <div class="flex w-[600px] flex-col gap-4">
             <h2 class="text-3xl font-semibold text-white">About Us</h2>
-            <p class="text-lg md:text-xl text-white leading-relaxed">
-                At Comestro Techlab Private Limited, we empower businesses with
+            <p class="text-sm md:text-lg text-white leading-relaxed">
+                At Comestro Techlab Private Limited, we empower businesses with<br>
                 <span class="font-medium text-gray-100">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
                 Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
                 challenges, enabling our clients to achieve their goals with confidence.

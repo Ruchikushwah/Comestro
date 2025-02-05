@@ -29,7 +29,7 @@
         </nav>
         <!-- Call-to-Action Button -->
         <div class="hidden md:block">
-            <a href="#get-started" class="bg-[#0071bc] text-white px-4 py-3 rounded hover:bg-[#0071bc] text-lg">
+            <a href="{{ route('auth.register')}}" class="bg-[#0071bc] text-white px-4 py-3 rounded hover:bg-[#0071bc] text-lg">
                 Get Started
             </a>
         </div>
@@ -48,7 +48,7 @@
             <a href="#portfolio" class="block hover:text-blue-500">Services</a>
             <a href="{{ route('support.tickets.manage') }}" class="block hover:text-blue-500">support</a>
             <a href="{{ route('crm.lead') }}" class="block hover:text-blue-500">crm</a>
-            <a href="#get-started" class="block bg-[#f15a24] text-center text-white px-4 py-2 rounded hover:bg-[#f15a24]">
+            <a href="{{ route('auth.register')}}" class="block bg-[#f15a24] text-center text-white px-4 py-2 rounded hover:bg-[#f15a24]">
                 Get Started
             </a>
 

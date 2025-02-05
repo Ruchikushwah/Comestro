@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom styles if needed */
-        .gradient-bg {
-            background: linear-gradient(135deg, #6b73ff 0%, #000dff 100%);
-        }
-    </style>
 </head>
 
 <body class=" min-h-screen flex items-center justify-center p-4 bg-gray-100">
