@@ -1,4 +1,4 @@
-
+<!-- 
     <div class="w-full mx-auto p-6 bg-gray-200 shadow-md rounded-md">
         @if (session()->has('message'))
             <div class="mb-2 text-slate-600 font-semibold">
@@ -180,4 +180,4 @@
         </form>
     </div>
 
-
+ -->

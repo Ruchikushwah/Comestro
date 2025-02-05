@@ -44,13 +44,26 @@
                 @enderror
             </div>
 
+            <div>
+                <label for="lead_status" class="block text-sm font-medium text-gray-700">Lead Status</label>
+                <select id="lead_status" wire:model="lead_status"
+                    class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border px-4 py-2 bg-white">
+                    <option value="">Select Status</option>
+                    @foreach ($this->getLeadStatuses() as $status)
+                    <option value="{{ $status }}">{{ $status }}</option>
+                    @endforeach
+                </select>
+                @error('lead_status')
+                <span class="text-sm text-red-500">{{ $message }}</span>
+                @enderror
+            </div>
+
             @foreach ([
             'company' => 'Company',
             'phone' => 'Phone',
             'email' => 'Email',
             'website' => 'Website',
             'lead_source' => 'Lead Source',
-            'lead_status' => 'Lead Status',
             'industry' => 'Industry',
             'annual_revenue' => 'Annual Revenue',
             'no_of_employees' => 'Number of Employees',
@@ -60,7 +73,6 @@
             'state' => 'State',
             'zip_code' => 'Zip Code',
             'country' => 'Country',
-            'description' => 'Description',
             ] as $field => $label)
             <div>
                 <label for="{{ $field }}" class="block text-sm font-medium text-gray-700">{{ $label }}</label>
@@ -72,6 +84,16 @@
                 @enderror
             </div>
             @endforeach
+
+            <div class="col-span-full">
+                <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                <textarea id="description" wire:model="description"
+                    class="mt-1 block w-full rounded-md border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm border px-4 py-2 bg-white"
+                    placeholder="Enter description"></textarea>
+                @error('description')
+                <span class="text-sm text-red-500">{{ $message }}</span>
+                @enderror
+            </div>
 
             <div class="col-span-full">
                 <button type="submit"

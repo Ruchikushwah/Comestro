@@ -72,22 +72,24 @@ Route::prefix("crm")->group(function () {
     Route::get("/contact", function () {
         return view("crm.contact", ['userName' => Auth::user()->name]);
     })->name("crm.contact")->middleware('auth');
-    Route::get("/quote", function () {
-        return view("crm.quote", ['userName' => Auth::user()->name]);
-    })->name("crm.quote")->middleware('auth');
+    // Route::get("/quote", function () {
+    //     return view("crm.quote", ['userName' => Auth::user()->name]);
+    // })->name("crm.quote")->middleware('auth');
 });
 
 Route::get('/create-lead', CreateLead::class)->name('create-lead');
 Route::get('/create-lead/edit/{id}', CreateLead::class)->name('create-lead.edit');
+//Route::get('/create-lead/delete/{id}', CreateLead::class)->name('create-lead.delete');
 Route::get('/manage-leads', ManageLead::class)->name('lead.manage-leads');
 
 Route::get('/create-contact', CreateContact::class)->name('create-contact');
 Route::get('/create-contact/edit/{id}', CreateContact::class)->name('create-contact.edit');
+//Route::get('/create-contact/delete/{id}', CreateContact::class)->name('create-contact.delete');
 Route::get('/manage-contact', ManageContact::class)->name('contact.manage-contact');
 
-Route::get('/create-quote', CreateQuote::class)->name('create-quote');
-Route::get('/create-quote/edit/{id}', CreateQuote::class)->name('create-quote.edit');
-Route::get('/manage-quote', ManageQuote::class)->name('contact.manage-quote');
+// Route::get('/create-quote', CreateQuote::class)->name('create-quote');
+// Route::get('/create-quote/edit/{id}', CreateQuote::class)->name('create-quote.edit');
+// Route::get('/manage-quote', ManageQuote::class)->name('contact.manage-quote');
 
 
 

@@ -100,9 +100,10 @@
                 <div class="mt-10 px-10 py-5">
                     <form id="sendMessage">
                         <div class="mt-3">
-                            <textarea name="message" rows="7" cols="90" class="mt-5 px-10 py-5 border-2 rounded-lg"
+                            <textarea id="messageText" name="message" rows="7" cols="90" class="mt-5 px-10 py-5 border-2 rounded-lg"
                                 placeholder="Enter your message here..."></textarea>
-                            <button type="button" class="bg-blue-500 px-3 py-1 rounded text-white text-lg">Send</button>
+                            <button type="button" id="sendMessageButton"
+                                class="bg-blue-500 px-3 py-1 rounded text-white text-lg">Send</button>
                         </div>
                     </form>
                 </div>
@@ -114,10 +115,10 @@
 @section('js')
     <script>
         $(document).ready(function() {
+
             //calling specified ticket here:
             let ticketId = {{ $id }}; //getting ticket_id from the blade
             let userId = {{ auth()->id() }}; //getting user_id of the logged-in user 
-            $('#ticketImage').hide();
 
             $.ajax({
                 type: "GET",
@@ -135,6 +136,7 @@
                         $('#noAttachmentMessage').hide();
                     } else {
                         $('#noAttachmentMessage').show();
+                        $('#ticketImage').hide();
                     }
 
                     $('#ticketDetails').html(`
@@ -166,8 +168,81 @@
                         </div>
                     `);
                 }
+            });
+            // calling ticket ends here;
+
+            // calling messages:
+            function fetchMessages() {
+                $.ajax({
+                    url: `/api/messages/${ticketId}`,
+                    type: "GET",
+                    success: function(response) {
+                        let callMessages = $('#callMessages');
+                        callMessages.empty();
+
+                        let message = response.data;
+                        let lastSender = null;
+
+                        message.forEach((msg) => {
+                            let messageTime = new Date(msg.created_at).toLocaleString();
+                            let sender = msg.sender_type;
+
+                            if (sender !== lastSender) {
+                                let headerColor = sender === "user" ? "bg-blue-500" :
+                                    "bg-red-500";
+                                let senderText = sender === "user" ? "Client" : "Admin";
+
+                                callMessages.append(
+                                    `<h2 class="${headerColor} text-white w-full px-3 py-2 text-lg">${messageTime} - ${senderText}</h2>`
+                                );
+                                lastSender = sender;
+                            }
+
+                            callMessages.append(`
+                                <div class='px-10 py-5 bg-white'>
+                                    <p>${msg.message}</p>    
+                                </div>`);
+                        });
+                    },
+                    error: function(err) {
+                        console.log("Error fetching messages:", err);
+                    },
+                });
+            }
+            fetchMessages();
 
 
+            // sending message work goes here:
+            $('#sendMessageButton').on("click", function(e) {
+                e.preventDefault();
+                // alert('hello, send button got clicked')
+
+                let message = $('#messageText').val();
+
+                let data = {
+                    ticketId: ticketId,
+                    senderId: userId,
+                    message: message
+                };
+                console.log(data)
+                
+                $.ajax({
+                    url:'/api/messages',
+                    type:"post",
+                    data:data,
+                    success:function(response){
+                        alert(response.msg);
+
+                        fetchMessages();
+                        $('#sendMessage').trigger('reset');
+
+
+                    },
+                    error: function(err){
+                        console.log("Error sending message:",err)
+                        alert('there was an error sending the message')
+                    },
+                });
             });
         });
     </script>

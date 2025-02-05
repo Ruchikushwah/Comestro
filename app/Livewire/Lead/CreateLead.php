@@ -8,7 +8,6 @@ use Livewire\Component;
 
 class CreateLead extends Component
 {
-
     public $lead_id;
     public $lead_owner, $first_name, $last_name, $title, $company, $phone, $email, $website, $lead_source;
     public $lead_status, $industry, $annual_revenue, $no_of_employees, $rating, $street, $city, $state, $zip_code, $country, $description;
@@ -22,7 +21,7 @@ class CreateLead extends Component
         'email' => 'required|email',
         'website' => 'nullable|url',
         'lead_source' => 'nullable|string',
-        'lead_status' => 'nullable|string',
+        'lead_status' => 'required|in:in New,Contacted,Qualified,Lost,Closed',
         'industry' => 'nullable|string',
         'annual_revenue' => 'nullable|numeric',
         'no_of_employees' => 'nullable|integer',
@@ -34,10 +33,10 @@ class CreateLead extends Component
         'country' => 'nullable|string',
         'description' => 'nullable|string',
     ];
+
     public function mount($id = null)
     {
         if ($id) {
-            // Load lead data if $id is provided
             $lead = Lead::find($id);
             if ($lead) {
                 $this->lead_id = $lead->id;
@@ -67,21 +66,39 @@ class CreateLead extends Component
             }
         }
     }
+
     public function save()
     {
         $validatedData = $this->validate();
         $validatedData['lead_owner'] = Auth::user()->name;
+
         if ($this->lead_id) {
-            // Update existing lead
             Lead::find($this->lead_id)->update($validatedData);
             session()->flash('message', 'Lead updated successfully!');
         } else {
-            // Create new lead
             Lead::create($validatedData);
             session()->flash('message', 'Lead created successfully!');
         }
 
-        return redirect()->route('crm.lead'); // Redirect back to create route
+        return redirect()->route('crm.lead');
+    }
+
+    public function delete()
+    {
+        if ($this->lead_id) {
+            $lead = Lead::find($this->lead_id);
+            if ($lead) {
+                $lead->delete();
+                session()->flash('message', 'Lead deleted successfully!');
+            } else {
+                session()->flash('error', 'Lead not found.');
+            }
+        }
+        return redirect()->route('crm.lead');
+    }
+    public function getLeadStatuses()
+    {
+        return ['New', 'Contacted', 'Qualified', 'Lost', 'Closed'];
     }
 
 
