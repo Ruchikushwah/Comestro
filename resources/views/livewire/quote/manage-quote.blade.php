@@ -1,13 +1,13 @@
-<div>
+ <!-- <div>
     <div class="w-full">
         <!-- Search Bar -->
-        <div class="flex justify-between mb-4">
+        <!-- <div class="flex justify-between mb-4">
             <input type="text" placeholder="Search..." class="border px-4 py-2 rounded"
                 wire:model.debounce.500ms="search" />
-        </div>
+        </div> -->
 
         <!-- Table -->
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        <!-- <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
@@ -32,19 +32,12 @@
                         <td class="px-6 py-4">{{ $quote->valid_until }}</td>
                         <td class="px-6 py-4">{{ $quote->contact_name }}</td>
                         <td class="px-6 py-4">{{ $quote->account_name }}</td>
-                        <td class="px-6 py-4">
-                            {{ $quote->billing_street }}, {{ $quote->billing_city }},
-                            {{ $quote->billing_state }},
-                            {{ $quote->billing_code }}, {{ $quote->billing_country }}
-                        </td>
-                        <td class="px-6 py-4">
-                            {{ $quote->shipping_street }}, {{ $quote->shipping_city }},
-                            {{ $quote->shipping_state }},
-                            {{ $quote->shipping_code }}, {{ $quote->shipping_country }}
-                        </td>
-                        <td class="px-6 py-4">
+                        
+                        <td class="px-6 py-4 gap-4">
                             <a href="{{ route('create-quote.edit', $quote->id) }}" wire:navigate
                                 class="font-medium text-slate-600">Edit</a>
+                            <a href="{{ route('create-quote.delete', $quote->id) }}" wire:navigate
+                                class="font-medium text-red-600">Delete</a>
                         </td>
                     </tr>
                     @empty
@@ -55,8 +48,8 @@
                 </tbody>
             </table>
         </div>
-    </div>
-    {{-- <div class="mt-4">
+    </div> -->
+    <!-- {{-- <div class="mt-4">
         {{ $quotes->links() }}
 </div> --}}
-</div>
+</div>  --> -->

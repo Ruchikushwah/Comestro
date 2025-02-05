@@ -13,15 +13,7 @@
                     <li>
                         <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
                     </li>
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                    </li>
-                    <li>
-                        <a href="#" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-                    </li>
+                   
                     <li>
                         <a href="{{ route('support.tickets.manage') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Support</a>
                     </li>
@@ -30,16 +22,8 @@
                     </li>
                 </ul>
             </div>
-            <a href="#about" class="hover:text-blue-500 text-lg">About Us</a>
-            <a href="#services" class="hover:text-blue-500 text-lg">Services</a>
-            <a href="#contact" class="hover:text-blue-500 text-lg">Contact</a>
-
-            <a href="{{ route('support.tickets.manage') }}" class="hover:text-blue-500 text-lg">Support</a>
             
-
            
-            <a href="{{ route('crm.lead') }}" class="hover:text-blue-500 text-lg">CRM</a>
-
         </nav>
         <!-- Call-to-Action Button -->
         <div class="hidden md:block">

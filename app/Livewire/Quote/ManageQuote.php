@@ -1,20 +1,26 @@
 <?php
 
 namespace App\Livewire\Quote;
-use App\Models\Quote;
-use Livewire\WithPagination;
 
+use App\Models\Quote;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class ManageQuote extends Component
 {
     use WithPagination;
-    public $quotes;
+
     public $search = '';
-    public $sortField = 'id'; // Default sort field
-    public $sortDirection = 'asc'; // Default sort direction
+    public $sortField = 'created_at'; // Default sort field
+    public $sortDirection = 'desc'; // Default sort direction
+    public $selectedQuotes = [];
 
     protected $queryString = ['search', 'sortField', 'sortDirection'];
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function sortBy($field)
     {
@@ -26,13 +32,22 @@ class ManageQuote extends Component
         }
     }
 
+    public function deleteSelected()
+    {
+        if (!empty($this->selectedQuotes)) {
+            Quote::whereIn('id', $this->selectedQuotes)->delete();
+            session()->flash('message', 'Selected quotes deleted successfully!');
+            $this->selectedQuotes = [];
+        }
+    }
+
     public function render()
     {
-        $quotes = Quote::all();
-            // ->where('subject', 'like', '%' . $this->search . '%')
-            // ->orWhere('deal_name', 'like', '%' . $this->search . '%') // Replace with actual email column
-            // ->orderBy($this->sortField, $this->sortDirection)
-            // ->paginate(10);
-        return view('livewire.quote.manage-quote', ['quotes' => $quotes]);
+        $quotes = Quote::where('subject', 'like', '%' . $this->search . '%')
+            ->orWhere('subject', 'like', '%' . $this->search . '%')
+            ->orderBy($this->sortField, $this->sortDirection)
+            ->paginate(10);
+
+        return view('livewire.quote.manage-quote', compact('quotes'));
     }
 }
