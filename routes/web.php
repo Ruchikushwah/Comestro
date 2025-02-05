@@ -16,9 +16,14 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+
 Route::middleware('auth')->get('/support', function () {
     return view('support.manage_tickets');
 })->name('support.generate.ticket');
+Route::get("/services", function () {
+    return view('services');
+})->name("services");
+
 
 Route::get('/footer', function () {
     return view('footer');
@@ -26,9 +31,6 @@ Route::get('/footer', function () {
 Route::get('/about', function () {
     return view('about/about');
 })->name('about');
-Route::get("/services", function () {
-    return view('services');
-})->name("services");
 
 Route::get('contactus', function () {
     return view('contactus');
