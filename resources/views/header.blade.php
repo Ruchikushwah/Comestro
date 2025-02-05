@@ -11,9 +11,12 @@
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                     <li>
-                        <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
+                        <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500" aria-current="page">Home</a>
                     </li>
-                   
+                    <li>
+                        <a href="{{ route('services')}} " class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
+                    </li>
+
                     <li>
                         <a href="{{ route('support.tickets.manage') }}" class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Support</a>
                     </li>
@@ -42,11 +45,9 @@
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="hidden bg-white md:hidden">
         <nav class="space-y-2 px-6 py-4 text-center">
-            <a href="#services" class="block hover:text-blue-500">About Us</a>
             <a href="#portfolio" class="block hover:text-blue-500">Services</a>
             <a href="{{ route('support.tickets.manage') }}" class="block hover:text-blue-500">support</a>
             <a href="{{ route('crm.lead') }}" class="block hover:text-blue-500">crm</a>
-            <a href="#contact" class="block hover:text-blue-500">Contact</a>
             <a href="#get-started" class="block bg-[#f15a24] text-center text-white px-4 py-2 rounded hover:bg-[#f15a24]">
                 Get Started
             </a>

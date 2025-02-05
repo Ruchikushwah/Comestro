@@ -19,7 +19,7 @@
                 <div class="flex gap-5 items-start mb-4">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
                         <img src="\5658421.png" alt="AI Efficiency" class="w-10 h-10">
-                        <img src="/AI.png" alt="AI Efficiency" class="w-10 h-10">
+                        
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">AI-Powered Efficiency</h2>
@@ -31,7 +31,7 @@
                 <div class="flex gap-5 items-start ">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
                         <img src="\17373061.png" alt="Collaboration" class="w-10 h-10">
-                        <img src="/team.png" alt="Collaboration" class="w-10 h-10">
+                       
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">Seamless Collaboration</h2>
@@ -43,7 +43,7 @@
                 <div class="flex gap-5 items-start">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
                         <img src="\18168643.png" alt="Collaboration" class="w-10 h-10">
-                        <img src="/Data.png" alt="Collaboration" class="w-10 h-10">
+                       
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">Intelligent Data Insights</h2>
@@ -56,7 +56,7 @@
                 <div class="flex gap-5 items-start">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
                         <img src="\17385075.png" alt="Collaboration" class="w-10 h-10">
-                        <img src="/Solutions.png" alt="Collaboration" class="w-10 h-10">
+                        
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">Scalable & Flexible Solutions</h2>
