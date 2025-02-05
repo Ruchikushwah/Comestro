@@ -67,7 +67,7 @@
         <div class="mt-4 border-t pt-4 text-center text-sm space-x-4">
             <a href="#" class="hover:text-gray-800 hover:underline">Home</a>
             <a href="#" class="hover:text-gray-800 hover:underline">Contact Us</a>
-            <a href="{{ route('services')}}" class="hover:text-gray-800 hover:underline">Service</a>
+            <a href="" class="hover:text-gray-800 hover:underline">Service</a>
             <a href="{{ route('support.tickets.manage') }}" class="hover:text-gray-800 hover:underline">support</a>
             <a href="{{ route('crm.lead')}}" class="hover:text-gray-800 hover:underline">crm</a>
             <a href="#" class="hover:text-gray-800 hover:underline">privacy policy</a>
