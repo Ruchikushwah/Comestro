@@ -1,7 +1,5 @@
 @extends('layout')
 @section('content')
-
-
 <div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-purple-900 px-[8%] ">
 
     <div class="w-full h-[500px] flex items-center justify-between gap-10">
