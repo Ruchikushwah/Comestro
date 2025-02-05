@@ -22,8 +22,7 @@
                     </li>
                 </ul>
             </div>
-            
-           
+
         </nav>
         <!-- Call-to-Action Button -->
         <div class="hidden md:block">

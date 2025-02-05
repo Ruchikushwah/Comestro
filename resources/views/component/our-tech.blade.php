@@ -1,6 +1,6 @@
 
 <section class="relative min-h-3xl bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 overflow-hidden ">
-    <h2 class=" flex text-3xl font-semibold mt-10 text-center items-center justify-center text-gray-100 ">Our Tech</h2>
+    <h2 class=" flex text-3xl font-semibold mt-10 text-center items-center justify-center text-gray-100 ">Our <br>Tech Stack</h2>
     <div class="relative container mx-auto px-10 sm:px-10 py-5 mt-16 ">
         <div class="max-w-9xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 place-items-center md:gap-5">
             <div class="bg-white w-32 sm:w-40 md:w-44 h-20 sm:h-24 flex justify-center items-center transition-transform transform hover:scale-110 cursor-pointer rounded-md shadow-md">

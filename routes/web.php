@@ -45,6 +45,10 @@ Route::get('services', function () {
 Route::get('contactus', function () {
     return view('contactus');
 });
+
+Route::get('code', function () {
+    return view('component.code');
+});
 Route::get('contact-us', function () {
     return view('contact-us');
 });
