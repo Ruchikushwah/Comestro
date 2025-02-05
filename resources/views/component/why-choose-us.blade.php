@@ -2,7 +2,7 @@
     <div class="container mx-auto max-w-6xl">
         <!-- Title Section -->
         <div class="text-center mb-10">
-            <h1 class="text-3xl font-bold text-gray-800 mb-2">Why Choose Us</h1>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-[#0071bc] to-gray-600 bg-clip-text text-transparent">Why Choose Us</h1>
             <p class="text-md text-gray-600">Comestro: Innovating Beyond Limits in Web & Software Development</p>
         </div>
 
@@ -14,49 +14,49 @@
             </div>
 
             <!-- Features Section -->
-            <div class="space-y-6">
+            <div class="space-y-6 gap-8">
                 <!-- Feature 1 -->
-                <div class="flex gap-4 items-start">
+                <div class="flex gap-5 items-start mb-4">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
-                        <img src="php_9872475.png" alt="AI Efficiency" class="w-10 h-10">
+                        <img src="\5658421.png" alt="AI Efficiency" class="w-10 h-10">
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">AI-Powered Efficiency</h2>
-                        <p class="text-gray-600">Harness the power of AI to automate tasks, optimize workflows, and accelerate project delivery with precision.</p>
+                        <p class="text-gray-600 tracking-wider">Harness the power of AI to automate tasks, optimize workflows, and accelerate project delivery with precision.</p>
                     </div>
                 </div>
 
                 <!-- Feature 2 -->
-                <div class="flex gap-4 items-start">
+                <div class="flex gap-5 items-start ">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
-                        <img src="php_9872475.png" alt="Collaboration" class="w-10 h-10">
+                        <img src="\17373061.png" alt="Collaboration" class="w-10 h-10">
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">Seamless Collaboration</h2>
-                        <p class="text-gray-600">Empower your team with real-time collaboration tools, ensuring smooth communication and streamlined project execution.</p>
+                        <p class="text-gray-600 tracking-wider">Empower your team with real-time collaboration tools, ensuring smooth communication and streamlined project execution.</p>
                     </div>
                 </div>
 
                 <!-- Feature 3 -->
-                <div class="flex gap-4 items-start">
+                <div class="flex gap-5 items-start">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
-                        <img src="php_9872475.png" alt="Collaboration" class="w-10 h-10">
+                        <img src="\18168643.png" alt="Collaboration" class="w-10 h-10">
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">Intelligent Data Insights</h2>
-                        <p class="text-gray-600">Leverage real-time analytics and AI-driven insights to make data-backed decisions that drive business growth.</p>
+                        <p class="text-gray-600 tracking-wider">Leverage real-time analytics and AI-driven insights to make data-backed decisions that drive business growth.</p>
                     </div>
 
                 </div>
 
                 <!-- Feature 4 -->
-                <div class="flex gap-4 items-start">
+                <div class="flex gap-5 items-start">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
-                        <img src="php_9872475.png" alt="Collaboration" class="w-10 h-10">
+                        <img src="\17385075.png" alt="Collaboration" class="w-10 h-10">
                     </div>
                     <div>
                         <h2 class="text-xl font-semibold text-gray-800">Scalable & Flexible Solutions</h2>
-                        <p class="text-gray-600">Designed to grow with your business, our solutions adapt to evolving needs, ensuring performance at any scale.</p>
+                        <p class="text-gray-600 tracking-wider">Designed to grow with your business, our solutions adapt to evolving needs, ensuring performance at any scale.</p>
                     </div>
 
                 </div>

@@ -59,19 +59,18 @@
                 <a href="#" class="text-gray-600 hover:text-blue-600 text-2xl"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="text-gray-600 hover:text-blue-600 text-2xl"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="text-gray-600 hover:text-blue-600 text-2xl"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 text-2xl"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-gray-600 hover:text-blue-600 text-2xl"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-gray-600 hover:text-orange-700 text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-gray-600 hover:text-red-600 text-2xl"><i class="fab fa-youtube"></i></a>
             </div>
 
             <!-- Bottom Links -->
             <div class="mt-4 border-t pt-4 text-center text-sm space-x-4">
-                <a href="#" class="hover:text-gray-800">Home</a>
-                <a href="#" class="hover:text-gray-800">Contact Us</a>
-                <a href="#" class="hover:text-gray-800">Service</a>
-                <a href="#" class="hover:text-gray-800">Contact</a>
-                <a href="#" class="hover:text-gray-800">support</a>
-                <a href="#" class="hover:text-gray-800">crm</a>
-                <a href="#" class="hover:text-gray-800">privacy policy</a>
+                <a href="#" class="hover:text-gray-800 hover:underline">Home</a>
+                <a href="#" class="hover:text-gray-800 hover:underline">Contact Us</a>
+                <a href="#" class="hover:text-gray-800 hover:underline">Service</a>
+                <a href="#" class="hover:text-gray-800 hover:underline">support</a>
+                <a href="#" class="hover:text-gray-800 hover:underline">crm</a>
+                <a href="#" class="hover:text-gray-800 hover:underline">privacy policy</a>
             </div>
 
             <!-- Copyright -->
@@ -80,3 +79,4 @@
             </div>
         </div>
     </footer>
+    

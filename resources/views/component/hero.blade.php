@@ -1,8 +1,8 @@
 <!-- Hero Section -->
 <section class="relative min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900 overflow-hidden">
     <div class="absolute inset-0 opacity-20">
-        <div class="absolute w-96 h-96 bg-purple-500 rounded-full blur-3xl -top-48 -left-48"></div>
-        <div class="absolute w-96 h-96 bg-blue-500 rounded-full blur-3xl -bottom-48 -right-48"></div>
+        <div class="absolute w-96 h-96 bg-purple-500 rounded-full -top-48 -left-48"></div>
+        <div class="absolute w-96 h-96 bg-blue-500 rounded-full -bottom-48 -right-48"></div>
     </div>
 
     <!-- Hero Content -->
@@ -50,7 +50,7 @@
                     <div class="relative bg-gray-800 bg-opacity-50 rounded-3xl p-8 backdrop-blur-xl border border-gray-700">
                         <div class="animate-pulse-slow">
                             <div class="bg-gray-700 rounded-2xl h-64 w-full">
-                                <img src="https://media.istockphoto.com/id/1408255024/photo/developers-discussing-programming-code.jpg?s=2048x2048&w=is&k=20&c=FX-R-szUMTh0dbG5yUVKgnijyNxa2KFFpbjUj-PaK4g=" alt="" class="rounded-2xl h-64 w-full object-cover">
+                                <img src="\diverse-business-colleagues-shoot_53876-16090.jpg" alt="" class="rounded-2xl h-64 w-full object-cover">
                             </div>
                             <div class="flex space-x-4 mt-6">
                                 <div class="bg-gray-600 h-4 w-1/3 rounded"></div>
