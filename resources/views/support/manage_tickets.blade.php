@@ -25,7 +25,8 @@
         </table>
     </div>
 
-    <div class="max-w-4xl mx-auto p-6 space-y-8" >
+    {{-- ticket raising form html goes here: --}}
+    <div class="max-w-4xl mx-auto p-6 space-y-8">
         {{-- <!-- FAQ Section -->
         <section>
             <h2 class="text-2xl font-bold text-blue-500">Frequently Asked Questions</h2>
@@ -100,7 +101,6 @@
             </form>
         </section> --}}
     </div>
-
 @endsection
 
 @section('js')
@@ -123,7 +123,7 @@
             });
 
             //show and close the form for ticket generating:
-            $('#create-ticket-btn').click(function(e){
+            $('#create-ticket-btn').click(function(e) {
                 $('#ticket-form').toggleClass("hidden");
             });
 
@@ -176,8 +176,9 @@
                     let tickets = response.data;
 
                     tickets.forEach((ticket) => {
+                        let isClosed = ticket.status === 'closed';
                         TicketTable.append(`
-                             <tr>
+                            <tr>
                                 <td class="px-4 py-2 border-b">${ticket.id}</td>
                                 <td class="px-4 py-2 border-b">${ticket.ticket_number}</td>
                                 <td class="px-4 py-2 border-b">${ticket.user_id}</td>
@@ -185,11 +186,39 @@
                                 <td class="px-4 py-2 border-b">${ticket.description}</td>
                                 <td class="px-4 py-2 border-b">${ticket.status}</td>
                                 <td class="px-4 py-2 border-b">${ticket.formatted_created_at}</td>
-                                <td> <a href='/support/view/${ticket.id}' class='text-red-500 px-2 py-1 rounded'>View</a></td>
+                                <td>
+                                    <a href='/support/view/${ticket.id}' class='bg-yellow-500 text-white px-2 py-1 rounded'>View</a>                                     
+                                    <button data-id="${ticket.id}"
+                                            id="close-ticket-btn"
+                                            ${isClosed ? "disabled" : ""} 
+                                            class="${isClosed ? "text-gray-500" : "bg-red-500 text-white"} px-2 py-1 rounded">
+                                        ${isClosed ? 'Closed' : 'Close'}
+                                    </button>                                      
+                                </td>
                             </tr> 
                         `);
                     });
                 },
+            });
+
+            // close ticket work goes here: 
+            $(document).on("click", "#close-ticket-btn", function(){
+                let ticketId = $(this).data("id");
+                // console.log("ticket ID: ", ticketId);
+
+                $.ajax({
+                    url:`/api/support/close/${ticketId}`,
+                    type:"POST",
+                    data:{_token: "{{ csrf_token() }}"},
+                    success:function(response){
+                        alert(response.msg);
+
+                        let button = $(`button[data-id=${ticketId}]`);
+                        button.text("Closed").prop("disabled", true).removeClass("text-red-500").addClass("text-gray-500");
+
+                        $(`.status-${ticketId}`).text("closed");
+                    },
+                });
             });
         });
     </script>

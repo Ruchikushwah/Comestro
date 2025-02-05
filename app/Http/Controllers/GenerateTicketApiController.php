@@ -79,4 +79,18 @@ class GenerateTicketApiController extends Controller
             return response()->json(['success' => false, "msg" => "Tickets not found"]);
         }
     }
+
+
+    // close a specific ticket:
+    public function closeTicket($id){
+        $ticket = Tickets::findOrFail($id);
+        if($ticket->status === 'closed'){
+            return response()->json(["error" => 'Ticket is already closed'], 400);
+        }
+
+        $ticket->status = 'closed';
+        $ticket->save();
+
+        return response()->json(["success" => true, "msg" => 'Ticket closed successfully!', "new_status" => $ticket->status]);
+    }
 }
