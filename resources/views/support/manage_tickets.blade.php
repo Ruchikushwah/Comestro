@@ -1,9 +1,9 @@
 @extends('layout')
 @section('content')
-    <div class="w-full min-h-screen px-10 mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <div class="w-full px-10 mx-auto bg-white p-6 rounded-lg shadow-lg">
         <div class="flex justify-between">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">My Tickets</h2>
-            <a class="text-2xl font-semibold text-blue-500 mb-4">Create new ticket</a>
+            <button id="create-ticket-btn" class="text-2xl font-semibold text-blue-500 mb-4">Create new ticket</button>
             <a href="{{ route('auth.logout') }}" class='text-red-500'>logout</a>
         </div>
         <table class="w-full table-auto border-collapse">
@@ -25,8 +25,8 @@
         </table>
     </div>
 
-    {{-- <div class="max-w-4xl mx-auto p-6 space-y-8">
-        <!-- FAQ Section -->
+    <div class="max-w-4xl mx-auto p-6 space-y-8" >
+        {{-- <!-- FAQ Section -->
         <section>
             <h2 class="text-2xl font-bold text-blue-500">Frequently Asked Questions</h2>
             <ul class="list-disc list-inside space-y-2 mt-4">
@@ -43,10 +43,10 @@
             <a href="#ticket-form" class="mt-4 inline-block bg-customBlue text-white px-4 py-2 rounded hover:bg-opacity-90">
                 Generate Ticket
             </a>
-        </section>
+        </section> --}}
 
         <!-- Ticket Form -->
-        <section id="ticket-form">
+        <section id="ticket-form" class="hidden">
             <h2 class="text-2xl font-bold text-blue-500">Generate a Support Ticket</h2>
             <form id="generateTickets" class="mt-4 space-y-4 bg-gray-50 p-6 rounded shadow">
                 @csrf
@@ -84,7 +84,7 @@
             </form>
         </section>
 
-        <!-- Check Ticket Status -->
+        {{-- <!-- Check Ticket Status -->
         <section>
             <h2 class="text-2xl font-bold text-blue-500">Check Your Ticket Status</h2>
             <form action="/check-ticket" method="GET" class="mt-4 space-y-4">
@@ -98,8 +98,8 @@
                         Status</button>
                 </div>
             </form>
-        </section>
-    </div> --}}
+        </section> --}}
+    </div>
 
 @endsection
 
@@ -120,6 +120,11 @@
                         select.append(`<option value=${probs.id}>${probs.name}</option>`);
                     });
                 },
+            });
+
+            //show and close the form for ticket generating:
+            $('#create-ticket-btn').click(function(e){
+                $('#ticket-form').toggleClass("hidden");
             });
 
             // ajax for generating tickets:
