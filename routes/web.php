@@ -16,31 +16,19 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-Route::middleware('auth')->get('/support',function(){
-     return view('support.manage_tickets');
- })->name('support.generate.ticket');
+Route::middleware('auth')->get('/support', function () {
+    return view('support.manage_tickets');
+})->name('support.generate.ticket');
 
 Route::get('/footer', function () {
     return view('footer');
 });
-
-Route::get('/portfolio/create', function () {
-    return view('portfolio/create');
-});
-Route::get('/portfolio/edit', function () {
-    return view('portfolio/edit');
-});
-Route::get('/portfolio/index', function () {
-    return view('portfolio/index');
-});
-
 Route::get('/about', function () {
     return view('about/about');
-});
-
-Route::get('services', function () {
+})->name('about');
+Route::get("/services", function () {
     return view('services');
-});
+})->name("services");
 
 Route::get('contactus', function () {
     return view('contactus');
@@ -49,9 +37,10 @@ Route::get('contactus', function () {
 Route::get('code', function () {
     return view('component.code');
 });
-Route::get('contact-us', function () {
-    return view('contact-us');
-});
+
+// Route::get('contact-us', function () {
+//     return view('contact-us');
+// });
 
 Route::get('/get-touch', function () {
     return view('component.get-touch');
@@ -111,4 +100,3 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
 
 Route::middleware('auth')->get('/support', [TicketController::class, 'manageTickets'])->name('support.tickets.manage');
 Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');
-

@@ -1,13 +1,13 @@
  @extends('layout')
  @section('content')
- <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
- <div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900 to-purple-600 ">
+
+ <div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-purple-600 ">
 
      <div class="absolute top-[-130px] left-[-130px] rounded-full bg-blue-600 w-[300px] h-[300px] flex items-center justify-center text-white">
 
      </div>
-     <div class="flex items-center justify-center py-9">
-         <h2 class="text-3xl font-semibold text-white">Web development refers to <br> the process of creating,</h2>
+     <div class="flex items-center justify-center py-20 ">
+         <h2 class="text-3xl font-semibold text-white text-center">Web development refers to <br> the process of creating,</h2>
      </div>
  </div>
 

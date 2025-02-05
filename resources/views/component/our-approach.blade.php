@@ -1,4 +1,4 @@
-<div class="bg-gray-50 text-gray-900 py-8">
+<div class="bg-gray-50 text-gray-900 py-8 font-sans">
     <section class="py-12">
         <div class="container mx-auto text-center">
             <h2 class="text-2xl font-semibold text-gray-700 mb-2">Our design and</h2>
@@ -15,7 +15,7 @@
                     <h2 class="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-300 cursor-pointer">
                         Agile Development
                     </h2>
-                    <p class="text-sm text-gray-600 max-w-sm">
+                    <p class="text-sm text-gray-600 max-w-sm tracking-wide">
                         We follow an Agile methodology, ensuring quick iterations, continuous feedback, and fast adaptability to project requirements.
                     </p>
                 </div>
@@ -30,7 +30,7 @@
                     <h2 class="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-300 cursor-pointer">
                         Scalable Architecture
                     </h2>
-                    <p class="text-sm text-gray-600 max-w-sm">
+                    <p class="text-sm text-gray-600 max-w-sm tracking-wide">
                         We design robust and scalable software architectures to ensure performance and reliability as your business grows.
                     </p>
                 </div>
@@ -45,7 +45,7 @@
                     <h2 class="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-300 cursor-pointer">
                         API-Driven Development
                     </h2>
-                    <p class="text-sm text-gray-600 max-w-sm">
+                    <p class="text-sm text-gray-600 max-w-sm tracking-wide">
                         Our API-first approach ensures seamless integration with multiple platforms, enhancing flexibility and reusability.
                     </p>
                 </div>
@@ -60,7 +60,7 @@
                     <h2 class="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-300 cursor-pointer">
                         Security-First Approach
                     </h2>
-                    <p class="text-sm text-gray-600 max-w-sm">
+                    <p class="text-sm text-gray-600 max-w-sm tracking-wide">
                         Security is at the core of our development, implementing best practices to protect data and prevent vulnerabilities.
                     </p>
                 </div>
@@ -75,7 +75,7 @@
                     <h2 class="text-xl font-semibold text-gray-900 hover:text-gray-700 transition-colors duration-300 cursor-pointer">
                         DevOps & Automation
                     </h2>
-                    <p class="text-sm text-gray-600 max-w-sm">
+                    <p class="text-sm text-gray-600 max-w-sm tracking-wide">
                         We integrate CI/CD pipelines and automate workflows for seamless deployments and efficient software management.
                     </p>
                 </div>

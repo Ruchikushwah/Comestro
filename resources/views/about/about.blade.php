@@ -1,21 +1,38 @@
-
-
 @extends('layout')
-@section('title')
-    About Us
-@endsection
 @section('content')
 
-<section class="py-10 bg-white text-black mt-8">
+
+<div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-purple-900 px-[8%] ">
+
+    <div class="w-full h-[500px] flex items-center justify-between gap-10">
+        <div class="flex w-[600px] flex-col gap-4">
+            <h2 class="text-3xl font-semibold text-white">About Us</h2>
+            <p class="text-sm md:text-lg text-white leading-relaxed">
+                At Comestro Techlab Private Limited, we empower businesses with<br>
+                <span class="font-medium text-gray-100">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
+                Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
+                challenges, enabling our clients to achieve their goals with confidence.
+            </p>
+
+        </div>
+        <div class=" flex  rounded-lg">
+            <img src="\about.jpg" alt="" class="rounded-lg w-[400px]">
+        </div>
+
+    </div>
+
+</div>
+
+<!-- <div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-gray-800 ">
     <div class="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-12">
         <div class="lg:w-2/3 text-center lg:text-left space-y-6">
-            <h2 class="text-xl md:text-4xl font-bold text-indigo-800 leading-tight">
+            <h2 class="text-xl md:text-4xl font-bold text-white leading-tight">
                 About Us
             </h2>
             <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
-                At Comestro Tech Lab Private Limited, we empower businesses with 
+                At Comestro Tech Lab Private Limited, we empower businesses with
                 <span class="font-medium text-gray-900">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
-                Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world 
+                Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
                 challenges, enabling our clients to achieve their goals with confidence.
             </p>
             <div class="flex justify-center lg:justify-start">
@@ -24,24 +41,21 @@
                 </a>
             </div>
         </div>
-        
-        <div class="lg:w-1/2 flex justify-center">
-            <img src="/software.png" 
-                 alt="Development Approach" class="w-full max-w-md rounded-lg ">
+
+        <div class="lg:w-1/2 flex justify-center h-[400px] ">
+
         </div>
     </div>
-</section>
-
-
+</div> -->
 
 
 <div class="flex flex-col items-center px-4 mt-20 ">
-    <h2 class="text-4xl font-bold mb-6 text-center text-indigo-800">
+    <h2 class="text-3xl md:text-2xl font-bold mb-6 text-center text-indigo-800">
         For Teams, By Teams
     </h2>
     <p class="text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-        Good software is a work of art, and good art takes time.  
-        <br class="hidden md:block">  
+        Good software is a work of art, and good art takes time.
+        <br class="hidden md:block">
         Our teams spend years mastering their craft to deliver exceptional products.
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center mt-5">
@@ -74,7 +88,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 
 <div class="py-10"></div>

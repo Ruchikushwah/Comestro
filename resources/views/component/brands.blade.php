@@ -1,8 +1,5 @@
-<script src="https://cdn.tailwindcss.com"></script>
 <section class="w-full px-4 sm:px-10 md:px-20 py-10 bg-gray-100 font-sans flex justify-center items-center flex-col gap-8">
-
-    <h1
-        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-[#0071bc] to-gray-600 bg-clip-text text-transparent">
         Brands We've Worked With
     </h1>
 
@@ -21,10 +18,10 @@
                 With a streamlined hiring process, intuitive design, and AI-powered matching, we ensure that the right educators find
                 the right opportunities efficiently and effectively.
             </p>
-            <a href="#" class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
+            <a href="https://ptpi.com" target="_blank"  class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
         </div>
-
     </div>
+
     <div class="flex flex-col md:flex-row bg-[#f0f4ff] rounded-xl overflow-hidden max-w-4xl w-full border-r-2 border-[#000000c9] ">
 
         <!-- Image Section -->
@@ -40,19 +37,16 @@
                 With a keen eye for detail, artistic vision, and top-tier equipment, we bring out the best in every shot.
                 Whether it's portraits, events, or commercial photography, our expertise ensures stunning, high-quality visuals.
             </p>
-            <a href="smartstudiocreation.com" class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
+            <a href="https://smartstudiocreation.com" target="_blank" class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
         </div>
-
-
     </div>
+
     <div class="flex flex-col md:flex-row bg-[#f0f4ff] rounded-xl overflow-hidden max-w-4xl w-full border-r-2 border-sky-200 ">
 
         <!-- Image Section -->
         <div class="flex justify-center items-center  md:w-1/2 p-4">
             <img src="\Screenshot 2025-02-05 000558.png" alt="Website Mockup" class="w-full h-auto rounded-lg shadow">
         </div>
-
-
         <!-- Description Section -->
         <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
             <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-3">BiharShop – Your Ultimate Shopping Destination</h2>
@@ -60,9 +54,7 @@
                 BiharShop is an online shopping platform offering a wide range of products at unbeatable prices.
                 With a seamless shopping experience, secure payments, and fast delivery, we bring convenience and quality right to your doorstep.
             </p>
-            <a href="#" class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
+            <a href="https://biharshop.com" class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
         </div>
-
-
     </div>
 </section>
