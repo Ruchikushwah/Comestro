@@ -33,7 +33,7 @@
                 @forelse ($contacts as $contact)
                 <tr class="odd:bg-white even:bg-gray-50 border-b border-gray-200">
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
-                        {{ $contact->{auth()->user()->name} }}
+                        {{ auth()->user()->name }}
                     </th>
                     <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $contact->first_name }}

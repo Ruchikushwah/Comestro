@@ -23,6 +23,9 @@
                         Phone
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Lead Status
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Action
                     </th>
                 </tr>
@@ -43,12 +46,16 @@
                         {{ $lead->phone }}
                     </td>
                     <td class="px-6 py-4">
+                        {{ $lead->lead_status }}
+                    </td>
+                    <td class="px-6 py-4 gap-4">
                         <a href="{{ route('create-lead.edit', $lead->id) }}" wire:navigate class="font-medium text-slate-600 hover:underline">Edit</a>
+                      
                     </td>
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="5" class="border px-4 py-2 text-center">No Leads Found</td>
+                    <td colspan="6" class="border px-4 py-2 text-center">No Leads Found</td>
                 </tr>
                 @endforelse
             </tbody>
