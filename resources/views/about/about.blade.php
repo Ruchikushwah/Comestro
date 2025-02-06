@@ -1,94 +1,159 @@
 @extends('layout')
 @section('content')
-<div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-purple-900 px-[8%] ">
-
-    <div class="w-full h-[500px] flex items-center justify-between gap-10">
-        <div class="flex w-[600px] flex-col gap-4">
-            <h2 class="text-3xl font-semibold text-white">About Us</h2>
-            <p class="text-sm md:text-lg text-white leading-relaxed">
-                At Comestro Techlab Private Limited, we empower businesses with<br>
-                <span class="font-medium text-gray-100">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
-                Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
-                challenges, enabling our clients to achieve their goals with confidence.
-            </p>
-
-        </div>
-        <div class=" flex  rounded-lg">
-            <img src="\about.jpg" alt="" class="rounded-lg w-[400px]">
-        </div>
-
+<div class="w-full h-[580px] mt-10 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center opacity-70">
+    <div class="flex flex-col gap-6 max-w-2xl">
+        <h2 class="text-4xl font-bold text-white">About Us</h2>
+        <p class="text-lg text-black  leading-relaxed">
+            At <span class="font-semibold ">Comestro Techlab Private Limited</span>, we empower businesses with
+            <span class="font-medium">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
+            Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
+            challenges, enabling our clients to achieve their goals with confidence.
+        </p>
     </div>
-
+    <!-- <div class="ml-auto">
+        <img src="/about.jpg" alt="Company Image" class="rounded-lg shadow-lg w-[400px]">
+    </div> -->
 </div>
+<div class="container mx-auto max-w-6xl px-6 py-12 font-sans">
+    <div class="flex flex-col md:flex-row items-center gap-16">
+        <!-- Image Section -->
+        <div class="w-full md:w-[400px] flex justify-center">
+            <img src="/co founder.jpg" alt="Co-Founder" class="max-w-full h-auto object-cover rounded-lg shadow-lg">
+        </div>
 
-<!-- <div class="w-full h-[500px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-gray-800 ">
-    <div class="container mx-auto px-6 lg:px-12 flex flex-col-reverse lg:flex-row items-center gap-12">
-        <div class="lg:w-2/3 text-center lg:text-left space-y-6">
-            <h2 class="text-xl md:text-4xl font-bold text-white leading-tight">
-                About Us
-            </h2>
-            <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
-                At Comestro Tech Lab Private Limited, we empower businesses with
-                <span class="font-medium text-gray-900">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
-                Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
-                challenges, enabling our clients to achieve their goals with confidence.
+        <!-- Text Section -->
+        <div class="flex-1 space-y-6">
+            <h2 class="text-3xl font-semibold text-gray-700">10 Years of Experience</h2>
+            <p class="text-lg text-gray-700 leading-relaxed font-light">
+                As a co-founder of <span class="font-semibold text-blue-600">Comestro Techlabs Pvt. Ltd.</span>, I bring over 10 years of expertise in IT services and training. Comestro was founded with a vision to bridge the gap between education and industry by providing high-quality IT solutions alongside professional training. Over the years, we have expanded our expertise in software development, backend solutions, and API integration, ensuring businesses and aspiring developers receive cutting-edge technology and guidance.
             </p>
-            <div class="flex justify-center lg:justify-start">
-                <a href="#get-started" class="bg-indigo-800 text-white px-6 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition">
-                    Contact Us
-                </a>
+            
+            <!-- Signature Section -->
+            <div class="mt-6 flex justify-between">
+                <p class="text-xl text-gray-600 font-mono">Syed Sadique Hussain</p>
+                <p class="text-gray-900 text-lg font-semibold">-Co-Founder</p>
             </div>
         </div>
-
-        <div class="lg:w-1/2 flex justify-center h-[400px] ">
-
-        </div>
     </div>
-</div> -->
+</div>
 
-
-<div class="flex flex-col items-center px-4 mt-20 ">
-    <h2 class="text-3xl md:text-2xl font-bold mb-6 text-center text-indigo-800">
-        For Teams, By Teams
-    </h2>
-    <p class="text-lg md:text-xl text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+<div class="flex flex-col items-center px-4 mt-20">
+    <h2 class="text-3xl font-bold mb-6 text-center text-[#0071bc]">For Teams, By Teams</h2>
+    <p class="text-lg text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
         Good software is a work of art, and good art takes time.
-        <br class="hidden md:block">
         Our teams spend years mastering their craft to deliver exceptional products.
     </p>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center mt-5">
-        <div class="overflow-hidden bg-white w-80">
-            <img src="https://picsum.photos/330/200/" alt="Team Member" class="w-full h-64 ">
-            <div class="p-4 text-center text-lg font-medium">
-                <span>Syed Sadique Hussain</span>
-                <span class="block text-sm text-gray-500">Chief Executive Officer</span>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center mt-10">
+        @foreach ([
+        ['name' => 'Syed Sadique Hussain', 'role' => 'Chief Executive Officer', 'image' => '\ceo.jpg', 'linkedin' => '#', 'twitter' => '#'],
+        ['name' => 'Sarita', 'role' => 'Project Team Leader', 'image' => 'https://picsum.photos/320/200', 'linkedin' => '#', 'twitter' => '#'],
+        ['name' => 'Aarchana', 'role' => 'Frontend Developer(React)', 'image' => 'https://picsum.photos/340/200', 'linkedin' => '#', 'twitter' => '#'],
+        ['name' => 'Roni Saha', 'role' => 'Tester', 'image' => 'https://picsum.photos/310/200', 'linkedin' => '#', 'twitter' => '#'],
+        ] as $member)
+        <div class="relative bg-white  rounded-lg overflow-hidden w-80 transition transform hover:scale-105 group">
+            <!-- Image -->
+            <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" class="w-full h-64 object-cover object-center">
+            
+            <!-- Overlay Effect on Hover -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0071bcb5] via-gray-400 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"></div>
+
+            <!-- Social Media Icons (Hidden by Default) -->
+            <div class="absolute left-4 flex flex-col top-1/3 transform -translate-y-1/2 space-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
+                <a href="{{ $member['linkedin'] }}" class="bg-white p-2 rounded-full  hover:bg-blue-500 transition-all duration-300">
+                    <i class="fab fa-linkedin text-blue-700"></i>
+                </a>
+                <a href="{{ $member['twitter'] }}" class="bg-white p-2 rounded-full  hover:bg-blue-400 transition-all duration-300">
+                    <i class="fab fa-twitter text-blue-500"></i>
+                </a>
+            </div>
+
+            <!-- Text Section -->
+            <div class="p-4 text-center relative z-10">
+                <span class="block text-lg font-medium text-gray-900">{{ $member['name'] }}</span>
+                <span class="block text-sm text-gray-200">{{ $member['role'] }}</span>
             </div>
         </div>
-        <div class="overflow-hidden bg-white w-80">
-            <img src="https://picsum.photos/320/200/" alt="Team Member" class="w-full h-64 ">
-            <div class="p-4 text-center text-lg font-medium">
-                <span>Sarita</span>
-                <span class="block text-sm text-gray-500">Lead Developer</span>
+        @endforeach
+    </div>
+</div>
+<div class="flex flex-col items-center px-4 mt-20">
+    <h2 class="text-3xl font-bold mb-4 text-center text-[#2a5a7a]">Our Office & Culture</h2>
+    <p class="text-lg text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+        At Comestro, we believe in a work environment that fosters creativity, collaboration, and innovation.
+        Our office is designed to inspire and support our team, providing a balance between productivity and fun.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
+        <img src="\WhatsApp Image 2025-02-06 at 09.33.19_47edf4d4.jpg" alt="Office Space" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="https://picsum.photos/401/300" alt="Team Collaboration" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="https://picsum.photos/402/300" alt="Work Environment" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="https://picsum.photos/403/300" alt="Brainstorming Session" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="https://picsum.photos/404/300" alt="Casual Workspace" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="https://picsum.photos/405/300" alt="Team Lunch" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="https://picsum.photos/404/300" alt="Casual Workspace" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="https://picsum.photos/405/300" alt="Team Lunch" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+    </div>
+    <div class="mt-10 text-center py-10">
+        <h3 class="text-3xl font-semibold text-[#2a5a7a]">A Day at Comestro</h3>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-4">
+            At Comestro, every day is a journey of creativity and collaboration. From brainstorming sessions to solving real-world tech challenges, our team thrives in an environment that nurtures growth and innovation. We work hard, support each other, and celebrate every success together.
+        </p>
+    </div>
+</div>
+
+<div class="flex w-full items-center justify-between bg-[#2a5a7a] py-12 px-16 rounded-lg  mx-auto">
+    <div class="flex flex-col">
+    <h2 class="text-3xl font-bold text-white ">Get New Insights Weekly</h2>
+    <p class="text-lg text-gray-200 mt-2 max-w-xl">
+        Stay informed with fresh insights and trends delivered to your inbox. Subscribe now!
+    </p>
+    </div>
+    
+
+    <!-- Subscription Form -->
+    <form class="flex flex-col sm:flex-row items-center w-full max-w-md mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+        <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email">
+        <button type="submit" class=" bg-white px-6 py-3 font-semibold rounded-lg  hover:border-[#2a5a7a] transition w-full sm:w-auto">
+            Subscribe
+        </button>
+    </form>
+</div>
+
+<!-- <div class="flex flex-col items-center px-4 mt-20 py-8 bg-gray-100">
+    <h2 class="text-3xl font-bold mb-6 text-center text-[#2a5a7a]">Client Testimonials</h2>
+    <p class="text-lg text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+        See what our clients say about working with us. Their success stories drive our passion for innovation and excellence.
+    </p>
+    <div class="relative w-full max-w-5xl overflow-hidden mt-10">
+        <div class="flex space-x-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory p-4">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Comestro delivered beyond our expectations. Their team’s dedication and expertise helped us scale our business seamlessly!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">-, CEO of TechCorp</span>
             </div>
-        </div>
-        <div class="overflow-hidden bg-white w-80">
-            <img src="https://picsum.photos/340/200/" alt="Team Member" class="w-full h-64 ">
-            <div class="p-4 text-center text-lg font-medium">
-                <span>Aarchana</span>
-                <span class="block text-sm text-gray-500">Product Manager</span>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Their innovative solutions transformed our operations. A game changer for our company!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">- Jane Smith, CTO of InnovateX</span>
             </div>
-        </div>
-        <div class="overflow-hidden bg-white w-80">
-            <img src="https://picsum.photos/310/200/" alt="Team Member" class="w-full h-64">
-            <div class="p-4 text-center text-lg font-medium">
-                <span>Roni</span>
-                <span class="block text-sm text-gray-500">Teaster</span>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Excellent support and seamless integration. Highly recommended!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">- , Manager at SoftWave</span>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Their attention to detail and commitment to success is unmatched!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">- Sarah Lee, Founder of NextGen</span>
             </div>
         </div>
     </div>
 
-</div>
+</div>   -->
 
-<div class="py-10"></div>
+<!-- <style>
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style> -->
 
 @endsection
