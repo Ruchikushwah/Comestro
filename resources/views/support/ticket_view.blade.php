@@ -144,7 +144,7 @@
                         $('#ticketDetails').html(`
                         <div class="flex flex-col gap-3">
                             <p class="text-lg font-semibold">Ticket: ${ticket.ticket_number}</p>
-                            <p class="text-sm"><strong>Status:</strong> <span>${ticket.status}</span></p>
+                            <p class="text-sm"><strong>Status:</strong> <span id='ticket-status' >${ticket.status}</span></p>
                             <p class="text-sm"><strong>Department:</strong> ${ticket.department}</p>
                             <p class="text-sm"><strong>Subject:</strong> ${ticket.problem_category.name}</p>
                             <p class="text-sm"><strong>Create Date:</strong> ${ticket.formatted_created_at}</p>
@@ -174,6 +174,13 @@
                             <p id='noAttachmentMessage'>No Attachment file is provided</p>
                         </div>
                     `);
+
+                    // hide the message form if ticket is closed:
+                    if(isClosed){
+                        $('#sendMessage').remove();
+                        $('#close-ticket-btn').remove();
+                    }
+
                     }
                 });
             }
@@ -191,7 +198,6 @@
                     },
                     success: function(response) {
                         alert(response.msg);
-                        $('#close-ticket-btn').remove();
                         callingTickets();
                     },
                 });
@@ -238,7 +244,7 @@
             fetchMessages();
 
 
-            // sending message work goes here:
+            // send message work goes here:
             $('#sendMessageButton').on("click", function(e) {
                 e.preventDefault();
                 // alert('hello, send button got clicked')

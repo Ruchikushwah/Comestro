@@ -192,7 +192,7 @@
                                             id="close-ticket-btn"
                                             ${isClosed ? "disabled" : ""} 
                                             class="${isClosed ? "text-gray-500" : "bg-red-500 text-white"} px-2 py-1 rounded">
-                                        ${isClosed ? 'Closed' : 'Close'}
+                                        ${isClosed ? 'Closed' : 'Close Ticket'}
                                     </button>                                      
                                 </td>
                             </tr> 
