@@ -144,7 +144,7 @@
                         $('#ticketDetails').html(`
                         <div class="flex flex-col gap-3">
                             <p class="text-lg font-semibold">Ticket: ${ticket.ticket_number}</p>
-                            <p class="text-sm"><strong>Status:</strong> <span id='ticket-status' >${ticket.status}</span></p>
+                            <p class="text-sm"><strong>Status:</strong> <span id='ticket-status' class="${ticket.status === 'closed' ? 'text-red-500' : ''}">${ticket.status}</span></p>
                             <p class="text-sm"><strong>Department:</strong> ${ticket.department}</p>
                             <p class="text-sm"><strong>Subject:</strong> ${ticket.problem_category.name}</p>
                             <p class="text-sm"><strong>Create Date:</strong> ${ticket.formatted_created_at}</p>
