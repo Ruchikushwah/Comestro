@@ -120,29 +120,31 @@
             let ticketId = {{ $id }}; //getting ticket_id from the blade
             let userId = {{ auth()->id() }}; //getting user_id of the logged-in user 
 
-            $.ajax({
-                type: "GET",
-                url: `/api/support/view_tickets/${ticketId}`,
-                data: {
-                    user_id: userId
-                }, //sending user_id in the request
-                success: function(response) {
-                    // console.log("user id in blade file :", userId);
-                    // console.log(response);
-                    let ticket = response.data;
+            function callingTickets() {
+                $.ajax({
+                    type: "GET",
+                    url: `/api/support/view_tickets/${ticketId}`,
+                    data: {
+                        user_id: userId
+                    }, //sending user_id in the request
+                    success: function(response) {
+                        // console.log("user id in blade file :", userId);
+                        // console.log(response);
+                        let ticket = response.data;
+                        let isClosed = ticket.status === 'closed';
 
-                    if (ticket.attachment) {
-                        $('#ticketImage').attr('src', `/Problem_image/${ticket.attachment}`).show();
-                        $('#noAttachmentMessage').hide();
-                    } else {
-                        $('#noAttachmentMessage').show();
-                        $('#ticketImage').hide();
-                    }
+                        if (ticket.attachment) {
+                            $('#ticketImage').attr('src', `/Problem_image/${ticket.attachment}`).show();
+                            $('#noAttachmentMessage').hide();
+                        } else {
+                            $('#noAttachmentMessage').show();
+                            $('#ticketImage').hide();
+                        }
 
-                    $('#ticketDetails').html(`
+                        $('#ticketDetails').html(`
                         <div class="flex flex-col gap-3">
                             <p class="text-lg font-semibold">Ticket: ${ticket.ticket_number}</p>
-                            <p class="text-sm"><strong>Status:</strong> <span class="text-red-500">${ticket.status}</span></p>
+                            <p class="text-sm"><strong>Status:</strong> <span id='ticket-status' class="${ticket.status === 'closed' ? 'text-red-500' : ''}">${ticket.status}</span></p>
                             <p class="text-sm"><strong>Department:</strong> ${ticket.department}</p>
                             <p class="text-sm"><strong>Subject:</strong> ${ticket.problem_category.name}</p>
                             <p class="text-sm"><strong>Create Date:</strong> ${ticket.formatted_created_at}</p>
@@ -157,9 +159,14 @@
                         </div>
                         <div>
                             <strong>Description:</strong>
-                            <p>
+                            <p class='mb-2'>
                                 ${ticket.description}
                             </p>
+                            ${ticket.status !== 'closed' ? `
+                                        <button id='close-ticket-btn' data-id='${ticket.id}' class='bg-red-500 text-white px-3 py-1 rounded'>
+                                            Close Ticket
+                                        </button>` : ''
+                            }
                         </div>
                         <div>
                             <strong>Attachment:</strong>
@@ -167,9 +174,34 @@
                             <p id='noAttachmentMessage'>No Attachment file is provided</p>
                         </div>
                     `);
-                }
+
+                    // hide the message form if ticket is closed:
+                    if(isClosed){
+                        $('#sendMessage').remove();
+                        $('#close-ticket-btn').remove();
+                    }
+
+                    }
+                });
+            }
+            callingTickets();
+
+            // close ticket work goes here:
+            $(document).on("click", "#close-ticket-btn", function() {
+                let ticketId = $(this).data('id');
+
+                $.ajax({
+                    type: "post",
+                    url: `/api/support/close/${ticketId}`,
+                    data: {
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
+                        alert(response.msg);
+                        callingTickets();
+                    },
+                });
             });
-            // calling ticket ends here;
 
             // calling messages:
             function fetchMessages() {
@@ -212,7 +244,7 @@
             fetchMessages();
 
 
-            // sending message work goes here:
+            // send message work goes here:
             $('#sendMessageButton').on("click", function(e) {
                 e.preventDefault();
                 // alert('hello, send button got clicked')
@@ -225,12 +257,12 @@
                     message: message
                 };
                 console.log(data)
-                
+
                 $.ajax({
-                    url:'/api/messages',
-                    type:"post",
-                    data:data,
-                    success:function(response){
+                    url: '/api/messages',
+                    type: "post",
+                    data: data,
+                    success: function(response) {
                         alert(response.msg);
 
                         fetchMessages();
@@ -238,8 +270,8 @@
 
 
                     },
-                    error: function(err){
-                        console.log("Error sending message:",err)
+                    error: function(err) {
+                        console.log("Error sending message:", err)
                         alert('there was an error sending the message')
                     },
                 });
