@@ -1,13 +1,13 @@
- <!-- <div>
+  <!-- <div>
     <div class="w-full">
-        <!-- Search Bar -->
-        <!-- <div class="flex justify-between mb-4">
+         Search Bar 
+        <div class="flex justify-between mb-4">
             <input type="text" placeholder="Search..." class="border px-4 py-2 rounded"
                 wire:model.debounce.500ms="search" />
-        </div> -->
+        </div> 
 
-        <!-- Table -->
-        <!-- <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
+        Table 
+     <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
             <table class="w-full text-sm text-left text-gray-500">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
@@ -48,8 +48,8 @@
                 </tbody>
             </table>
         </div>
-    </div> -->
-    <!-- {{-- <div class="mt-4">
+    </div> 
+     <div class="mt-4">
         {{ $quotes->links() }}
-</div> --}}
-</div>  --> -->
+</div> 
+</div>   -->
