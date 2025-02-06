@@ -51,7 +51,7 @@
             <a href="#portfolio" class="block hover:text-blue-500">Services</a>
             <a href="{{ route('support.tickets.manage') }}" class="block hover:text-blue-500">support</a>
             <a href="{{ route('crm.lead') }}" class="block hover:text-blue-500">crm</a>
-            <a href="{{ route('auth.register')}}" class="block bg-[#f15a24] text-center text-white px-4 py-2 rounded hover:bg-[#f15a24]">
+            <a href="{{ route('auth.register')}}" class="block bg-[#0071bc] text-center text-white px-4 py-2 rounded hover:bg-[#0071bc]">
                 Get Started
             </a>
 
