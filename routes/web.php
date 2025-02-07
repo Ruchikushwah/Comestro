@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TicketController;
 use App\Livewire\Contact\CreateContact;
 use App\Livewire\Contact\ManageContact;
@@ -15,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
 
 
 Route::middleware('auth')->get('/support', function () {
@@ -34,7 +36,7 @@ Route::get('/about', function () {
 
 Route::get('contactus', function () {
     return view('contactus');
-});
+})->name('contactus');
 
 Route::get('code', function () {
     return view('component.code');
@@ -68,6 +70,13 @@ Route::prefix("crm")->group(function () {
     })->name("crm.quote")->middleware('auth');
 });
 
+Route::get('/send-message', function () {
+    return view('send-message');
+})->name('send-message');
+
+Route::post('/send-message', [ContactController::class, 'sendMessage'])->name('send.message');
+
+
 Route::get('/create-lead', CreateLead::class)->name('create-lead');
 Route::get('/create-lead/edit/{id}', CreateLead::class)->name('create-lead.edit');
 //Route::get('/create-lead/delete/{id}', CreateLead::class)->name('create-lead.delete');
@@ -97,6 +106,9 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::post('send-otp', 'sendOtp')->name('auth.sendOtp');
     Route::get('/logout',  'logout')->name('auth.logout');
 });
+
+
+
 
 
 

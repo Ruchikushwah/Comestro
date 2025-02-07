@@ -47,15 +47,15 @@
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center mt-10">
         @foreach ([
-        ['name' => 'Prince kumar', 'role' => 'Full Stack Developer', 'image' => '\fullstackdeveloper.png', 'linkedin' => 'https://www.linkedin.com/in/prince-kumar-143a99174/overlay/photo/', 'twitter' => '#'],
-        ['name' => 'Sarita', 'role' => 'Project Team Leader', 'image' => '\teamleader.png', 'linkedin' => 'https://www.linkedin.com/in/sarita-kumari-79abb3213/', 'twitter' => '#'],
-        ['name' => 'Aarchana', 'role' => 'Frontend Developer(React)', 'image' => '\fontenddeveloper (1).png', 'linkedin' => 'https://www.linkedin.com/in/archana-kumari-39107824a/', 'twitter' => '#'],
-        ['name' => 'Roni Saha', 'role' => 'Tester', 'image' => '\tester.png', 'linkedin' => 'https://www.linkedin.com/in/roni-saha/', 'twitter' => '#'],
+        ['name' => 'Prince kumar', 'role' => 'Full Stack Developer', 'image' => '\fullstackdeveloper.png', 'linkedin' => 'https://www.linkedin.com/in/prince-kumar-143a99174/overlay/photo/', 'github' => 'https://github.com/princekumar205086'],
+        ['name' => 'Sarita', 'role' => 'Project Team Leader', 'image' => '\teamleader.png', 'linkedin' => 'https://www.linkedin.com/in/sarita-kumari-79abb3213/', 'github' => 'https://github.com/SaritaKumari24'],
+        ['name' => 'Aarchana', 'role' => 'Frontend Developer(React)', 'image' => '\fontenddeveloper (1).png', 'linkedin' => 'https://www.linkedin.com/in/archana-kumari-39107824a/', 'github' => 'https://github.com/Archana-PC'],
+        ['name' => 'Roni Saha', 'role' => 'Tester', 'image' => '\tester.png', 'linkedin' => 'https://www.linkedin.com/in/roni-saha/', 'github' => 'https://github.com/roni836'],
         ] as $member)
         <div class="relative bg-white  rounded-lg overflow-hidden w-80 transition transform hover:scale-105 group">
             <!-- Image -->
             <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" class="w-full h-64 object-cover object-center">
-            
+
             <!-- Overlay Effect on Hover -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#0071bcb5] via-gray-400 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"></div>
 
@@ -64,8 +64,8 @@
                 <a href="{{ $member['linkedin'] }}" class="bg-white p-2 rounded-full  hover:bg-blue-500 transition-all duration-300">
                     <i class="fab fa-linkedin text-blue-600 hover:text-white"></i>
                 </a>
-                <a href="{{ $member['twitter'] }}" class="bg-white p-2 rounded-full  hover:bg-blue-400 transition-all duration-300">
-                    <i class="fab fa-twitter text-blue-500"></i>
+                <a href="{{ $member['github'] }}" class="bg-white p-2 rounded-full  hover:bg-blue-400 transition-all duration-300">
+                    <i class="fab fa-github text-blue-500"></i>
                 </a>
             </div>
 
