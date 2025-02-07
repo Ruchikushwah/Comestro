@@ -7,7 +7,6 @@
 
             </div>
 
-
             <div>
                 <h3 class="font-semibold text-lg">Apps and Extensions</h3>
                 <ul class="mt-4 space-y-2 text-sm">
