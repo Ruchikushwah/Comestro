@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class=" min-h-screen flex items-center justify-center p-4 bg-gray-100">
+<div class=" min-h-screen flex items-center justify-center p-4 bg-gray-100 mt-10">
     <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-sm overflow-hidden max-w-4xl w-full">
         <!-- Image Section -->
         <div class="md:w-1/2  flex  flex-col items-center">

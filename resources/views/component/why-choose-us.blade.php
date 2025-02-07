@@ -30,6 +30,7 @@
                         </div>
                     </div>
 
+
                     <!-- Feature 2 -->
                     <div class="flex gap-4 items-start">
                         <div class="bg-gray-200 w-20 p-2   h-16 md:w-20 md:h-16 flex justify-center items-center rounded-lg">
@@ -39,6 +40,7 @@
                             <h2 class="text-lg md:text-xl font-semibold text-gray-800">Seamless Collaboration</h2>
                             <p class="text-gray-600">Empower your team with real-time collaboration tools, ensuring smooth communication and streamlined project execution.</p>
                         </div>
+
                     </div>
 
                     <!-- Feature 3 -->
