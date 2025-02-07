@@ -32,9 +32,9 @@
             <div>
                 <h3 class="font-semibold text-lg">Company</h3>
                 <ul class="mt-4 space-y-2 text-sm">
-                    <li><a href="#" class="hover:bg-[#0071bc]">About Us</a></li>
-                    <li><a href="#" class="hover::bg-[#0071bc]">Press</a></li>
-                    <li><a href="#" class="hover:bg-[#0071bc]">Events</a></li>
+                    <li><a href="#" class="hover:text-blue-600">About Us</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Press</a></li>
+                    <li><a href="#" class="hover:text-blue-600">Events</a></li>
                     <li><a href="#" class="hover:text-blue-600">Newsroom</a></li>
                     <li><a href="#" class="hover:text-blue-600">Branding Assets</a></li>
                     <li><a href="#" class="hover:text-blue-600">Service Status</a></li>
@@ -74,7 +74,7 @@
         </div>
 
         <!-- Copyright -->
-        <div class="mt-4 text-center text-sm bg-gray-900 py-5 text-gray-100">
+        <div class="mt-4 text-center text-sm bg-gray-900 py-5 text-gray-100 w-full">
             © 2025, Comestro Techlabs Pvt. Ltd. All Rights Reserved.
         </div>
     </div>
