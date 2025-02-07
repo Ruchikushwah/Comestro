@@ -1,7 +1,7 @@
 @extends('layout')
 @section('content')
 
-<div class="flex flex-col items-center px-4 mt-20">
+<div class="flex flex-col items-center px-4 mt-20 py-5">
     <h2 class="text-3xl font-bold text-[#0071bc] text-center">Let's Work Together</h2>
     <p class="text-lg text-gray-700 text-center mt-2 max-w-2xl">
         Need expert software solutions or have a project idea? Let's collaborate!
@@ -37,12 +37,12 @@
     </div>
 
     <!-- Social Media Links -->
-    <div class="flex space-x-6 mt-6">
+    <!-- <div class="flex space-x-6 mt-6">
         <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-facebook"></i></a>
         <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-twitter"></i></a>
         <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-linkedin"></i></a>
         <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-instagram"></i></a>
-    </div>
+    </div> -->
 </div>
 
 @endsection

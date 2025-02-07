@@ -36,7 +36,7 @@ Route::get('/about', function () {
 
 Route::get('contactus', function () {
     return view('contactus');
-});
+})->name('contactus');
 
 Route::get('code', function () {
     return view('component.code');
