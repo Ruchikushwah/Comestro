@@ -1,7 +1,22 @@
 @extends('layout')
 @section('content')
 
-<div class="flex flex-col items-center px-4 mt-20 py-5">
+<div class="w-full h-[510px] mt-10 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-6 md:px-[8%] flex items-center">
+    <!-- Blur Overlay -->
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+
+    <!-- Content Section -->
+    <div class="relative flex flex-col gap-4 md:gap-6 max-w-2xl z-10 text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">Contact Us</h2>
+        <p class="text-base md:text-lg text-white leading-relaxed drop-shadow-md">
+            At <span class="font-semibold">Comestro Techlab Private Limited</span>, we’re here to assist you with all your technology needs. Whether you have a project idea, need expert consultation, or have any queries, our team is ready to help!<br>
+            If you are looking for cutting-edge software solutions or need support with your digital transformation journey, don’t hesitate to reach out to us. Our dedicated team ensures that every inquiry is addressed promptly and professionally.
+        </p>
+    </div>
+</div>
+
+
+<div class="flex flex-col items-center px-4 mt-5 py-5">
     <h2 class="text-3xl font-bold text-[#0071bc] text-center">Let's Work Together</h2>
     <p class="text-lg text-gray-700 text-center mt-2 max-w-2xl">
         Need expert software solutions or have a project idea? Let's collaborate!
@@ -15,7 +30,7 @@
     @endif
 
     <!-- Contact Form -->
-    <div class="rounded-lg p-6 mt-4 w-full max-w-2xl">
+    <div class="rounded-lg p-6  w-full max-w-2xl">
         <form action="{{ route('send.message') }}" method="POST" class="space-y-4">
             @csrf
             <div>
