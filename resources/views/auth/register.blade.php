@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layout')
+@section('content')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-
-<body class=" min-h-screen flex items-center justify-center p-4 bg-gray-100">
+<div class=" min-h-screen flex items-center justify-center p-4 bg-gray-100">
     <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-sm overflow-hidden max-w-4xl w-full">
         <!-- Image Section -->
         <div class="md:w-1/2  flex  flex-col items-center">
@@ -62,6 +55,7 @@
             </form>
         </div>
     </div>
-</body>
+</div>
 
-</html>
+
+@endsection

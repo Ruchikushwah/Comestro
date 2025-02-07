@@ -15,7 +15,6 @@
                     <li><a href="#" class="hover:text-blue-600">Browser Extensions</a></li>
                 </ul>
             </div>
-
             <!-- Community -->
             <div>
                 <h3 class="font-semibold text-lg">Community</h3>

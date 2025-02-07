@@ -1,19 +1,21 @@
 @extends('layout')
 @section('content')
-<div class="w-full h-[580px] mt-10 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center opacity-70">
-    <div class="flex flex-col gap-6 max-w-2xl">
-        <h2 class="text-4xl font-bold text-white">About Us</h2>
-        <p class="text-lg text-black  leading-relaxed">
-            At <span class="font-semibold ">Comestro Techlab Private Limited</span>, we empower businesses with
+<div class="w-full h-[580px] mt-10 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center">
+    <!-- Blur Overlay -->
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+
+    <!-- Content Section -->
+    <div class="relative flex flex-col gap-6 max-w-2xl z-10">
+        <h2 class="text-4xl font-bold text-white drop-shadow-lg">About Us</h2>
+        <p class="text-lg text-white leading-relaxed drop-shadow-md">
+            At <span class="font-semibold">Comestro Techlab Private Limited</span>, we empower businesses with
             <span class="font-medium">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
             Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
             challenges, enabling our clients to achieve their goals with confidence.
         </p>
     </div>
-    <!-- <div class="ml-auto">
-        <img src="/about.jpg" alt="Company Image" class="rounded-lg shadow-lg w-[400px]">
-    </div> -->
 </div>
+
 <div class="container mx-auto max-w-6xl px-6 py-12 font-sans">
     <div class="flex flex-col md:flex-row items-center gap-16">
         <!-- Image Section -->
@@ -45,22 +47,22 @@
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 place-items-center mt-10">
         @foreach ([
-        ['name' => 'Syed Sadique Hussain', 'role' => 'Chief Executive Officer', 'image' => '\ceo.jpg', 'linkedin' => '#', 'twitter' => '#'],
-        ['name' => 'Sarita', 'role' => 'Project Team Leader', 'image' => 'https://picsum.photos/320/200', 'linkedin' => '#', 'twitter' => '#'],
-        ['name' => 'Aarchana', 'role' => 'Frontend Developer(React)', 'image' => 'https://picsum.photos/340/200', 'linkedin' => '#', 'twitter' => '#'],
-        ['name' => 'Roni Saha', 'role' => 'Tester', 'image' => 'https://picsum.photos/310/200', 'linkedin' => '#', 'twitter' => '#'],
+        ['name' => 'Prince kumar', 'role' => 'Full Stack Developer', 'image' => '\fullstackdeveloper.png', 'linkedin' => 'https://www.linkedin.com/in/prince-kumar-143a99174/overlay/photo/', 'twitter' => '#'],
+        ['name' => 'Sarita', 'role' => 'Project Team Leader', 'image' => '\teamleader.png', 'linkedin' => 'https://www.linkedin.com/in/sarita-kumari-79abb3213/', 'twitter' => '#'],
+        ['name' => 'Aarchana', 'role' => 'Frontend Developer(React)', 'image' => '\fontenddeveloper (1).png', 'linkedin' => 'https://www.linkedin.com/in/archana-kumari-39107824a/', 'twitter' => '#'],
+        ['name' => 'Roni Saha', 'role' => 'Tester', 'image' => '\tester.png', 'linkedin' => 'https://www.linkedin.com/in/roni-saha/', 'twitter' => '#'],
         ] as $member)
         <div class="relative bg-white  rounded-lg overflow-hidden w-80 transition transform hover:scale-105 group">
             <!-- Image -->
             <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" class="w-full h-64 object-cover object-center">
-
+            
             <!-- Overlay Effect on Hover -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#0071bcb5] via-gray-400 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"></div>
 
             <!-- Social Media Icons (Hidden by Default) -->
             <div class="absolute left-4 flex flex-col top-1/3 transform -translate-y-1/2 space-y-2 opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out">
                 <a href="{{ $member['linkedin'] }}" class="bg-white p-2 rounded-full  hover:bg-blue-500 transition-all duration-300">
-                    <i class="fab fa-linkedin text-blue-700"></i>
+                    <i class="fab fa-linkedin text-blue-600 hover:text-white"></i>
                 </a>
                 <a href="{{ $member['twitter'] }}" class="bg-white p-2 rounded-full  hover:bg-blue-400 transition-all duration-300">
                     <i class="fab fa-twitter text-blue-500"></i>
@@ -100,21 +102,22 @@
     </div>
 </div>
 
-<div class="flex w-full items-center justify-between bg-[#2a5a7a] py-12 px-16 rounded-lg  mx-auto">
-    <div class="flex flex-col">
-        <h2 class="text-3xl font-bold text-white ">Get New Insights Weekly</h2>
-        <p class="text-lg text-gray-200 mt-2 max-w-xl">
+<div class="flex flex-col lg:flex-row w-full items-center justify-between bg-[#2a5a7a] py-10 px-8 sm:px-12 rounded-lg mx-auto space-y-6 lg:space-y-0">
+    <!-- Text Section -->
+    <div class="text-center lg:text-left flex flex-col">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white">Get New Insights Weekly</h2>
+        <p class="text-base sm:text-lg text-gray-200 mt-2 max-w-lg">
             Stay informed with fresh insights and trends delivered to your inbox. Subscribe now!
         </p>
     </div>
 
-
     <!-- Subscription Form -->
-    <form class="flex flex-col sm:flex-row items-center w-full max-w-md mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
+    <form class="flex flex-col sm:flex-row items-center w-full max-w-md gap-4">
         <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email">
-        <button type="submit" class=" bg-white px-6 py-3 font-semibold rounded-lg  hover:border-[#2a5a7a] transition w-full sm:w-auto">
+        <button type="submit" class="bg-white px-6 py-3 font-semibold rounded-lg hover:border-[#2a5a7a] transition w-full sm:w-auto">
             Subscribe
         </button>
     </form>
 </div>
+
 @endsection
