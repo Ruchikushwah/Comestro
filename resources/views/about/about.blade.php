@@ -86,7 +86,7 @@
     </p>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mt-10">
         <img src="\WhatsApp Image 2025-02-06 at 09.33.19_47edf4d4.jpg" alt="Office Space" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
-        <img src="https://picsum.photos/401/300" alt="Team Collaboration" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
+        <img src="\day.jpg" alt="Team Collaboration" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
         <img src="https://picsum.photos/402/300" alt="Work Environment" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
         <img src="https://picsum.photos/403/300" alt="Brainstorming Session" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">
         <img src="https://picsum.photos/404/300" alt="Casual Workspace" class="rounded-lg  w-full h-60 object-cover hover:scale-105 transition transform duration-300">

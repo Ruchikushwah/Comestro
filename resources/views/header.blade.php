@@ -39,8 +39,6 @@
                 <button class="flex items-center space-x-2 text-gray-900 dark:text-white focus:outline-none" id="user-menu-button">
                     <img src="/default.jpg" class="w-8 h-8 rounded-full" alt="User Avatar">
 
-
-                   
                 </button>
 
                 <!-- Dropdown -->
@@ -68,19 +66,22 @@
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="hidden bg-white">
-        <nav class="space-y-2 px-6 py-4 text-right">
-            <a href="#portfolio" class="block hover:text-blue-500">Services</a>
+    <div id="mobile-menu" class="hidden bg-white ">
+        <nav class="space-y-2 px-6 py-4 text-center">
+            <a href="{{route('about')}}" class="block hover:text-blue-500">About</a>
             <a href="{{ route('support.tickets.manage') }}" class="block hover:text-blue-500">Support</a>
             <a href="{{ route('crm.lead') }}" class="block hover:text-blue-500">CRM</a>
+            <a href="{{ route('contactus')}} " class="block hover:text-blue-500">Contact</a>
 
             @auth
             <!-- User dropdown in mobile -->
-            <div class="border-t pt-4">
-                <p class="text-gray-800 dark:text-white font-semibold">{{ Auth::user()->name }}</p>
-                <a href="" class="block hover:text-blue-500">Profile</a>
-                <a href="" class="block hover:text-blue-500">Dashboard</a>
-                <a href="{{route('auth.logout')}}" class="block px-4 py-2 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">Logout</a>
+            <div class="border-t pt-3 flex item-center justify-between">
+                <div class="flex  items-center">
+                    <img src="/default.jpg" class="w-8 h-8 rounded-full" alt="User Avatar">
+                    <p class="text-gray-800 dark:text-white font-semibold">{{ Auth::user()->name }}</p>
+                </div>
+
+                <a href="{{route('auth.logout')}}" class="block px-4 py-2 text-white bg-red-400 dark:text-white hover:bg-red-500 dark:hover:bg-gray-700">Logout</a>
 
             </div>
             @else
