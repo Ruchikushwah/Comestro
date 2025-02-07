@@ -1,4 +1,4 @@
-<section class="relative min-h-3xl bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 overflow-hidden py-5 ">
+<section class="relative min-h-3xl bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 overflow-hidden py-5  ">
     <h2 class=" flex text-3xl font-semibold mt-8 text-center items-center justify-center text-gray-100 ">Our <br>Tech Stack</h2>
     <div class="relative container mx-auto px-10 sm:px-10 py-5 mt-16 ">
         <div class="max-w-9xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 place-items-center md:gap-5">
