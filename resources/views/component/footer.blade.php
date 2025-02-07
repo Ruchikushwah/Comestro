@@ -3,18 +3,17 @@
         <!-- Footer Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 text-center md:text-left">
             <!-- Logo -->
-            <div class="flex justify-center md:justify-start">
-                <img src="/comestro.png" alt="Comestro Logo" class="h-12">
+            <div class="flex justify-center md:justify-start flex-col text-center">
+               <a href="" class="text-3xl font-semibold text-gray-800 ">Comestro</a>
+               <span class="text-sm  ">Techlabs .Pvt .Ltd</span>
             </div>
 
             <!-- Company Links -->
             <div class="flex flex-col gap-2 text-sm text-gray-900">
                 <h3 class="font-semibold text-lg">Company</h3>
-                <a href="#" class="hover:text-gray-500">Home</a>
+                <a href="{{ route('about')}}" class="hover:text-gray-500">About</a>
                 <a href="#" class="hover:text-gray-500">Contact Us</a>
-                <a href="#" class="hover:text-gray-500">Service</a>
                 <a href="{{ route('support.tickets.manage') }}" class="hover:text-gray-500">Support</a>
-                <a href="{{ route('crm.lead')}}" class="hover:text-gray-500">CRM</a>
                 <a href="#" class="hover:text-gray-500">Privacy Policy</a>
             </div>
 
@@ -22,7 +21,7 @@
             <div class="text-sm text-gray-900">
                 <h3 class="font-semibold text-lg">Contact</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><span class="font-semibold">Phone:</span> <a href="#" class="hover:text-gray-500">(+91) 9546805580</a></li>
+                    <li><span class="font-semibold">Phone:</span> <a href="#" class="hover:text-gray-500">(+91) 9546-80-5580</a></li>
                     <li><span class="font-semibold">Email:</span> <a href="#" class="hover:text-gray-500">info@comestro.com</a></li>
                 </ul>
             </div>

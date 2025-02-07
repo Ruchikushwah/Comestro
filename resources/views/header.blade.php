@@ -12,42 +12,34 @@
                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 
                     md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 
                     md:dark:bg-gray-900 dark:border-gray-700">
-                    
+
                     <li>
-                        <a href="/" 
-                           class="block py-2 px-3 rounded-sm md:p-0 
+                        <a href="/"
+                            class="block py-2 px-3 rounded-sm md:p-0 
                                   {{ request()->is('/') ? ' text-blue-700 md:text-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
                             Home
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{ route('about')}}" 
-                           class="block py-2 px-3 rounded-sm md:p-0 
+                        <a href="{{ route('about')}}"
+                            class="block py-2 px-3 rounded-sm md:p-0 
                                   {{ request()->is('about') ? ' text-blue-700 md:text-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
                             About
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{ route('support.tickets.manage') }}" 
-                           class="block py-2 px-3 rounded-sm md:p-0 
+                        <a href="{{ route('support.tickets.manage') }}"
+                            class="block py-2 px-3 rounded-sm md:p-0 
                                   {{ request()->is('support/tickets/manage') ? ' text-blue-700 md:text-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
                             Support
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{ route('crm.lead') }}" 
-                           class="block py-2 px-3 rounded-sm md:p-0 
-                                  {{ request()->is('crm/lead') ? ' text-blue-700 md:text-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
-                            CRM
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="{{ route('contactus')}}" 
-                           class="block py-2 px-3 rounded-sm md:p-0 
+                        <a href="{{ route('contactus')}}"
+                            class="block py-2 px-3 rounded-sm md:p-0 
                                   {{ request()->is('contactus') ? ' text-blue-700 md:text-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
                             Contact
                         </a>
@@ -79,11 +71,12 @@
         </div>
 
         <!-- Mobile Menu Toggle -->
-        <button id="menu-toggle" class="md:hidden focus:outline-none">
+        <button id="menu-toggle" class="md:hidden focus:outline-none text-gray-800 dark:text-white transition">
             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </button>
+
     </div>
 </nav>
 

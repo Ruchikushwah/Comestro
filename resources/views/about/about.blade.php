@@ -1,4 +1,8 @@
 @extends('layout')
+
+@section('title')
+About us
+@endsection
 @section('content')
 <div class="w-full h-[580px] mt-10 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center">
     <!-- Blur Overlay -->
