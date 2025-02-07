@@ -30,7 +30,7 @@
                 <!-- Feature 2 -->
                 <div class="flex gap-5 items-start ">
                     <div class="bg-gray-200 w-24 h-16 flex justify-center items-center rounded-lg">
-                        <img src="\17373061.png" alt="Collaboration" class="w-10 h-10">
+                        <img src="\17373061.png" alt="Collaboration" class="w-10 h-10 md:w-16 md:h-12">
                        
                     </div>
                     <div>

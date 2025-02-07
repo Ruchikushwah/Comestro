@@ -1,17 +1,17 @@
 @extends('layout')
 @section('content')
 
-<div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+<div class="min-h-screen flex items-center justify-center bg-gray-100 p-4 mt-10">
     <div class="bg-white shadow-sm rounded-lg flex flex-col md:flex-row w-full max-w-4xl">
         <!-- Left Side - Sign In -->
-        <div class="w-full md:w-1/2 p-6 md:px-8 md:py-12">
+        <div class="w-full md:w-1/2 p-6 md:px-8 md:py-8">
             <img src="/comestro.png" alt="Logo" class="h-10 mb-4">
             <h2 class="text-2xl font-semibold">Sign in</h2>
             <p class="text-gray-600 text-sm mb-6">to access CRM</p>
 
             <form method="POST" action="{{ route('auth.sendOtp') }}" class="space-y-4">
                 @csrf
-                <input type="email" name="email" value="{{ old('email') }}" placeholder="Email address or mobile number"
+                <input type="email" name="email" value="{{ old('email') }}" placeholder="Email address "
                     class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400" required>
                 @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 

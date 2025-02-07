@@ -17,11 +17,11 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-
-
 Route::middleware('auth')->get('/support', function () {
     return view('support.manage_tickets');
 })->name('support.generate.ticket');
+
+
 Route::get("/services", function () {
     return view('services');
 })->name("services");
