@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-</head>
-
-<body>
+@extends('layout')
+@section('content')
 
 <div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
     <div class="bg-white shadow-sm rounded-lg flex w-full max-w-4xl">
@@ -37,7 +28,7 @@
                 </div>
             </div>
 
-            <p class="text-sm text-gray-600 mt-6">Don't have a Comestro account? 
+            <p class="text-sm text-gray-600 mt-6">Don't have a Comestro account?
                 <a href="{{ route('auth.register') }}" class="text-blue-500 font-semibold">Sign up now</a>
             </p>
         </div>
@@ -61,11 +52,11 @@
         <img src="/comestro.png" alt="Logo" class="mx-auto mb-4 w-20">
         <h3 class="text-xl font-semibold text-gray-800">Enter OTP</h3>
         <p class="text-sm text-gray-600 mb-4">An OTP has been sent to your email. Please enter it below:</p>
-        
+
         <form action="{{ route('auth.verify-otp') }}" method="POST" class="space-y-4">
             @csrf
             <input type="hidden" name="email" id="otp_email_hidden" value="{{ session('email') }}">
-            
+
             <div class="relative">
                 <input type="text" name="otp" id="otp" required
                     class="bg-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-300 rounded py-2 px-4 w-full text-center tracking-widest text-lg"
@@ -74,13 +65,13 @@
                 <span class="text-red-500 text-xs">{{ $message }}</span>
                 @enderror
             </div>
-            
+
             <!-- <p class="text-xs text-gray-500">Resend in <span id="resend-timer">53s</span></p> -->
-            
+
             <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 rounded hover:bg-blue-600">
                 Verify
             </button>
-            
+
             <p class="text-xs text-gray-500">You have not set a password for this account <a href="#" class="text-blue-500">Set password now.</a></p>
         </form>
     </div>
@@ -106,6 +97,4 @@
     });
 </script>
 
-</body>
-
-</html>
+@endsection
