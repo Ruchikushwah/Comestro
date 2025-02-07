@@ -46,16 +46,17 @@
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="hidden bg-white md:hidden">
-        <nav class="space-y-2 px-6 py-4 text-center">
+    <div id="mobile-menu" class="hidden bg-white">
+        <nav class="space-y-2 px-6 py-4 text-right">
             <a href="#portfolio" class="block hover:text-blue-500">Services</a>
-            <a href="{{ route('support.tickets.manage') }}" class="block hover:text-blue-500">support</a>
-            <a href="{{ route('crm.lead') }}" class="block hover:text-blue-500">crm</a>
-            <a href="{{ route('auth.register')}}" class="block bg-[#0071bc] text-center text-white px-4 py-2 rounded hover:bg-[#0071bc]">
+            <a href="{{ route('support.tickets.manage') }}" class="block hover:text-blue-500">Support</a>
+            <a href="{{ route('crm.lead') }}" class="block hover:text-blue-500">CRM</a>
+            <a href="{{ route('auth.register') }}" class="block bg-[#0071bc] text-white px-4 py-2 rounded hover:bg-[#005fa3]">
                 Get Started
             </a>
-
+        </nav>
     </div>
+
 
     </div>
     <script>
