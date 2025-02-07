@@ -27,7 +27,7 @@
             <p class="text-lg text-gray-700 leading-relaxed font-light">
                 As a co-founder of <span class="font-semibold text-blue-600">Comestro Techlabs Pvt. Ltd.</span>, I bring over 10 years of expertise in IT services and training. Comestro was founded with a vision to bridge the gap between education and industry by providing high-quality IT solutions alongside professional training. Over the years, we have expanded our expertise in software development, backend solutions, and API integration, ensuring businesses and aspiring developers receive cutting-edge technology and guidance.
             </p>
-            
+
             <!-- Signature Section -->
             <div class="mt-6 flex justify-between">
                 <p class="text-xl text-gray-600 font-mono">Syed Sadique Hussain</p>
@@ -53,7 +53,7 @@
         <div class="relative bg-white  rounded-lg overflow-hidden w-80 transition transform hover:scale-105 group">
             <!-- Image -->
             <img src="{{ $member['image'] }}" alt="{{ $member['name'] }}" class="w-full h-64 object-cover object-center">
-            
+
             <!-- Overlay Effect on Hover -->
             <div class="absolute inset-0 bg-gradient-to-t from-[#0071bcb5] via-gray-400 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"></div>
 
@@ -102,12 +102,12 @@
 
 <div class="flex w-full items-center justify-between bg-[#2a5a7a] py-12 px-16 rounded-lg  mx-auto">
     <div class="flex flex-col">
-    <h2 class="text-3xl font-bold text-white ">Get New Insights Weekly</h2>
-    <p class="text-lg text-gray-200 mt-2 max-w-xl">
-        Stay informed with fresh insights and trends delivered to your inbox. Subscribe now!
-    </p>
+        <h2 class="text-3xl font-bold text-white ">Get New Insights Weekly</h2>
+        <p class="text-lg text-gray-200 mt-2 max-w-xl">
+            Stay informed with fresh insights and trends delivered to your inbox. Subscribe now!
+        </p>
     </div>
-    
+
 
     <!-- Subscription Form -->
     <form class="flex flex-col sm:flex-row items-center w-full max-w-md mt-6 space-y-4 sm:space-y-0 sm:space-x-4">
@@ -117,43 +117,4 @@
         </button>
     </form>
 </div>
-
-<!-- <div class="flex flex-col items-center px-4 mt-20 py-8 bg-gray-100">
-    <h2 class="text-3xl font-bold mb-6 text-center text-[#2a5a7a]">Client Testimonials</h2>
-    <p class="text-lg text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
-        See what our clients say about working with us. Their success stories drive our passion for innovation and excellence.
-    </p>
-    <div class="relative w-full max-w-5xl overflow-hidden mt-10">
-        <div class="flex space-x-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory p-4">
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
-                <p class="text-gray-700 italic">"Comestro delivered beyond our expectations. Their team’s dedication and expertise helped us scale our business seamlessly!"</p>
-                <span class="block font-medium text-indigo-800 mt-4">-, CEO of TechCorp</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
-                <p class="text-gray-700 italic">"Their innovative solutions transformed our operations. A game changer for our company!"</p>
-                <span class="block font-medium text-indigo-800 mt-4">- Jane Smith, CTO of InnovateX</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
-                <p class="text-gray-700 italic">"Excellent support and seamless integration. Highly recommended!"</p>
-                <span class="block font-medium text-indigo-800 mt-4">- , Manager at SoftWave</span>
-            </div>
-            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
-                <p class="text-gray-700 italic">"Their attention to detail and commitment to success is unmatched!"</p>
-                <span class="block font-medium text-indigo-800 mt-4">- Sarah Lee, Founder of NextGen</span>
-            </div>
-        </div>
-    </div>
-
-</div>   -->
-
-<!-- <style>
-    .scrollbar-hide::-webkit-scrollbar {
-        display: none;
-    }
-    .scrollbar-hide {
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-</style> -->
-
 @endsection
