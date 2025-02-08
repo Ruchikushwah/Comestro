@@ -60,6 +60,71 @@
              </div>
          </div>
      </div>
+     <div class="flex flex-col items-center px-4 mt-20">
+    <h2 class="text-3xl font-bold mb-6 text-center text-indigo-800">Client Testimonials</h2>
+    <p class="text-lg text-gray-700 text-center leading-relaxed max-w-2xl mx-auto">
+        See what our clients say about working with us. Their success stories drive our passion for innovation and excellence.
+    </p>
+
+    <!-- Scrolling Testimonials -->
+    <div class="relative w-full max-w-5xl overflow-hidden mt-10">
+        <div id="testimonial-slider" class="flex space-x-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory p-4 transition-transform duration-500 ease-in-out">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Comestro delivered beyond our expectations. Their team’s dedication and expertise helped us scale our business seamlessly!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">- John Doe, CEO of TechCorp</span>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Their innovative solutions transformed our operations. A game changer for our company!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">- Jane Smith, CTO of InnovateX</span>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Excellent support and seamless integration. Highly recommended!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">- Alex Brown, Manager at SoftWave</span>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center min-w-[300px] snap-center">
+                <p class="text-gray-700 italic">"Their attention to detail and commitment to success is unmatched!"</p>
+                <span class="block font-medium text-indigo-800 mt-4">- Sarah Lee, Founder of NextGen</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<!-- Hide Scrollbar -->
+<style>
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+
+<!-- Auto Scroll JavaScript -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById("testimonial-slider");
+        let scrollAmount = 0;
+        const slideWidth = 320; // Width of each testimonial card
+        const scrollSpeed = 3000; // Time before scrolling (in ms)
+
+        function autoScroll() {
+            if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+                scrollAmount = 0;
+            } else {
+                scrollAmount += slideWidth;
+            }
+            slider.scrollTo({
+                left: scrollAmount,
+                behavior: "smooth"
+            });
+        }
+
+        setInterval(autoScroll, scrollSpeed);
+    });
+</script>
 
      <script src="{{ mix('js/app.js') }}"></script>
  </body>
