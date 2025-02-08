@@ -4,8 +4,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 text-center md:text-left">
             <!-- Logo -->
             <div class="flex justify-center md:justify-start flex-col text-center">
-               <a href="" class="text-3xl font-semibold text-orange-400 ">com<span class="text-blue-600">estro</span></a>
-               <span class="text-sm  ">Techlabs .Pvt .Ltd</span>
+                <a href="" class="text-3xl font-semibold text-orange-500 ">com<span class="text-blue-600">estro</span></a>
+                <span class="text-sm  ">Techlabs .Pvt .Ltd</span>
             </div>
 
             <!-- Company Links -->
@@ -21,13 +21,13 @@
             <div class="text-sm text-gray-900">
                 <h3 class="font-semibold text-lg">Contact</h3>
                 <ul class="mt-4 space-y-2">
-                    <li><span class="font-semibold">Phone:</span> <a href="#" class="hover:text-gray-500">(+91) 9546-80-5580</a></li>
+                    <li><span class="font-semibold">Phone:</span> <a href="#" class="hover:text-gray-500">(+91) 95-46-80-55-80</a></li>
                     <li><span class="font-semibold">Email:</span> <a href="#" class="hover:text-gray-500">info@comestro.com</a></li>
                 </ul>
             </div>
 
             <!-- Social Links -->
-            <div class="flex justify-center md:justify-start">
+            <div class="flex justify-center md:justify-start mt-5">
                 <div class="flex space-x-4">
                     <a href="acebook.com/cwspurnea/" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-facebook"></i></a>
                     <a href="https://github.com/Comestro" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-github"></i></a>
@@ -36,11 +36,12 @@
                     <a href="https://www.youtube.com/@CodewithsadiQ" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
+            
         </div>
-
-        <!-- Copyright -->
-        <div class="mt-8 text-center text-sm bg-gray-800 py-5 text-white">
+        
+    </div>
+    <div class="text-center text-sm mt-5 bg-gray-700  text-white py-5">
             © 2025, <strong>{{ env('APP_NAME') }} Techlabs Pvt. Ltd.</strong> All Rights Reserved.
         </div>
-    </div>
+
 </footer>

@@ -1,23 +1,17 @@
  @extends('layout')
  @section('content')
 
- <div class="w-full h-[400px] mt-10 relative overflow-hidden bg-gradient-to-r from-blue-900  to-purple-600">
-
-     <div class="absolute top-[-130px] left-[-130px] rounded-full bg-blue-600 w-[300px] h-[300px] flex items-center justify-center text-white">
-
-     </div>
-     <div class="flex items-center justify-center py-20 ">
-         <h2 class="text-3xl font-semibold text-white text-center">app development refers to <br> the process of creating,</h2>
+ <div class="w-full h-[320px] mt-16 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center">
+     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
+     <div class="relative flex flex-col gap-6 max-w-2xl z-10">
+         <h2 class="text-4xl font-bold text-white drop-shadow-lg tracking-wider">Services</h2>
+         <p class="text-lg text-white leading-relaxed drop-shadow-md tracking-widest">
+             Web development refers to the process of creating, building, and maintaining websites and web applications that are accessible via the internet or an intranet.
+         </p>
      </div>
  </div>
-
- <div class="flex justify-center items-center  bg-gray-50 font-inter ">
-     <div class="max-w-xl text-left">
-
-         <p class="text-lg text-gray-900 mb-4  ">
-             Web development refers to the process of creating, building, and maintaining websites and web applications that are accessible via the internet or an intranet. It involves a combination of technical, creative, and problem-solving skills to create functional, interactive, and user-friendly websites.
-         </p>
-
+ <!-- <div class="flex justify-center items-center  bg-gray-50 font-inter ">
+     <div class="max-w-xl text-left py-10">
          <p class="text-lg font-medium text-gray-900 mb-2">Types of Web Development</p>
          <ul class="list-disc list-inside text-purple-500 space-y-1">
              <li class="hover:underline">Frontend Development (Client-Side)</li>
@@ -25,7 +19,7 @@
              <li class="hover:underline">Full-Stack Development</li>
          </ul>
      </div>
- </div>
+ </div> -->
  <div class="flex flex-col md:flex-row items-center md:items-start gap-8 py-10 px-20 bg-gray-100">
      <!-- Left Side Image -->
      <div class="md:w-1/2">
@@ -46,8 +40,5 @@
          </p>
      </div>
  </div>
-
-
-
 
  @endsection
