@@ -1,7 +1,9 @@
 @extends('layout')
-
 @section('title')
-About us
+About Us
+@endsection
+@section('meta')
+<meta name="description" content="Learn more about Comestro Techlab Private Limited, a leading software development company specializing in innovative solutions and digital transformation.">
 @endsection
 
 @section('content')

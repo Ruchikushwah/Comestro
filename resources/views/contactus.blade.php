@@ -1,7 +1,14 @@
 @extends('layout')
+@section('title', 'Contact Us')
+
+@section( 'meta')
+<meta name="description" content="Contact Comestro Techlab Private Limited for expert software solutions, project ideas, and digital transformation support. Our team is ready to assist you!">
+@endsection
 @section('content')
 
+
 <div class="w-full h-[350px] mt-16 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-6 md:px-[8%] flex items-center">
+
     <!-- Blur Overlay -->
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
