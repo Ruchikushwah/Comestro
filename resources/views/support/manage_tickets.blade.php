@@ -1,10 +1,9 @@
 @extends('layout')
 @section('content')
-    <div class="w-full px-10 mx-auto bg-white p-6 rounded-lg shadow-lg">
+    <div class="w-full px-10 mx-auto bg-white p-6 rounded-lg shadow-lg mt-16">
         <div class="flex justify-between">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">My Tickets</h2>
             <button id="create-ticket-btn" class="text-2xl font-semibold text-blue-500 mb-4">Create new ticket</button>
-            <a href="{{ route('auth.logout') }}" class='text-red-500'>logout</a>
         </div>
         <table class="w-full table-auto border-collapse">
             <thead>
@@ -64,18 +63,18 @@
                         class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue"></textarea>
                 </div>
                 <div class="flex-space-x-4">
-                    <w class="2/3">
+                    <div class="2/3">
                         <div class='mb-3'>
                             <label for="attachment" class="block text-sm font-medium text-gray-700">Attachment
                                 (optional)</label>
                             <input type="file" id="attachment_upload" name="attachment"
                                 class="block w-full border border-gray-300 p-2 rounded focus:ring-customBlue focus:border-customBlue">
                         </div>
-                    </w>
-                    <w class="1/3">
+                    </div>
+                    <div class="1/3">
                         <img src="" id="attachment_preview" alt=""
                             class="w-full h-auto object-cover rounded">
-                    </w>
+                    </div>
                 </div>
 
                 <div class='mb-3'>
@@ -110,12 +109,14 @@
             // ajax for calling problems:
             $.ajax({
                 type: "get",
-                url: "/api/support",
+                url: "/support-api",
                 success: function(response) {
+                    console.log(response);
                     let select = $('#callingProblemCategory');
                     select.empty();
                     let problems = response.data;
 
+                    console.log(problems);
                     problems.forEach((probs) => {
                         select.append(`<option value=${probs.id}>${probs.name}</option>`);
                     });
@@ -149,7 +150,7 @@
 
                 $.ajax({
                     type: 'post',
-                    url: '/api/support/generate_tickets',
+                    url: '/support/generate_tickets',
                     data: new FormData(this),
                     dataType: "JSON",
                     contentType: false,
@@ -166,11 +167,12 @@
             //ajax for calling tickets for the specified users:
             $.ajax({
                 type: "get",
-                url: "api/support/call_tickets",
+                url: "/support/call_tickets",
                 data: {
                     user_id: {{ session('user_id') }}
                 },
                 success: function(response) {
+
                     let TicketTable = $('#CallingTickets');
                     TicketTable.empty();
                     let tickets = response.data;
@@ -207,7 +209,7 @@
                 // console.log("ticket ID: ", ticketId);
 
                 $.ajax({
-                    url:`/api/support/close/${ticketId}`,
+                    url:`/support/close/${ticketId}`,
                     type:"POST",
                     data:{_token: "{{ csrf_token() }}"},
                     success:function(response){
