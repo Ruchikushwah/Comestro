@@ -5,7 +5,6 @@
                 <img src="/comestro.png" class="md:h-10 h-10" alt="">
             </span>
         </a>
-
         <!-- Navigation Links -->
         <nav class="hidden md:flex space-x-8 font-semibold">
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
