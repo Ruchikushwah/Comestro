@@ -1,12 +1,12 @@
-
+<!--  
     <div class="w-full mx-auto p-6 bg-gray-200 shadow-md rounded-md">
         @if (session()->has('message'))
-            <div class="mb-2 text-green-600 font-semibold">
+            <div class="mb-2 text-slate-600 font-semibold">
                 {{ session('message') }}
             </div>
         @endif
 
-        <form wire:submit.prevent="submit" class=" w-full  p-4 bg-white shadow-md rounded-lg grid grid-cols-2 gap-5">
+        <form wire:submit.prevent="submit" class=" w-full  p-4 bg-white shadow-md rounded-lg grid grid-cols-3 gap-5">
             <div class="mb-2">
                 <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
                 <input type="text" id="subject" wire:model="subject"
@@ -175,9 +175,9 @@
             </div>
             <div>
                 <button type="submit"
-                    class="bg-teal-500 hover:bg-teal-800 text-white px-4 py-2 rounded-lg ">{{ $quote_id ? 'Update' : 'Create' }}</button>
+                    class="bg-slate-500  text-white px-4 py-2 rounded-lg ">{{ $quote_id ? 'Update Quote' : 'Create Quote' }}</button>
             </div>
         </form>
     </div>
 
-
+  -->

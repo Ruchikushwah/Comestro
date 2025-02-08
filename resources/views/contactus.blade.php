@@ -1,68 +1,63 @@
 @extends('layout')
 @section('content')
-<div class=" bg-gray-300 ">
-    <div class="min-h-screen flex items-center justify-center m-4">
-        <div class="w-full max-w-4xl bg-white shadow-lg rounded-lg flex overflow-hidden">
 
-            <div class="w-1/2 bg-gray-100 p-8">
-                <h2 class="text-2xl font-bold text-gray-800">Finding your way around Comestro?</h2>
-                <p class="text-gray-600 mt-4 font-inter">
-                    At Comestro, we take pride in being more than a vendor. We are your trusted advisors, committed to delivering value and helping you thrive in a competitive landscape. Let us be your guide to innovation, efficiency, and growth. Together, we can achieve extraordinary results, transforming your business with solutions tailored just for you.
-                </p>
-                <div class="mt-8">
-                    <img src="/teams.png" alt="">
-                </div>
-            </div>
+<div class="w-full h-[510px] mt-10 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-6 md:px-[8%] flex items-center">
+    <!-- Blur Overlay -->
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
-
-            <div class="w-1/2 p-8">
-                <h3 class="text-xl font-semibold text-gray-800 mb-4">Connect with us to start building your future.</h3>
-                <form action="/submit" method="POST" class="space-y-4">
-                    @csrf
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Name*</label>
-                        <input type="text" name="name" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Company Name*</label>
-                        <input type="text" name="company_name" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Email*</label>
-                        <input type="email" name="email" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Phone Number*</label>
-                        <input type="tel" name="phone" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">What software are you currently using?*</label>
-                        <textarea name="software" rows="4" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Tell us about your business*</label>
-                        <textarea name="business" rows="2" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">What are you looking to achieve?*</label>
-                        <textarea name="achieve" rows="2" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">
-                            Are you currently transitioning from another provider, or is this your first time exploring a solution?*
-                        </label>
-                        <textarea name="transitioning" rows="2" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500"></textarea>
-                    </div>
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700">Enter the verification code*</label>
-                        <input type="text" name="verification_code" required class="w-full border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
-                    </div>
-                    <div>
-                        <button type="submit" class="w-full bg-purple-500 text-white py-2 rounded-lg ">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+    <!-- Content Section -->
+    <div class="relative flex flex-col gap-4 md:gap-6 max-w-2xl z-10 text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">Contact Us</h2>
+        <p class="text-base md:text-lg text-white leading-relaxed drop-shadow-md">
+            At <span class="font-semibold">Comestro Techlab Private Limited</span>, we’re here to assist you with all your technology needs. Whether you have a project idea, need expert consultation, or have any queries, our team is ready to help!<br>
+            If you are looking for cutting-edge software solutions or need support with your digital transformation journey, don’t hesitate to reach out to us. Our dedicated team ensures that every inquiry is addressed promptly and professionally.
+        </p>
     </div>
 </div>
+
+
+<div class="flex flex-col items-center px-4 mt-5 py-5">
+    <h2 class="text-3xl font-bold text-[#0071bc] text-center">Let's Work Together</h2>
+    <p class="text-lg text-gray-700 text-center mt-2 max-w-2xl">
+        Need expert software solutions or have a project idea? Let's collaborate!
+    </p>
+
+    <!-- Display Success Message -->
+    @if(session('success'))
+    <div class="bg-green-100 text-green-800 p-3 rounded mt-4">
+        {{ session('success') }}
+    </div>
+    @endif
+
+    <!-- Contact Form -->
+    <div class="rounded-lg p-6  w-full max-w-2xl">
+        <form action="{{ route('send.message') }}" method="POST" class="space-y-4">
+            @csrf
+            <div>
+                <label class="block text-gray-700 font-medium">Your Name</label>
+                <input type="text" name="name" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" placeholder="Hello" required>
+            </div>
+            <div>
+                <label class="block text-gray-700 font-medium">Your Email</label>
+                <input type="email" name="email" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" placeholder="abc@example.com" required>
+            </div>
+            <div>
+                <label class="block text-gray-700 font-medium">Message</label>
+                <textarea name="message" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" rows="4" placeholder="How can we help you?" required></textarea>
+            </div>
+            <button type="submit" class="w-full bg-[#0071bc] text-white py-3 rounded-lg shadow-md hover:bg-[#005fa3] transition">
+                Send Message
+            </button>
+        </form>
+    </div>
+
+    <!-- Social Media Links -->
+    <!-- <div class="flex space-x-6 mt-6">
+        <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-instagram"></i></a>
+    </div> -->
+</div>
+
 @endsection

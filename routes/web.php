@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TicketController;
 use App\Livewire\Contact\CreateContact;
 use App\Livewire\Contact\ManageContact;
@@ -16,44 +17,40 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Route::middleware('auth')->get('/support',function(){
-//     return view('support.manage_tickets');
-// })->name('support.generate.ticket');
+Route::middleware('auth')->get('/support', function () {
+    return view('support.manage_tickets');
+})->name('support.generate.ticket');
+
+
+Route::get("/services", function () {
+    return view('services');
+})->name("services");
+
 
 Route::get('/footer', function () {
     return view('footer');
 });
-
-Route::get('/portfolio/create', function () {
-    return view('portfolio/create');
-});
-Route::get('/portfolio/edit', function () {
-    return view('portfolio/edit');
-});
-Route::get('/portfolio/index', function () {
-    return view('portfolio/index');
-});
-
 Route::get('/about', function () {
     return view('about/about');
-});
-
-Route::get('services', function () {
-    return view('services');
-});
+})->name('about');
 
 Route::get('contactus', function () {
     return view('contactus');
-});
-Route::get('contact-us', function () {
-    return view('contact-us');
+})->name('contactus');
+
+Route::get('code', function () {
+    return view('component.code');
 });
 
+// Route::get('contact-us', function () {
+//     return view('contact-us');
+// });
+
 Route::get('/get-touch', function () {
-    return view('get-touch');
+    return view('component.get-touch');
 });
-Route::get('/code', function () {
-    return view('code');
+Route::get('/brands', function () {
+    return view('brands');
 });
 
 Route::prefix("crm")->group(function () {
@@ -73,12 +70,21 @@ Route::prefix("crm")->group(function () {
     })->name("crm.quote")->middleware('auth');
 });
 
+Route::get('/send-message', function () {
+    return view('send-message');
+})->name('send-message');
+
+Route::post('/send-message', [ContactController::class, 'sendMessage'])->name('send.message');
+
+
 Route::get('/create-lead', CreateLead::class)->name('create-lead');
 Route::get('/create-lead/edit/{id}', CreateLead::class)->name('create-lead.edit');
+//Route::get('/create-lead/delete/{id}', CreateLead::class)->name('create-lead.delete');
 Route::get('/manage-leads', ManageLead::class)->name('lead.manage-leads');
 
 Route::get('/create-contact', CreateContact::class)->name('create-contact');
 Route::get('/create-contact/edit/{id}', CreateContact::class)->name('create-contact.edit');
+//Route::get('/create-contact/delete/{id}', CreateContact::class)->name('create-contact.delete');
 Route::get('/manage-contact', ManageContact::class)->name('contact.manage-contact');
 
 Route::get('/create-quote', CreateQuote::class)->name('create-quote');
@@ -103,7 +109,8 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
 
 
 
-Route::middleware('auth')->get('/support',[TicketController::class, 'manageTickets'])->name('support.tickets.manage');
-Route::get('/support/view/{id}',[TicketController::class, 'viewTicket'])->name('support.tickets.view');
 
 
+
+Route::middleware('auth')->get('/support', [TicketController::class, 'manageTickets'])->name('support.tickets.manage');
+Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');

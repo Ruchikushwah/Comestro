@@ -6,8 +6,8 @@
             class="border px-4 py-2 rounded" />
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
-        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-            <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <table class="w-full text-sm text-left text-gray-500">
+            <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-3">
                         Contact Owner
@@ -31,12 +31,11 @@
             </thead>
             <tbody>
                 @forelse ($contacts as $contact)
-                <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                        {{ $contact->{auth()->user()->name} }}
-
+                <tr class="odd:bg-white even:bg-gray-50 border-b border-gray-200">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
+                        {{ auth()->user()->name }}
                     </th>
-                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                         {{ $contact->first_name }}
                     </th>
                     <td class="px-6 py-4">
@@ -49,7 +48,7 @@
                         {{ $contact->mobile }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="{{route('create-contact.edit', $contact->id)}}" wire:navigate class="font-medium text-teal-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="{{route('create-contact.edit', $contact->id)}}" wire:navigate class="font-medium text-slate-600">Edit</a>
                     </td>
                 </tr>
                 @empty
