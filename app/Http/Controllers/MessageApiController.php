@@ -6,12 +6,16 @@ use App\Models\Messages;
 use App\Models\Tickets;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PHPUnit\Framework\Attributes\Ticket;
 
 class MessageApiController extends Controller
 {
     public function storeMessage(Request $request)
     {
+        if(!Auth::check()){
+            return response()->json(['message' => 'not authorized']);
+        }
 
         $validated = $request->validate([
             'ticketId' => 'required|integer',
@@ -43,6 +47,9 @@ class MessageApiController extends Controller
 
     public function getMessage($ticketId)
     {
+        if(!Auth::check()){
+            return response()->json(['message' => 'not authorized']);
+        }
         $messages = Messages::where('ticket_id', $ticketId)
             ->orderBy('created_at', 'asc')
             ->get();
