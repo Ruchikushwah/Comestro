@@ -4,19 +4,29 @@ namespace App\Http\Controllers;
 
 use App\Models\ProblemCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProblemCateogryApiController extends Controller
 {
     public function store(Request $request){
-        $problem = new ProblemCategory();
-        $problem->name = $request->name;
-        $problem->description = $request->description;
-        $problem->save();
+        if (!Auth::check()){
+        return response()->json(['msg' => 'not authorized ']);
+        }
+            $problem = new ProblemCategory();
+            $problem->name = $request->name;
+            $problem->description = $request->description;
+            $problem->save();
 
-        return response()->json(['data' => $problem, 'success' => true, 'msg' => 'Problem Category added successfully']);
+            return response()->json(['data' => $problem, 'success' => true, 'msg' => 'Problem Category added successfully']);
+
+        
     }
 
     public function index(){
+        if (!Auth::check()){
+            return response()->json(['msg' => 'not authorized ']);
+            }
+            
         return response()->json(['data' => ProblemCategory::all()]);
     }
 
