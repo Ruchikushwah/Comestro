@@ -8,7 +8,7 @@ About Us
 @section('content')
 <div class="w-full h-[580px] mt-10 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center">
     <!-- Blur Overlay -->
-    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm"></div>
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
 
     <!-- Content Section -->
     <div class="relative flex flex-col gap-6 max-w-2xl z-10">

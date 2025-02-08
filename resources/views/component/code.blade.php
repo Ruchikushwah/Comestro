@@ -11,33 +11,43 @@
  <body class="">
      <div class=" w-full ">
          <div class="flex justify-between p-6 bg-[#f0f4ff] font-sans  w-full">
-             <div class="flex gap-4 bg-gray-200 p-4">
-
-                 <!-- Phone Mockup 1: Login/Sign Up with Image -->
-                 <div class="w-[160px] h-[300px] bg-white rounded-[20px] shadow-md overflow-hidden">
+             <div class="flex gap-4 bg-sky-200 p-4">
+                 <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[7px] rounded-[1.5rem] h-[300px] w-[160px]">
+                     <div class="h-[16px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[36px] rounded-s-lg"></div>
+                     <div class="h-[24px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[62px] rounded-s-lg"></div>
+                     <div class="h-[24px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[88px] rounded-s-lg"></div>
+                     <div class="h-[34px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -end-[9px] top-[72px] rounded-e-lg"></div>
+                     <div class="rounded-[1.4rem] overflow-hidden w-[146px] h-[286px] bg-white dark:bg-gray-800">
                      <div class="text-center bg-cover">
                          <!-- Image with responsive width and height -->
-                         <img src="\Screenshot 2025-02-04 214507.png" alt="Phone Mockup" class="w-[170px] h-[300px] object-cover ">
+                         <img src="bs2.png" alt="Phone Mockup" class="w-[170px] h-[300px] object-cover ">
+                     </div>
+                     </div>
+                 </div>
+                 <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[7px] rounded-[1.5rem] h-[300px] w-[160px]">
+                     <div class="h-[16px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[36px] rounded-s-lg"></div>
+                     <div class="h-[24px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[62px] rounded-s-lg"></div>
+                     <div class="h-[24px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[88px] rounded-s-lg"></div>
+                     <div class="h-[34px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -end-[9px] top-[72px] rounded-e-lg"></div>
+                     <div class="rounded-[1.4rem] overflow-hidden w-[146px] h-[286px] bg-white dark:bg-gray-800">
+                     <div class="text-center bg-cover">
+                         <!-- Image with responsive width and height -->
+                         <img src="bs1.png" alt="Phone Mockup" class="w-[170px] h-[300px] object-cover ">
+                     </div>
                      </div>
                  </div>
 
 
-
-                 <!-- Phone Mockup 2: Stats -->
-                 <div class="w-[160px] h-[300px] bg-white rounded-[20px] shadow-md overflow-hidden">
-
+                 <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[7px] rounded-[1.5rem] h-[300px] w-[160px]">
+                     <div class="h-[16px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[36px] rounded-s-lg"></div>
+                     <div class="h-[24px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[62px] rounded-s-lg"></div>
+                     <div class="h-[24px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[88px] rounded-s-lg"></div>
+                     <div class="h-[34px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -end-[9px] top-[72px] rounded-e-lg"></div>
+                     <div class="rounded-[1.4rem] overflow-hidden w-[146px] h-[286px] bg-white dark:bg-gray-800">
                      <div class="text-center bg-cover">
                          <!-- Image with responsive width and height -->
-                         <img src="\Screenshot 2025-02-04 214409.png" alt="Phone Mockup" class="w-[170px] h-[300px] object-cover ">
+                         <img src="bs3.png" alt="Phone Mockup" class="w-[170px] h-[300px] object-cover ">
                      </div>
-                 </div>
-
-
-                 <!-- Phone Mockup 3: Progress -->
-                 <div class="w-[160px] h-[300px] bg-white rounded-[20px] shadow-md overflow-hidden">
-                     <div class="text-center bg-cover">
-                         <!-- Image with responsive width and height -->
-                         <img src="\Screenshot 2025-02-04 214535.png" alt="Phone Mockup" class="w-[170px] h-[300px] object-cover ">
                      </div>
                  </div>
              </div>

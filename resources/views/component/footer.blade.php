@@ -4,7 +4,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 text-center md:text-left">
             <!-- Logo -->
             <div class="flex justify-center md:justify-start flex-col text-center">
-               <a href="" class="text-3xl font-semibold text-gray-800 ">Comestro</a>
+               <a href="" class="text-3xl font-semibold text-orange-400 ">com<span class="text-blue-600">estro</span></a>
                <span class="text-sm  ">Techlabs .Pvt .Ltd</span>
             </div>
 
@@ -29,18 +29,18 @@
             <!-- Social Links -->
             <div class="flex justify-center md:justify-start">
                 <div class="flex space-x-4">
-                    <a href="#" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-youtube"></i></a>
+                    <a href="acebook.com/cwspurnea/" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://github.com/Comestro" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/syedsadiquehussain/" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/comestro_software_company" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@CodewithsadiQ" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
         </div>
 
         <!-- Copyright -->
         <div class="mt-8 text-center text-sm bg-gray-800 py-5 text-white">
-            © 2025, <strong>Comestro Techlabs Pvt. Ltd.</strong> All Rights Reserved.
+            © 2025, <strong>{{ env('APP_NAME') }} Techlabs Pvt. Ltd.</strong> All Rights Reserved.
         </div>
     </div>
 </footer>

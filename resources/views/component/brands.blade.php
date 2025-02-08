@@ -7,7 +7,7 @@
 
         <!-- Image Section -->
         <div class="flex justify-center items-center  md:w-1/2 p-4">
-            <img src="Screenshot 2025-02-02 100234.png" alt="Website Mockup" class="w-full h-auto rounded-lg shadow">
+            <img src="ptpif.png" alt="Website Mockup" class="w-full h-auto rounded-lg shadow">
         </div>
 
         <!-- Description Section -->
@@ -18,7 +18,7 @@
                 With a streamlined hiring process, intuitive design, and AI-powered matching, we ensure that the right educators find
                 the right opportunities efficiently and effectively.
             </p>
-            <a href="https://ptpi.com" target="_blank"  class="text-[#ff6b6b] font-semibold hover:underline">Visit</a>
+            <a href="https://ptpi.com" target="_blank" class="text-[#ff6b6b] font-semibold hover:underline">Visit Website</a>
         </div>
     </div>
 
@@ -26,7 +26,7 @@
 
         <!-- Image Section -->
         <div class="flex justify-center items-center  md:w-1/2 p-4">
-            <img src="\Screenshot 2025-02-04 235013.png" alt="Website Mockup" class="w-full h-auto rounded-lg shadow">
+            <img src="\ssf.png" alt="Website Mockup" class="w-full h-auto rounded-lg shadow">
         </div>
 
         <!-- Description Section -->
@@ -37,7 +37,7 @@
                 With a keen eye for detail, artistic vision, and top-tier equipment, we bring out the best in every shot.
                 Whether it's portraits, events, or commercial photography, our expertise ensures stunning, high-quality visuals.
             </p>
-            <a href="https://smartstudiocreation.com" target="_blank" class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
+            <a href="https://smartstudiocreation.com" target="_blank" class="text-[#ff6b6b] font-semibold hover:underline">Visit Website →</a>
         </div>
     </div>
 
@@ -45,7 +45,7 @@
 
         <!-- Image Section -->
         <div class="flex justify-center items-center  md:w-1/2 p-4">
-            <img src="\Screenshot 2025-02-05 000558.png" alt="Website Mockup" class="w-full h-auto rounded-lg shadow">
+            <img src="\bsf.png" alt="Website Mockup" class="w-full h-auto rounded-lg shadow">
         </div>
         <!-- Description Section -->
         <div class="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
@@ -54,7 +54,11 @@
                 BiharShop is an online shopping platform offering a wide range of products at unbeatable prices.
                 With a seamless shopping experience, secure payments, and fast delivery, we bring convenience and quality right to your doorstep.
             </p>
-            <a href="https://biharshop.com" class="text-[#ff6b6b] font-semibold hover:underline">Learn More</a>
+            <a href="https://biharshop.com" class="text-[#ff6b6b] font-semibold hover:underline">Visit Website →</a>
         </div>
-    </div>
+    </div><a href="#" 
+   class="text-blue-600 font-semibold hover:underline px-3 py-1 rounded-md transition duration-200 ease-in-out hover:bg-gray-200 hover:text-gray-700 focus:ring-2 focus:ring-blue-600 focus:outline-none">
+   See more →
+</a>
+
 </section>
