@@ -18,7 +18,7 @@
                 With a streamlined hiring process, intuitive design, and AI-powered matching, we ensure that the right educators find
                 the right opportunities efficiently and effectively.
             </p>
-            <a href="https://ptpi.com" target="_blank" class="text-[#ff6b6b] font-semibold hover:underline">Visit Website</a>
+            <a href="https://ptpiui-gbdvdbbpe0hwh7gv.centralindia-01.azurewebsites.net/" target="_blank" class="text-[#ff6b6b] font-semibold hover:underline">Visit Website</a>
         </div>
     </div>
 
