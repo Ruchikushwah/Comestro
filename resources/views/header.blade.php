@@ -39,11 +39,12 @@
 
                     <li>
                         <a href="{{ route('contactus')}}"
-                            class="block py-2 px-3 rounded-sm md:p-0 
-                                  {{ request()->is('contactus') ? ' text-blue-700 md:text-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
+                            class="block py-2 px-3 rounded-sm md:p-0  text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                             Contact
                         </a>
                     </li>
+                    `
+
                 </ul>
                 <div class="hidden md:block">
                     @auth

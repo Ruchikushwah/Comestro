@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\GenerateTicketApiController;
@@ -110,6 +111,8 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::get('/logout',  'logout')->name('auth.logout');
 });
 
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin.dashboard');// Ensure only logged-in users can access
 
 Route::middleware('auth')->group(function () {
     Route::post('/messages', [MessageApiController::class, 'storeMessage']);
