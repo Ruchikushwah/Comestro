@@ -38,11 +38,12 @@
 
                     <li>
                         <a href="{{ route('contactus')}}"
-                            class="block py-2 px-3 rounded-sm md:p-0 
-                                  {{ request()->is('contactus') ? ' text-blue-700 md:text-blue-700' : 'text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent' }}">
+                            class="block py-2 px-3 rounded-sm md:p-0  text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
                             Contact
                         </a>
                     </li>
+                    `
+
                 </ul>
             </div>
         </nav>
@@ -59,11 +60,11 @@
                 <div id="user-dropdown" class="hidden absolute right-0 mt-2 w-56 bg-white border rounded-md">
                     <span class="block px-4 py-2 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">{{ Auth::user()->name }}</span>
                     <span class="block text-sm px-4 py-2 text-gray-800 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700">{{ Auth::user()->email }}</span>
-                    <a href="{{ route('auth.logout') }}" class="block px-4 py-2 text-gray-800 hover:text-red-600">Logout</a>
+                    <a href="{{route('auth.logout')}}" class="block px-4 py-2 text-gray-800 hover:text-red-600">Logout</a>
                 </div>
             </div>
             @else
-            <a href="{{ route('auth.register')}}" class="bg-[#0071bc] text-white px-4 py-3 rounded hover:bg-[#005fa3] text-lg">
+            <a href="{{route('auth.register')}}" class="bg-[#0071bc] text-white px-4 py-3 rounded hover:bg-[#005fa3] text-lg">
                 Get Started
             </a>
             @endauth

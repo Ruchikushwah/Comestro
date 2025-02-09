@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\TicketController;
@@ -107,7 +108,8 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::get('/logout',  'logout')->name('auth.logout');
 });
 
-
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin.dashboard');// Ensure only logged-in users can access
 
 
 
