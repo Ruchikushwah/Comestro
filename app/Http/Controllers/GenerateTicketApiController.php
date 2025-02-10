@@ -13,6 +13,9 @@ class GenerateTicketApiController extends Controller
 
     public function index(Request $request)
     {
+        if (!Auth::check()) {
+            return response()->json(['message' => 'not authorized']);
+        }
         $userId = $request->user_id ?: Auth::id();
 
         $tickets = Tickets::with(['user', 'problemCategory'])->where('user_id', $userId)->get();
@@ -28,6 +31,9 @@ class GenerateTicketApiController extends Controller
 
     public function store(Request $request)
     {
+        if (!Auth::check()) {
+            return response()->json(['message' => 'not authorized']);
+        }
         $request->validate([
             'prob_cat_id' => 'required|exists:problem_categories,id',
             'description' => 'required|string|max:500',
@@ -66,6 +72,9 @@ class GenerateTicketApiController extends Controller
     // to view the specified tickets:
     public function show(int $id, Request $request)
     {
+        if (!Auth::check()) {
+            return response()->json(['message' => 'not authorized']);
+        }
         $userId = $request->query('user_id'); //getting user id from the ajax request
 
         $tickets = Tickets::where("id", $id)
@@ -82,9 +91,13 @@ class GenerateTicketApiController extends Controller
 
 
     // close a specific ticket:
-    public function closeTicket($id){
+    public function closeTicket($id)
+    {
+        if (!Auth::check()) {
+            return response()->json(['message' => 'not authorized']);
+        }
         $ticket = Tickets::findOrFail($id);
-        if($ticket->status === 'closed'){
+        if ($ticket->status === 'closed') {
             return response()->json(["error" => 'Ticket is already closed'], 400);
         }
 

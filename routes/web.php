@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\GenerateTicketApiController;
+use App\Http\Controllers\MessageApiController;
+use App\Http\Controllers\ProblemCateogryApiController;
 use App\Http\Controllers\TicketController;
 use App\Livewire\Contact\CreateContact;
 use App\Livewire\Contact\ManageContact;
@@ -103,5 +107,23 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::get('/logout',  'logout')->name('auth.logout');
 });
 
-Route::middleware('auth')->get('/support', [TicketController::class, 'manageTickets'])->name('support.tickets.manage');
-Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');
+Route::get('/admin', [AdminController::class, 'index'])
+    ->name('admin.dashboard');// Ensure only logged-in users can access
+
+Route::middleware('auth')->group(function () {
+    Route::post('/messages', [MessageApiController::class, 'storeMessage']);
+    Route::get('/messages/{ticketId}', [MessageApiController::class, 'getMessage']);
+
+    Route::get('/support/call_tickets', [GenerateTicketApiController::class, 'index']);
+    Route::post('/support/generate_tickets', [GenerateTicketApiController::class, 'store']);
+    Route::get('/support/view_tickets/{id}', [GenerateTicketApiController::class, 'show']);
+    Route::post('/support/close/{id}', [GenerateTicketApiController::class, 'closeTicket']);
+    Route::get('/support', [TicketController::class, 'manageTickets'])->name('support.tickets.manage');
+
+    Route::post('/support', [ProblemCateogryApiController::class, 'store'])->name('problem.store');
+    Route::get('/support-api', [ProblemCateogryApiController::class, 'index'])->name('support.index');
+    Route::get('/support/{id}', [ProblemCateogryApiController::class, 'show'])->name('support.show');
+    Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');
+});
+
+

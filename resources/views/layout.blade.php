@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title'){{ env('APP_NAME') }}</title>
+
+    <title>@yield('title') {{ env('APP_NAME') }} || Purnea's first IT software company, specializing in innovative web and software development solutions.</title>
+    @yield('meta')
+
 
     @if (file_exists(public_path('build/assets/app-CECBcA4t.css')))
     <link rel="stylesheet" href="{{ asset('build/assets/app-CECBcA4t.css') }}">
