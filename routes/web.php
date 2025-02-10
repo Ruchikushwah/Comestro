@@ -35,6 +35,7 @@ Route::get("/services", function () {
 //     return view('admin.dashboard');
 // })->name('admin.dashboard');
 
+
 Route::get('/footer', function () {
     return view('footer');
 });
@@ -75,6 +76,7 @@ Route::prefix("crm")->group(function () {
     Route::get("/quote", function () {
         return view("crm.quote", ['userName' => Auth::user()->name]);
     })->name("crm.quote")->middleware('auth');
+
 });
 
 Route::get('/send-message', function () {

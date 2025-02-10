@@ -110,12 +110,12 @@
                 type: "get",
                 url: "/support-api",
                 success: function(response) {
-                    console.log(response);
+                    // console.log(response);
                     let select = $('#callingProblemCategory');
                     select.empty();
                     let problems = response.data;
 
-                    console.log(problems);
+                    // console.log(problems);
                     problems.forEach((probs) => {
                         select.append(`<option value=${probs.id}>${probs.name}</option>`);
                     });
