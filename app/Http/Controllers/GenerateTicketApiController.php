@@ -75,11 +75,10 @@ class GenerateTicketApiController extends Controller
         if (!Auth::check()) {
             return response()->json(['message' => 'not authorized']);
         }
-        $userId = $request->query('user_id'); //getting user id from the ajax request
+        // $userId = $request->query('user_id'); //getting user id from the ajax request
 
         $tickets = Tickets::where("id", $id)
-            ->where("user_id", $userId)
-            ->with("problemCategory", "user")
+            ->with("problemCategory", "user","messages")
             ->first();
         if ($tickets) {
             $tickets->formatted_created_at = Carbon::parse($tickets->created_at)->format('l, d-m-Y g:i A');
@@ -105,5 +104,11 @@ class GenerateTicketApiController extends Controller
         $ticket->save();
 
         return response()->json(["success" => true, "msg" => 'Ticket closed successfully!', "new_status" => $ticket->status]);
+    }
+
+    // get all the tickets for the admin panel:
+    public function getTicketsAdmin(){
+        $tickets = Tickets::all();
+        return response()->json(["data" => $tickets, "success" => true]);
     }
 }
