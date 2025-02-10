@@ -10,4 +10,8 @@ class AdminController extends Controller
     {
         return view('admin.dashboard'); // Create this view
     }
+
+    public function manageTickets(){
+        return view('admin.manage-tickets');
+    }
 }

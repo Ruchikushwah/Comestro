@@ -32,13 +32,13 @@
                 {{-- tickets goes here --}}
                 <div class="flex flex-col flex-1 p-4">
                     <div id="ticketDetails" class="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                        
+
                     </div>
                 </div>
 
                 {{-- messages goes here --}}
                 <div id="callMessages" class="">
-                   
+
                 </div>
 
                 {{-- message sending input goes here --}}
@@ -69,9 +69,9 @@
                 $.ajax({
                     type: "GET",
                     url: `/support/view_tickets/${ticketId}`,
-                    data: {
-                        user_id: userId
-                    }, //sending user_id in the request
+                    // data: {
+                    //     user_id: userId
+                    // }, 
                     success: function(response) {
                         // console.log("user id in blade file :", userId);
                         // console.log(response);
@@ -108,9 +108,9 @@
                                 ${ticket.description}
                             </p>
                             ${ticket.status !== 'closed' ? `
-                                        <button id='close-ticket-btn' data-id='${ticket.id}' class='bg-red-500 text-white px-3 py-1 rounded'>
-                                            Close Ticket
-                                        </button>` : ''
+                                                <button id='close-ticket-btn' data-id='${ticket.id}' class='bg-red-500 text-white px-3 py-1 rounded'>
+                                                    Close Ticket
+                                                </button>` : ''
                             }
                         </div>
                         <div>
@@ -118,15 +118,42 @@
                             <img id='ticketImage' src="" alt=""  />
                             <p id='noAttachmentMessage'>No Attachment file is provided</p>
                         </div>
-                    `);
+                        `);
 
-                    // hide the message form if ticket is closed:
-                    if(isClosed){
-                        $('#sendMessage').remove();
-                        $('#close-ticket-btn').remove();
+                        // hide the message form if ticket is closed:
+                        if (isClosed) {
+                            $('#sendMessage').remove();
+                            $('#close-ticket-btn').remove();
+                        }
+
+                        let callMessages = $('#callMessages');
+                        callMessages.empty();
+                        let message = ticket.messages;
+                        let lastSender = null;
+
+                        message.forEach((msg) => {
+                            let messageTime = new Date(msg.created_at).toLocaleString();
+                            let sender = msg.sender_type;
+
+                            if (sender !== lastSender) {
+                                let headerColor = sender === "user" ? "bg-blue-500" :
+                                    "bg-red-500";
+                                let senderText = sender === "user" ? "Client" : "Admin";
+
+                                callMessages.append(
+                                    `<h2 class="${headerColor} text-white w-full px-3 py-2 text-lg">${messageTime} - ${senderText}</h2>`
+                                );
+                                lastSender = sender;
+                            }
+
+                            callMessages.append(`
+                                    <div class='px-10 py-5 bg-white'>
+                                        <p>${msg.message}</p>    
+                                    </div>`);
+                        });
+
                     }
 
-                    }
                 });
             }
             callingTickets();
@@ -148,46 +175,6 @@
                 });
             });
 
-            // calling messages:
-            function fetchMessages() {
-                $.ajax({
-                    url: `/messages/${ticketId}`,
-                    type: "GET",
-                    success: function(response) {
-                        let callMessages = $('#callMessages');
-                        callMessages.empty();
-
-                        let message = response.data;
-                        let lastSender = null;
-
-                        message.forEach((msg) => {
-                            let messageTime = new Date(msg.created_at).toLocaleString();
-                            let sender = msg.sender_type;
-
-                            if (sender !== lastSender) {
-                                let headerColor = sender === "user" ? "bg-blue-500" :
-                                    "bg-red-500";
-                                let senderText = sender === "user" ? "Client" : "Admin";
-
-                                callMessages.append(
-                                    `<h2 class="${headerColor} text-white w-full px-3 py-2 text-lg">${messageTime} - ${senderText}</h2>`
-                                );
-                                lastSender = sender;
-                            }
-
-                            callMessages.append(`
-                                <div class='px-10 py-5 bg-white'>
-                                    <p>${msg.message}</p>    
-                                </div>`);
-                        });
-                    },
-                    error: function(err) {
-                        console.log("Error fetching messages:", err);
-                    },
-                });
-            }
-            fetchMessages();
-
 
             // send message work goes here:
             $('#sendMessageButton').on("click", function(e) {
@@ -199,7 +186,8 @@
                 let data = {
                     ticketId: ticketId,
                     senderId: userId,
-                    message: message
+                    message: message,
+                    _token: "{{ csrf_token() }}",
                 };
                 console.log(data)
 
@@ -209,8 +197,6 @@
                     data: data,
                     success: function(response) {
                         alert(response.msg);
-
-                        fetchMessages();
                         $('#sendMessage').trigger('reset');
 
 
