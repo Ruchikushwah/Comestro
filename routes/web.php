@@ -12,7 +12,6 @@ use App\Livewire\Quote\ManageQuote;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -26,6 +25,9 @@ Route::get("/services", function () {
     return view('services');
 })->name("services");
 
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
 
 Route::get('/footer', function () {
     return view('footer');
@@ -55,9 +57,8 @@ Route::get('/brands', function () {
 
 Route::prefix("crm")->group(function () {
     Route::get("/", function () {
-        // Pass the authenticated user's name to the dashboard view
         return view("crm.dashboard", ['userName' => Auth::user()->name]);
-    })->middleware('auth'); // Ensure the user is authenticated
+    })->middleware('auth');
 
     Route::get("/lead", function () {
         return view("crm.lead", ['userName' => Auth::user()->name]);
@@ -75,8 +76,6 @@ Route::get('/send-message', function () {
 })->name('send-message');
 
 Route::post('/send-message', [ContactController::class, 'sendMessage'])->name('send.message');
-
-
 Route::get('/create-lead', CreateLead::class)->name('create-lead');
 Route::get('/create-lead/edit/{id}', CreateLead::class)->name('create-lead.edit');
 //Route::get('/create-lead/delete/{id}', CreateLead::class)->name('create-lead.delete');
@@ -91,8 +90,6 @@ Route::get('/create-quote', CreateQuote::class)->name('create-quote');
 Route::get('/create-quote/edit/{id}', CreateQuote::class)->name('create-quote.edit');
 Route::get('/manage-quote', ManageQuote::class)->name('contact.manage-quote');
 
-
-
 Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::get('/login', 'showLoginForm')->name('login');
     Route::get("/register", "showRegister")->name('auth.register');
@@ -100,17 +97,11 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::post('/register', 'register')->name('auth.register.post');
     Route::get('/verify-otp',  'showOtpForm')->name('show.otp.form');
 
-
     // OTP verification handling route (POST request to verify OTP)
     Route::post('verify-otp',  'verifyOtp')->name('auth.verify-otp');
     Route::post('send-otp', 'sendOtp')->name('auth.sendOtp');
     Route::get('/logout',  'logout')->name('auth.logout');
 });
-
-
-
-
-
 
 Route::middleware('auth')->get('/support', [TicketController::class, 'manageTickets'])->name('support.tickets.manage');
 Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');

@@ -45,6 +45,11 @@
                 <label class="block text-gray-700 font-medium">Message</label>
                 <textarea name="message" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" rows="4" placeholder="How can we help you?" required></textarea>
             </div>
+            <div> {!! htmlFormSnippet() !!}</div>
+            <!-- Google reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+            @error('captcha') <span class="text-red-500">{{ $message }}</span> @enderror
+
             <button type="submit" class="w-full bg-[#0071bc] text-white py-3 rounded-lg shadow-md hover:bg-[#005fa3] transition">
                 Send Message
             </button>
@@ -59,5 +64,8 @@
         <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-instagram"></i></a>
     </div> -->
 </div>
+<!-- Include Google reCAPTCHA Script -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
 @endsection

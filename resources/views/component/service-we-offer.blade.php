@@ -1,15 +1,13 @@
 <div class="bg-gray-50 font-sans py-16 px-4 sm:px-6 lg:px-8">
         <!-- Header Section -->
         <div class="max-w-6xl mx-auto text-center mb-12">
-            <h1
-                class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Our Technical Expertise
             </h1>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                 Delivering cutting-edge solutions using modern technologies
             </p>
         </div>
-
         <!-- Services Grid -->
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Service Card 1 - Mobile Development -->
@@ -133,7 +131,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- Service Card 6 - Branding -->
             <div
                 class="group relative bg-white rounded-2xl border hover:shadow-2xl transition-all duration-300 overflow-hidden">
@@ -160,5 +157,4 @@
                 </div>
             </div>
         </div>
-
     </div>

@@ -36,8 +36,6 @@
                      </div>
                      </div>
                  </div>
-
-
                  <div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[7px] rounded-[1.5rem] h-[300px] w-[160px]">
                      <div class="h-[16px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[36px] rounded-s-lg"></div>
                      <div class="h-[24px] w-[2px] bg-gray-800 dark:bg-gray-800 absolute -start-[9px] top-[62px] rounded-s-lg"></div>
@@ -51,7 +49,6 @@
                      </div>
                  </div>
              </div>
-
              <!-- Description Section -->
              <div class="w-[400px] p-6 bg-white rounded-lg shadow-md">
                  <h2 class="text-2xl mb-3">Website Design for SCFC Canada</h2>

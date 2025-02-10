@@ -192,9 +192,9 @@ About us
     <!-- Subscription Form -->
     <form class="flex flex-col sm:flex-row items-center w-full max-w-md gap-4">
         <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email">
-        <button type="submit" class="bg-white px-6 py-3 font-semibold rounded-lg hover:border-[#2a5a7a] transition w-full sm:w-auto">
-            Subscribe
-        </button>
+        <a href="{{ route('contactus')}}" type="submit" class="bg-white px-6 py-3 font-semibold rounded-lg hover:border-[#2a5a7a] transition w-full sm:w-auto">
+            Contact
+            </a>
     </form>
 </div>
 <!-- Styles -->

@@ -36,12 +36,9 @@
                     <a href="https://www.youtube.com/@CodewithsadiQ" class="text-gray-600 hover:text-gray-400 text-2xl"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            
         </div>
-        
     </div>
     <div class="text-center text-sm mt-5 bg-gray-700  text-white py-5">
-            © 2025, <strong>{{ env('APP_NAME') }} Techlabs Pvt. Ltd.</strong> All Rights Reserved.
-        </div>
-
+        © 2025, <strong>{{ env('APP_NAME') }} Techlabs Pvt. Ltd.</strong> All Rights Reserved.
+    </div>
 </footer>

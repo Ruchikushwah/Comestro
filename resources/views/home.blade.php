@@ -10,8 +10,5 @@
 
 @include('component.our-approach')
 
-
-
-
 @include('component.brands')
 @endsection

@@ -13,7 +13,6 @@
                 <div class="tech-card"><img src="Techstack 6.png" alt="Python"></div>
                 <div class="tech-card"><img src="Techstack 7.png" alt="Python"></div>
 
-
                 <!-- Duplicated for infinite scroll effect -->
                 <div class="tech-card"><img src="Techstack 1.png" alt="NodeJS"></div>
                 <div class="tech-card"><img src="Techstack 2.png" alt="PHP"></div>
@@ -26,7 +25,6 @@
         </div>
     </div>
 </section>
-
 <!-- Styles -->
 <style>
     .scrollbar-hide::-webkit-scrollbar {
@@ -50,7 +48,7 @@
     .tech-card img {
         max-width: 100%;
         max-height: 100%;
-        object-contain;
+        object-fit: contain;
     }
 
     /* Infinite Scroll Animation */
@@ -62,7 +60,6 @@
             transform: translateX(-50%);
         }
     }
-
     .animate-scroll {
         display: flex;
         animation: scroll 15s linear infinite;
