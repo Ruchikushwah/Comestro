@@ -1,8 +1,8 @@
 <?php
-
 namespace App\Livewire\Lead;
 
 use App\Models\Lead;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -15,8 +15,23 @@ class ManageLead extends Component
     public $sortField = 'created_at';
     public $sortDirection = 'desc';
     public $selectedLeads = [];
+    public $leadCountToday;
 
     protected $updatesQueryString = ['search'];
+    protected $listeners = ['leadCreated' => 'updateLeadCount'];
+
+    public function mount()
+    {
+        $this->updateLeadCount();
+    }
+
+    // Update lead count dynamically
+    public function updateLeadCount()
+    {
+        $this->leadCountToday = Lead::whereDate('created_at', Carbon::today())
+            ->where('lead_owner', Auth::user()->name)
+            ->count();
+    }
 
     public function updatingSearch()
     {
@@ -39,6 +54,7 @@ class ManageLead extends Component
             Lead::whereIn('id', $this->selectedLeads)->delete();
             session()->flash('message', 'Selected leads deleted successfully!');
             $this->selectedLeads = [];
+            $this->updateLeadCount(); // Update count after delete
         }
     }
 

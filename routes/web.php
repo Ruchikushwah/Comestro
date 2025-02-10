@@ -9,12 +9,14 @@ use App\Http\Controllers\ProblemCateogryApiController;
 use App\Http\Controllers\TicketController;
 use App\Livewire\Contact\CreateContact;
 use App\Livewire\Contact\ManageContact;
+use App\Livewire\CrmDashboard;
 use App\Livewire\Lead\CreateLead;
 use App\Livewire\Lead\ManageLead;
 use App\Livewire\Quote\CreateQuote;
 use App\Livewire\Quote\ManageQuote;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 Route::get('/', function () {
     return view('home');
@@ -29,9 +31,9 @@ Route::get("/services", function () {
     return view('services');
 })->name("services");
 
-Route::get('/admin', function () {
-    return view('admin.dashboard');
-})->name('admin.dashboard');
+// Route::get('/admin', function () {
+//     return view('admin.dashboard');
+// })->name('admin.dashboard');
 
 Route::get('/footer', function () {
     return view('footer');
@@ -107,8 +109,8 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::get('/logout',  'logout')->name('auth.logout');
 });
 
-Route::get('/admin', [AdminController::class, 'index'])
-    ->name('admin.dashboard');// Ensure only logged-in users can access
+
+
 
 Route::middleware('auth')->group(function () {
     Route::post('/messages', [MessageApiController::class, 'storeMessage']);
@@ -126,4 +128,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/support/view/{id}', [TicketController::class, 'viewTicket'])->name('support.tickets.view');
 });
 
-
+Route::get('/error-test', function () {
+    abort(500); // This will trigger the custom 500 error page
+});

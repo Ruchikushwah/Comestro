@@ -1,5 +1,46 @@
 <x-layouts.app title="Dashboard">
     <div class="container mx-auto m-2 p-4 ">
+
+
+        <div class="bg-white p-4 shadow rounded-lg">
+            <h3 class="text-lg font-semibold mb-2">Manage Users</h3>
+
+            @if (session()->has('message'))
+            <p class="text-green-500">{{ session('message') }}</p>
+            @endif
+
+            <table class="w-full border-collapse border border-gray-300 mt-4">
+                <thead>
+                    <tr class="bg-gray-100">
+                        <th class="border px-4 py-2">Name</th>
+                        <th class="border px-4 py-2">Email</th>
+                        <th class="border px-4 py-2">Role</th>
+                        <th class="border px-4 py-2">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($users as $user)
+                    <tr>
+                        <td class="border px-4 py-2">{{ $user->name }}</td>
+                        <td class="border px-4 py-2">{{ $user->email }}</td>
+                        <td class="border px-4 py-2">{{ $user->role }}</td>
+                        <td class="border px-4 py-2">
+                            @if($user->role !== 'crm')
+                            <form action="{{ route('assign.crm', $user->id) }}" method="POST">
+                                @csrf
+                                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Make CRM</button>
+                            </form>
+                            @else
+                            <span class="text-green-500">Already CRM</span>
+                            @endif
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+
+
         <!-- Welcome Section -->
         <div class="flex items-center mb-6">
             <div class="bg-gray-200 rounded-full w-12 h-12 flex items-center justify-center">
@@ -35,7 +76,19 @@
             <div class="bg-blue-100 shadow-md rounded-lg p-8 text-center">
                 <h2 class="text-gray-500 text-sm">My Leads</h2>
                 <p class="text-2xl font-bold text-gray-800"></p>
+
             </div>
         </div>
+        <div class="w-[300px] h-200px] gap-4 mt-10  border border-slate-200">
+            <div class="bg-white p-5 flex justify-between">
+                <h2 class="text-lg font-semibold">Today's Leads</h2>
+                <p class="text-2xl font-bold ">{{ $todayLeadsCount }}</p>
+            </div>
+
+        </div>
     </div>
+
+
+
+
 </x-layouts.app>
