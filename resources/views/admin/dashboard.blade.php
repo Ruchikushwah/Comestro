@@ -1,8 +1,6 @@
 <x-layouts.app title="Dashboard">
     <div class="container mx-auto m-2 p-4 ">
-
-
-        <div class="bg-white p-4 shadow rounded-lg">
+        <!-- <div class="bg-white p-4 shadow rounded-lg">
             <h3 class="text-lg font-semibold mb-2">Manage Users</h3>
 
             @if (session()->has('message'))
@@ -24,21 +22,14 @@
                         <td class="border px-4 py-2">{{ $user->name }}</td>
                         <td class="border px-4 py-2">{{ $user->email }}</td>
                         <td class="border px-4 py-2">{{ $user->role }}</td>
-                        <td class="border px-4 py-2">
-                            @if($user->role !== 'crm')
-                            <form action="{{ route('assign.crm', $user->id) }}" method="POST">
-                                @csrf
-                                <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md">Make CRM</button>
-                            </form>
-                            @else
-                            <span class="text-green-500">Already CRM</span>
-                            @endif
+                        
                         </td>
                     </tr>
                     @endforeach
+
                 </tbody>
             </table>
-        </div>
+        </div> -->
 
 
         <!-- Welcome Section -->
