@@ -7,14 +7,14 @@ About Us
 @endsection
 
 @section('content')
-<div class="w-full h-[350px] mt-16 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center">
+<div class="w-full h-[350px] md:h-[400px] lg:h-[450px] mt-16 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-6 md:px-[8%] flex items-center">
     <!-- Blur Overlay -->
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
     <!-- Content Section -->
-    <div class="relative flex flex-col gap-5 max-w-2xl z-10">
-        <h2 class="text-4xl font-bold text-white drop-shadow-lg tracking-wide">About Us</h2>
-        <p class="text-lg text-white leading-relaxed drop-shadow-md tracking-wider">
+    <div class="relative flex flex-col gap-4 md:gap-5 max-w-2xl z-10 text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg tracking-wide">About Us</h2>
+        <p class="text-base md:text-lg text-white leading-relaxed drop-shadow-md tracking-wide">
             At <span class="font-semibold">Comestro Techlab Private Limited</span>, we empower businesses with
             <span class="font-medium">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
             Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
@@ -22,6 +22,7 @@ About Us
         </p>
     </div>
 </div>
+
 
 <div class="container mx-auto max-w-6xl px-6 py-12 font-sans">
     <div class="flex flex-col md:flex-row items-center gap-16">
