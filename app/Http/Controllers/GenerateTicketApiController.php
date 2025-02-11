@@ -107,7 +107,7 @@ class GenerateTicketApiController extends Controller
     }
 
     // get all the tickets for the admin panel:
-    public function getTicketsAdmin(){
+    public function getAllTicketsAdminPanel(){
         $tickets = Tickets::all();
         return response()->json(["data" => $tickets, "success" => true]);
     }

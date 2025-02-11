@@ -31,7 +31,21 @@ Route::get("/services", function () {
     return view('services');
 })->name("services");
 
+
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
+
+Route::prefix("admin")->group(function(){
+    Route::get("/support/tickets", function () {
+        return view("support.admin.ticketList", ['userName' => Auth::user()->name]);
+    })->middleware('auth');
+
+});
+
+
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+
 Route::get('/footer', function () {
     return view('footer');
 });
