@@ -11,4 +11,4 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/admin/support/messages',[MessageApiController::class, 'getMessageAdmin']);
-Route::get('/admin/support/tickets',[GenerateTicketApiController::class, 'getTicketsAdmin']);
+Route::get('/admin/support/manage/tickets',[GenerateTicketApiController::class, 'getAllTicketsAdminPanel']);

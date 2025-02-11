@@ -33,6 +33,12 @@ Route::get('/admin', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
 
+Route::prefix("admin")->group(function(){
+    Route::get("/support/tickets", function () {
+        return view("support.admin.ticketList", ['userName' => Auth::user()->name]);
+    })->middleware('auth');
+
+});
 
 Route::get('/footer', function () {
     return view('footer');
