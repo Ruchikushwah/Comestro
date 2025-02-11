@@ -52,7 +52,7 @@
                 <label class="block text-gray-700 font-medium">Message</label>
                 <textarea name="message" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" rows="4" placeholder="How can we help you?" required></textarea>
             </div>
-            <div> {!! htmlFormSnippet() !!}</div>
+           
             <!-- Google reCAPTCHA -->
             <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
             @error('captcha') <span class="text-red-500">{{ $message }}</span> @enderror
