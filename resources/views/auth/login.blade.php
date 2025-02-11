@@ -12,7 +12,7 @@
             <form method="POST" action="{{ route('auth.sendOtp') }}" class="space-y-4">
                 @csrf
                 <input type="email" name="email" value="{{ old('email') }}" placeholder="Email address "
-                    class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-400" required>
+                    class="w-full px-4 py-3 border rounded-lg" >
                 @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
                 <button type="submit"
