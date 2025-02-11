@@ -21,7 +21,7 @@ class CreateLead extends Component
         'email' => 'required|email',
         'website' => 'nullable|url',
         'lead_source' => 'nullable|string',
-        'lead_status' => 'required|in:in New,Contacted,Qualified,Lost,Closed',
+        'lead_status' => 'nullable|in:New,,Contacted,Qualified,Lost,Closed',
         'industry' => 'nullable|string',
         'annual_revenue' => 'nullable|numeric',
         'no_of_employees' => 'nullable|integer',

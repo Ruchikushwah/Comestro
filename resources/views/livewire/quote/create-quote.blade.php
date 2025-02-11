@@ -1,4 +1,4 @@
-<div class="p-8 bg-white shadow-md rounded-lg w-full">
+<div class=" px-5 py-10 bg-white rounded-lg w-full">
     <h2 class="text-lg font-semibold mb-4">Quote Information</h2>
 
     <div class="grid grid-cols-2 gap-4">
