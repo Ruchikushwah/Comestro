@@ -1,5 +1,5 @@
 <nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
-    <div class="max-w-full px-6 flex items-center justify-between mx-auto py-4">
+    <div class="max-w-full px-4 flex items-center justify-between mx-auto py-3">
         <!-- Logo -->
         <a href="/" class="flex items-center space-x-3">
             <img src="/comestro.png" class="h-10 md:h-10" alt="Comestro Logo">
@@ -14,7 +14,7 @@
 
             <!-- "Get Started" button (Desktop) -->
             @guest
-            <a href="{{ route('auth.register') }}" class="bg-[#0071bc] text-white px-4 py-3 rounded hover:bg-[#005fa3] text-lg">
+            <a href="{{ route('auth.register') }}" class="bg-[#0071bc] text-white px-4 py-2 rounded hover:bg-[#005fa3] text-lg">
                 Get Started
             </a>
             @endguest
