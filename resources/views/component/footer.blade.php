@@ -4,7 +4,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-6 text-center md:text-left">
             <!-- Logo -->
             <div class="flex justify-center md:justify-start flex-col text-center">
-                <a href="" class="text-3xl font-semibold text-orange-500 ">com<span class="text-blue-600">estro</span></a>
+                <a href="" class="text-3xl font-semibold text-orange-500 ">Com<span class="text-blue-600">estro</span></a>
                 <span class="text-sm  ">Techlabs .Pvt .Ltd</span>
             </div>
 
