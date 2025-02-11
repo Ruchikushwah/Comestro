@@ -7,7 +7,7 @@
         <div class="w-full md:w-1/2 p-6 md:px-8 md:py-8">
             <!--  <img src="/comestro.png" alt="Logo" class="h-10 mb-4"> -->
             <h2 class="text-2xl font-semibold">Sign in</h2>
-            <p class="text-gray-600 text-sm mb-6">to access CRM</p>
+            <!--<p class="text-gray-600 text-sm mb-6">to access CRM</p> -->
 
             <form method="POST" action="{{ route('auth.sendOtp') }}" class="space-y-4">
                 @csrf
