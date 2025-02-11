@@ -54,6 +54,10 @@
             </div>
            
             <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>          
+           
+            <!-- Google reCAPTCHA -->
+            <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+            @error('captcha') <span class="text-red-500">{{ $message }}</span> @enderror
 
             <button type="submit" class="w-full bg-[#0071bc] text-white py-3 rounded-lg shadow-md hover:bg-[#005fa3] transition">
                 Send Message
