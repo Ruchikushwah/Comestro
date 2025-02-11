@@ -9,7 +9,6 @@ use App\Http\Controllers\ProblemCateogryApiController;
 use App\Http\Controllers\TicketController;
 use App\Livewire\Contact\CreateContact;
 use App\Livewire\Contact\ManageContact;
-use App\Livewire\CrmDashboard;
 use App\Livewire\Lead\CreateLead;
 use App\Livewire\Lead\ManageLead;
 use App\Livewire\Quote\CreateQuote;
@@ -31,9 +30,9 @@ Route::get("/services", function () {
     return view('services');
 })->name("services");
 
-// Route::get('/admin', function () {
-//     return view('admin.dashboard');
-// })->name('admin.dashboard');
+Route::get('/admin', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
 
 
 Route::get('/footer', function () {
@@ -76,7 +75,6 @@ Route::prefix("crm")->group(function () {
     Route::get("/quote", function () {
         return view("crm.quote", ['userName' => Auth::user()->name]);
     })->name("crm.quote")->middleware('auth');
-
 });
 
 Route::get('/send-message', function () {

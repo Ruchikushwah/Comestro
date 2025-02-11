@@ -88,6 +88,30 @@ class CreateQuote extends Component
         return redirect()->route('crm.quote');
     }
 
+
+    public function addItem()
+    {
+        $this->quoteItems[] = ['name' => '', 'quantity' => 1, 'price' => 0, 'total' => 0];
+    }
+
+    public function removeItem($index)
+    {
+        unset($this->quoteItems[$index]);
+        $this->quoteItems = array_values($this->quoteItems); // Reset array keys
+    }
+
+    public function updateTotal($index)
+    {
+        if (isset($this->quoteItems[$index])) {
+            $this->quoteItems[$index]['total'] =
+                $this->quoteItems[$index]['quantity'] * $this->quoteItems[$index]['price'];
+        }
+
+        // Recalculate subtotal, tax, and total
+        $this->sub_total = array_sum(array_column($this->quoteItems, 'total'));
+        $this->total = $this->sub_total - $this->discount + $this->tax;
+    }
+
     public function delete()
     {
         if ($this->quote_id) {

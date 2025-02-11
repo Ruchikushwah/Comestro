@@ -28,14 +28,12 @@
     <p class="text-lg text-gray-700 text-center mt-2 max-w-2xl">
         Need expert software solutions or have a project idea? Let's collaborate!
     </p>
-
     <!-- Display Success Message -->
     @if(session('success'))
     <div class="bg-green-100 text-green-800 p-3 rounded mt-4">
         {{ session('success') }}
     </div>
     @endif
-
     <!-- Contact Form -->
     <div class="rounded-lg p-6  w-full max-w-2xl">
         <form action="{{ route('send.message') }}" method="POST" class="space-y-4">
@@ -52,17 +50,13 @@
                 <label class="block text-gray-700 font-medium">Message</label>
                 <textarea name="message" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" rows="4" placeholder="How can we help you?" required></textarea>
             </div>
-           
-            <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>          
-           
-            
 
+            <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
             <button type="submit" class="w-full bg-[#0071bc] text-white py-3 rounded-lg shadow-md hover:bg-[#005fa3] transition">
                 Send Message
             </button>
         </form>
     </div>
-
     <!-- Social Media Links -->
     <!-- <div class="flex space-x-6 mt-6">
         <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-facebook"></i></a>
@@ -72,7 +66,5 @@
     </div> -->
 </div>
 <!-- Include Google reCAPTCHA Script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 @endsection
