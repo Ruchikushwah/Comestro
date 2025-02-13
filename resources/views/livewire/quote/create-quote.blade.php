@@ -26,7 +26,7 @@
             <input type="date" wire:model="valid_until" class="w-full border rounded p-2">
         </div>
 
-        <div>
+        <div class="mb-4">
             <label class="block text-gray-700">Quote Stage</label>
             <select wire:model="quote_stage" class="w-full border rounded p-2">
                 <option value="Draft">Draft</option>
@@ -43,10 +43,9 @@
             <select wire:model="quoteItems.{{$index}}.product_id" wire:change="updateProduct({{$index}})" class="w-full border rounded p-2">
                 <option value="">Select Product</option>
                
-                <option value="</option>
+                <option value=""></option>
                 
             </select>
-
             <input type="number" wire:model="quoteItems.{{$index}}.quantity" wire:change="updateTotal({{$index}})" placeholder="Quantity" class="w-full border rounded p-2">
             <input type="number" wire:model="quoteItems.{{$index}}.price" wire:change="updateTotal({{$index}})" placeholder="Price" class="w-full border rounded p-2">
             <input type="text" wire:model="quoteItems.{{$index}}.total" disabled placeholder="Total" class="w-full border rounded p-2 bg-gray-100">
@@ -54,8 +53,8 @@
         </div>
         @endforeach
         <button wire:click="addItem" class="bg-green-500 text-white px-4 py-2 rounded">Add Item</button>
-    </div>
 
+    </div>
     <script>
         document.addEventListener('livewire:load', function() {
             Livewire.on('productUpdated', function(index, price) {
@@ -63,8 +62,6 @@
             });
         });
     </script>
-
-
     <h2 class="text-lg font-semibold mt-6 mb-4">Address Information</h2>
     <div class="grid grid-cols-2 gap-4">
         <div>

@@ -11,7 +11,6 @@
 
     <!-- Blur Overlay -->
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
     <!-- Content Section -->
     <div class="relative flex flex-col gap-4 md:gap-6 max-w-2xl z-10 text-center md:text-left">
         <h2 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">Contact Us</h2>
@@ -26,14 +25,12 @@
     <p class="text-lg text-gray-700 text-center mt-2 max-w-2xl">
         Need expert software solutions or have a project idea? Let's collaborate!
     </p>
-
     <!-- Display Success Message -->
     @if(session('success'))
     <div class="bg-green-100 text-green-800 p-3 rounded mt-4">
         {{ session('success') }}
     </div>
     @endif
-
     <!-- Contact Form -->
     <div class="rounded-lg p-6  w-full max-w-2xl">
         <form action="{{ route('send.message') }}" method="POST" class="space-y-4">
@@ -68,13 +65,13 @@
             <p class="text-red-500 text-sm mt-1 text-center">{{ $message }}</p>
             @enderror
 
+            <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
             <button type="submit" class="w-full bg-[#0071bc] text-white py-3 rounded-lg shadow-md hover:bg-[#005fa3] transition">
                 Send Message
             </button>
         </form>
 
     </div>
-
     <!-- Social Media Links -->
     <!-- <div class="flex space-x-6 mt-6">
         <a href="#" class="text-[#0071bc] text-2xl hover:text-[#005fa3] transition"><i class="fab fa-facebook"></i></a>
@@ -84,7 +81,5 @@
     </div> -->
 </div>
 <!-- Include Google reCAPTCHA Script -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-
+<!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
 @endsection
