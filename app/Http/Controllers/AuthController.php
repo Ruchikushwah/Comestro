@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Otp;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
@@ -21,43 +23,46 @@ class AuthController extends Controller
     {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'nullable',
         ]);
+
         $user = User::where('email', $request->email)->first();
 
-        if ($user) {
-
-            if (!$user->hasVerifiedEmail()) {
-                return back()->withErrors(['email' => 'Please verify your email first.']);
-            }
-
-            $otp = rand(100000, 999999);
-
-            Otp::updateOrCreate(
-                ['email' => $request->email],
-                [
-                    'otp' => $otp,
-                    'otp_expires_at' => Carbon::now()->addMinutes(10),
-                ]
-            );
-
-            // Send OTP to the user's email
-            try {
-                Mail::raw("Your OTP is: $otp", function ($message) use ($request) {
-                    $message->to($request->email)
-                        ->subject('Your OTP for Login');
-                });
-
-                // Return view to enter OTP
-                return view('auth.verify-otp', ['email' => $request->email])
-                    ->with('success', 'OTP sent successfully. Please check your email.');
-            } catch (\Exception $e) {
-                return back()->with('error', 'Failed to send OTP. Please try again.');
-            }
+        if (!$user) {
+            return back()->withErrors(['email' => 'The provided email does not match our records.']);
         }
 
-        return back()->withErrors(['email' => 'The provided email does not match our records.']);
+        // Check if email is verified
+        if (!$user->hasVerifiedEmail()) {
+            return back()->withErrors(['email' => 'Please verify your email first.']);
+        }
+
+        // Generate a new OTP
+        $otp = rand(100000, 999999);
+
+        // Delete any previous OTPs for this user before inserting a new one
+        Otp::where('email', $request->email)->delete();
+
+        // Store OTP in the database
+        Otp::create([
+            'email' => $request->email,
+            'otp' => $otp,
+            'otp_expires_at' => Carbon::now()->addMinutes(10),
+        ]);
+
+        // Send OTP email
+        try {
+            Mail::send('emails.otp', ['otp' => $otp], function ($message) use ($user) {
+                $message->to($user->email)->subject('Your OTP for Login');
+            });
+
+            return redirect()->route('auth.verify-otp', ['email' => $request->email])
+                ->with('success', 'OTP sent successfully. Please check your email.');
+        } catch (\Exception $e) {
+            Log::error("Failed to send OTP email: " . $e->getMessage());
+            return back()->with('error', 'Failed to send OTP. Please try again.');
+        }
     }
+
     public function verifyOtp(Request $request)
     {
         $request->validate([
@@ -66,48 +71,62 @@ class AuthController extends Controller
         ]);
 
         $user = User::where('email', $request->email)->first();
-        if (!$user || $user->otp !== $request->otp || now()->greaterThan($user->otp_expires_at)) {
+        if (!$user) {
+            return back()->withErrors(['email' => 'User not found.']);
+        }
+
+        // Check OTP in Otp model
+        $otpRecord = Otp::where('email', $request->email)
+            ->where('otp', $request->otp)
+            ->where('otp_expires_at', '>', now())
+            ->first();
+
+        if (!$otpRecord) {
             return back()->withErrors(['otp' => 'Invalid or expired OTP.']);
         }
 
-        $user->otp = null;
-        $user->otp_expires_at = null;
-        $user->save();
+        // Delete OTP after successful verification
+        $otpRecord->delete();
 
+        // Log the user in
         Auth::login($user);
         session(['user_id' => Auth::id()]);
+
         return redirect()->route('crm.lead')->with('success', 'Logged in successfully.');
     }
+
+
     public function sendOtp(Request $request)
     {
         $request->validate([
             'email' => 'required|email|exists:users,email',
         ]);
-
+    
         $email = $request->input('email');
         $otp = rand(100000, 999999);
-
-        // Find user and update OTP
-        $user = User::where('email', $email)->first();
-        $user->otp = $otp;
-        $user->otp_expires_at = Carbon::now()->addMinutes(10);
-        $user->save();
-
+    
+        // Delete expired OTPs
+        Otp::where('otp_expires_at', '<', now())->delete();
+    
+        // Store OTP in Otp table (not User model)
+        Otp::updateOrCreate(
+            ['email' => $email],
+            ['otp' => $otp, 'otp_expires_at' => Carbon::now()->addMinutes(10)]
+        );
+    
         // Send OTP email
         try {
-
-            Mail::send('emails.otp', ['otp' => $otp], function ($message) use ($user) {
-                $message->to($user->email)
-                    ->subject('Your OTP Code');
+            Mail::send('emails.otp', ['otp' => $otp], function ($message) use ($email) {
+                $message->to($email)->subject('Your OTP Code');
             });
-
-
-            // Redirect with success message
+    
             return redirect()->back()->with(['otp_sent' => true, 'email' => $email]);
         } catch (\Exception $e) {
+            Log::error("Failed to send OTP email to {$email}: " . $e->getMessage());
             return redirect()->back()->with('error', 'Failed to send OTP. Please try again.');
         }
     }
+    
 
 
     public function showRegister()
@@ -121,7 +140,6 @@ class AuthController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|unique:users,email',
             'contact' => 'required|digits:10|unique:users,contact',
-
             'g-recaptcha-response' => 'required',
         ], [
             'email.unique' => 'The email address is already taken.',
