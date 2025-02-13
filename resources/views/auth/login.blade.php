@@ -12,7 +12,7 @@
             <form method="POST" action="{{ route('auth.sendOtp') }}" class="space-y-4">
                 @csrf
                 <input type="email" name="email" value="{{ old('email') }}" placeholder="Email address "
-                    class="w-full px-4 py-3 border rounded-lg" >
+                    class="w-full px-4 py-3 border rounded-lg">
                 @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
                 <button type="submit"
@@ -48,7 +48,7 @@
 </div>
 
 <!-- OTP Modal -->
-<div id="otp-modal" class="hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 p-4">
+<div id="otp-modal" class="hidden fixed inset-0 items-center justify-center bg-gray-900 bg-opacity-50 p-4">
     <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm text-center">
         <img src="/comestro.png" alt="Logo" class="mx-auto mb-4 w-16 md:w-20">
         <h3 class="text-xl font-semibold text-gray-800">Enter OTP</h3>

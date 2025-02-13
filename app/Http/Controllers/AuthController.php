@@ -15,7 +15,6 @@ class AuthController extends Controller
 {
     public function showLoginForm()
     {
-
         return view('auth.login');
     }
 
@@ -127,8 +126,6 @@ class AuthController extends Controller
         }
     }
     
-
-
     public function showRegister()
     {
         return view('auth.register');
@@ -176,9 +173,6 @@ class AuthController extends Controller
 
         return redirect()->route('login')->with('success', 'Registration successful. A confirmation email has been sent.');
     }
-
-
-
     public function logout()
     {
         Auth::logout();
