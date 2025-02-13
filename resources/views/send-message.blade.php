@@ -6,7 +6,6 @@
     <p class="text-lg text-gray-700 text-center mt-2 max-w-2xl">
         Have a question or need assistance? Send us a message, and we’ll get back to you soon!
     </p>
-
     <!-- Contact Form -->
     <div class="rounded-lg p-6 mt-4 w-full max-w-2xl">
         @if(session('success'))
@@ -14,7 +13,6 @@
             {{ session('success') }}
         </div>
         @endif
-
         <form action="{{ route('send.message') }}" method="POST" class="space-y-4">
             @csrf
             <div>

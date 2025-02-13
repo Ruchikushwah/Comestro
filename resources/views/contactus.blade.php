@@ -11,7 +11,6 @@
 
     <!-- Blur Overlay -->
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
     <!-- Content Section -->
     <div class="relative flex flex-col gap-4 md:gap-6 max-w-2xl z-10 text-center md:text-left">
         <h2 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg">Contact Us</h2>
@@ -21,8 +20,6 @@
         </p>
     </div>
 </div>
-
-
 <div class="flex flex-col items-center px-4 mt-5 py-5">
     <h2 class="text-3xl font-bold text-[#0071bc] text-center">Let's Work Together</h2>
     <p class="text-lg text-gray-700 text-center mt-2 max-w-2xl">
