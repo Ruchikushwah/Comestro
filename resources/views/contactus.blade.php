@@ -35,24 +35,42 @@
     <div class="rounded-lg p-6  w-full max-w-2xl">
         <form action="{{ route('send.message') }}" method="POST" class="space-y-4">
             @csrf
+
             <div>
                 <label class="block text-gray-700 font-medium">Your Name</label>
-                <input type="text" name="name" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" placeholder="Hello" required>
+                <input type="text" name="name" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" placeholder="Hello" value="{{ old('name') }}">
+                @error('name')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
+
             <div>
                 <label class="block text-gray-700 font-medium">Your Email</label>
-                <input type="email" name="email" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" placeholder="abc@example.com" required>
+                <input type="email" name="email" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" placeholder="abc@example.com" value="{{ old('email') }}">
+                @error('email')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
+
             <div>
                 <label class="block text-gray-700 font-medium">Message</label>
-                <textarea name="message" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" rows="4" placeholder="How can we help you?" required></textarea>
+                <textarea name="message" class="w-full p-3 border rounded-lg focus:outline-none hover:bg-slate-100" rows="4" placeholder="How can we help you?">{{ old('message') }}</textarea>
+                @error('message')
+                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
+                @enderror
             </div>
+
+            <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
+            @error('g-recaptcha-response')
+            <p class="text-red-500 text-sm mt-1 text-center">{{ $message }}</p>
+            @enderror
 
             <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
             <button type="submit" class="w-full bg-[#0071bc] text-white py-3 rounded-lg shadow-md hover:bg-[#005fa3] transition">
                 Send Message
             </button>
         </form>
+
     </div>
     <!-- Social Media Links -->
     <!-- <div class="flex space-x-6 mt-6">
