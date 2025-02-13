@@ -99,7 +99,7 @@ Route::prefix('auth')->controller(AuthController::class)->group(function () {
     Route::get("/register", [AuthController::class, 'showRegister'])->name('auth.register');
     Route::post('/login', [AuthController::class, 'login'])->name('auth.login.post');
     Route::post('/register', [AuthController::class, 'register'])->name('auth.register.post');
-    Route::get('/verify-otp', [AuthController::class, 'showOtpForm'])->name('show.otp.form');
+    // Route::get('/verify-otp', [AuthController::class, 'showOtpForm'])->name('show.otp.form');
     Route::post('verify-otp', [AuthController::class, 'verifyOtp'])->name('auth.verify-otp');
     Route::post('send-otp', [AuthController::class, 'sendOtp'])->name('auth.sendOtp');
     Route::get('/logout', [AuthController::class, 'logout'])->name('auth.logout');

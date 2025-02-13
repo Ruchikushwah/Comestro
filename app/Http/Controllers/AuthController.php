@@ -48,19 +48,21 @@ class AuthController extends Controller
             'otp_expires_at' => Carbon::now()->addMinutes(10),
         ]);
 
-        // Send OTP email
-        try {
-            Mail::send('emails.otp', ['otp' => $otp], function ($message) use ($user) {
-                $message->to($user->email)->subject('Your OTP for Login');
-            });
-
-            return redirect()->route('auth.verify-otp', ['email' => $request->email])
-                ->with('success', 'OTP sent successfully. Please check your email.');
-        } catch (\Exception $e) {
-            Log::error("Failed to send OTP email: " . $e->getMessage());
-            return back()->with('error', 'Failed to send OTP. Please try again.');
+        // Check if mail service is available before sending
+        if (!app()->bound('mailer')) {
+            Log::error("Mail service is not available.");
+            return back()->with('error', 'Mail service is currently unavailable. Please try again later.');
         }
+
+        // Send OTP email
+        Mail::send('emails.otp', ['otp' => $otp], function ($message) use ($user) {
+            $message->to($user->email)->subject('Your OTP for Login');
+        });
+
+        return redirect()->route('auth.verify-otp', ['email' => $request->email])
+            ->with('success', 'OTP sent successfully. Please check your email.');
     }
+
 
     public function verifyOtp(Request $request)
     {
@@ -100,32 +102,34 @@ class AuthController extends Controller
         $request->validate([
             'email' => 'required|email|exists:users,email',
         ]);
-    
+
         $email = $request->input('email');
         $otp = rand(100000, 999999);
-    
+
         // Delete expired OTPs
         Otp::where('otp_expires_at', '<', now())->delete();
-    
+
         // Store OTP in Otp table (not User model)
         Otp::updateOrCreate(
             ['email' => $email],
             ['otp' => $otp, 'otp_expires_at' => Carbon::now()->addMinutes(10)]
         );
-    
+
         // Send OTP email
-        try {
-            Mail::send('emails.otp', ['otp' => $otp], function ($message) use ($email) {
-                $message->to($email)->subject('Your OTP Code');
-            });
-    
+        Mail::send('emails.otp', ['otp' => $otp], function ($message) use ($email) {
+            $message->to($email)->subject('Your OTP Code');
+        });
+
+        // Check if mail failed (only works in some cases)
+        if (!app()->bound('mailer')) {
+            Log::error("Mail service is not available.");
+            return redirect()->back()->with('error', 'Mail service is currently unavailable. Please try again later.');
+        } else {
             return redirect()->back()->with(['otp_sent' => true, 'email' => $email]);
-        } catch (\Exception $e) {
-            Log::error("Failed to send OTP email to {$email}: " . $e->getMessage());
-            return redirect()->back()->with('error', 'Failed to send OTP. Please try again.');
         }
     }
-    
+
+
     public function showRegister()
     {
         return view('auth.register');
