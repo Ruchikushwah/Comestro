@@ -13,6 +13,8 @@ use App\Livewire\Lead\CreateLead;
 use App\Livewire\Lead\ManageLead;
 use App\Livewire\Quote\CreateQuote;
 use App\Livewire\Quote\ManageQuote;
+use App\Livewire\Support\ViewTickets;
+use App\Models\Tickets;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +39,12 @@ Route::prefix("admin")->group(function(){
     Route::get("/support/tickets", function () {
         return view("support.admin.ticketList", ['userName' => Auth::user()->name]);
     })->middleware('auth');
+
+    Route::get("/support/tickets/{ticket}", function (Tickets $ticket) {
+        return view("support.admin.viewTickets", ["ticket"=>$ticket]);
+    })->middleware('auth')->name('admin.support.ticket.view');
+
+    // Route::get("/support/tickets/{ticketId}", ViewTickets::class)->middleware('auth')->name('admin.support.ticket.view');
 
 });
 

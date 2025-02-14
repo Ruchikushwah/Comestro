@@ -108,9 +108,9 @@
                                 ${ticket.description}
                             </p>
                             ${ticket.status !== 'closed' ? `
-                                                <button id='close-ticket-btn' data-id='${ticket.id}' class='bg-red-500 text-white px-3 py-1 rounded'>
-                                                    Close Ticket
-                                                </button>` : ''
+                                                        <button id='close-ticket-btn' data-id='${ticket.id}' class='bg-red-500 text-white px-3 py-1 rounded'>
+                                                            Close Ticket
+                                                        </button>` : ''
                             }
                         </div>
                         <div>
