@@ -64,8 +64,6 @@
             @error('g-recaptcha-response')
             <p class="text-red-500 text-sm mt-1 text-center">{{ $message }}</p>
             @enderror
-
-            <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
             <button type="submit" class="w-full bg-[#0071bc] text-white py-3 rounded-lg shadow-md hover:bg-[#005fa3] transition">
                 Send Message
             </button>
