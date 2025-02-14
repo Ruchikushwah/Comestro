@@ -4,6 +4,7 @@
             type="text"
             placeholder="Search..."
             class="border px-4 py-2 rounded" />
+            
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg w-full">
         <table class="w-full text-sm text-left text-gray-500">

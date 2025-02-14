@@ -1,7 +1,7 @@
 <div class="p-6 w-full">
     <div class="flex justify-between mb-4">
         <input type="text" wire:model="search" placeholder="Search Quotes..." class="border p-2 rounded">
-        <button wire:click="deleteSelected" class="bg-red-500 text-white px-4 py-2 rounded">Delete Selected</button>
+       
     </div>
 
     <table class="min-w-full bg-white border border-gray-300">
@@ -24,13 +24,15 @@
                 <td>{{ $quote->deal_name }}</td>
                 
                 <td>
-                    <a href="{{ route('crm.quote.edit', $quote->id) }}" class="text-blue-500">Edit</a> |
+                    <a href="{{ route('create-quote.edit', $quote->id) }}" class="text-blue-500">Edit</a> |
                     <button wire:click="deleteSelected" class="text-red-500">Delete</button>
                 </td>
             </tr>
             @endforeach
+            
         </tbody>
     </table>
+    <button wire:click="deleteSelected" class="bg-red-500 text-white px-4 py-2 rounded  mt-4">Delete Selected</button>
 
     <div class="mt-4">
         {{ $quotes->links() }}

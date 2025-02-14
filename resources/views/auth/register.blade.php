@@ -17,8 +17,8 @@
                 <!-- Name Field -->
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                    <input type="text" id="name" name="name" required
-                        class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                    <input type="text" id="name" name="name"
+                        class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg transition duration-300">
                     @error('name')
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
@@ -27,8 +27,8 @@
                 <!-- Email Field -->
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" required
-                        class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                    <input type="email" id="email" name="email"
+                        class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg  transition duration-300">
                     @error('email')
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
@@ -37,12 +37,13 @@
                 <!-- Contact Field -->
                 <div>
                     <label for="contact" class="block text-sm font-medium text-gray-700">Contact</label>
-                    <input type="text" id="contact" name="contact" required
-                        class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-300">
+                    <input type="number" id="contact" name="contact"
+                        class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg  transition duration-300">
                     @error('contact')
                     <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
                     @enderror
                 </div>
+                <div class="g-recaptcha mt-8 flex justify-center" data-sitekey="{{ config('services.recaptcha.site_key') }}"></div>
 
                 <!-- Sign Up Button -->
                 <button type="submit"

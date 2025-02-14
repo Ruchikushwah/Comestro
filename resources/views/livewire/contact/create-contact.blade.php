@@ -1,5 +1,5 @@
-<div class="w-full p-6">
-    <div class="w-full mx-auto p-6 bg-slate-100 shadow-lg rounded-lg">
+
+    <div class="w-full mx-auto bg-slate-100  px-6 py-5 rounded-lg">
         @if (session()->has('message'))
         <div class="mb-4 text-slate-600 font-semibold">
             {{ session('message') }}
@@ -8,7 +8,7 @@
 
         <form wire:submit.prevent="save" class="space-y-6">
             <!-- Contact Owner -->
-            <div class="bg-white p-4 rounded-lg shadow">
+            <div class="bg-white p-3 rounded-lg shadow">
                 <h2 class="text-lg font-semibold text-gray-800 mb-4">Contact Owner</h2>
                 <div class="col-span-2 lg:col-span-4">
                     <input type="text" id="contact_owner"
@@ -41,7 +41,7 @@
             </div>
 
             <!-- Address Information Section -->
-            <div class="bg-white p-4 rounded-lg shadow">
+            <div class="bg-white p-3 rounded-lg shadow">
                 <h2 class="text-lg font-semibold text-gray-800 mb-4">Address Information</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
                     <!-- Mailing Address -->
@@ -99,4 +99,3 @@
             </div>
         </form>
     </div>
-</div>

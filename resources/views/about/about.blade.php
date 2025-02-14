@@ -7,14 +7,14 @@ About Us
 @endsection
 
 @section('content')
-<div class="w-full h-[350px] mt-16 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-[8%] flex items-center">
+<div class="w-full h-[350px] md:h-[400px] lg:h-[450px] mt-16 relative overflow-hidden bg-[url('/com.jpg')] bg-cover bg-center px-6 md:px-[8%] flex items-center">
     <!-- Blur Overlay -->
     <div class="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
 
     <!-- Content Section -->
-    <div class="relative flex flex-col gap-5 max-w-2xl z-10">
-        <h2 class="text-4xl font-bold text-white drop-shadow-lg tracking-wide">About Us</h2>
-        <p class="text-lg text-white leading-relaxed drop-shadow-md tracking-wider">
+    <div class="relative flex flex-col gap-4 md:gap-5 max-w-2xl z-10 text-center md:text-left">
+        <h2 class="text-3xl md:text-4xl font-bold text-white drop-shadow-lg tracking-wide">About Us</h2>
+        <p class="text-base md:text-lg text-white leading-relaxed drop-shadow-md tracking-wide">
             At <span class="font-semibold">Comestro Techlab Private Limited</span>, we empower businesses with
             <span class="font-medium">cutting-edge software solutions</span> designed to drive innovation and digital transformation.
             Our mission is to develop <span class="font-semibold">scalable, reliable, and secure</span> technology products that solve real-world
@@ -22,6 +22,7 @@ About Us
         </p>
     </div>
 </div>
+
 
 <div class="container mx-auto max-w-6xl px-6 py-12 font-sans">
     <div class="flex flex-col md:flex-row items-center gap-16">
@@ -118,7 +119,7 @@ About Us
 </section>
 <div class="bg-gray-100 py-12 px-6">
     <h2 class="text-4xl font-bold text-center text-gray-800 mb-10">
-        <span class="text-blue-600">Achievements & Certifications</span>
+        <span class="text-[#0071bc]">Achievements & Certifications</span>
     </h2>
 
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
@@ -145,43 +146,21 @@ About Us
 </div>
 
 
-<div class="bg-white py-10 px-5 h-[250px]">
+<div class="bg-white py-10 px-5">
     <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">
         Our <span class="text-blue-500">Clients</span>
     </h2>
 
-    <div class="flex flex-wrap justify-center gap-10 max-w-7xl mx-auto">
-        <!-- Client Logo 1 -->
-        <!-- <img src="\learnSyntax.png" alt="Client 1" class="h-16  w- object-contain"> -->
-
-        <!-- Client Logo 2 -->
-        <img src="\logo.png" alt="Client 2" class="h-16 object-contain">
-
-        <!-- Client Logo 3 -->
-        <img src="\logo (2).png" alt="Client 3" class="h-16 object-contain">
-
-        <!-- Client Logo 4 -->
-        <img src="\image.jpeg" alt="Client 4" class="h-16 object-contain">
-
-        <!-- Client Logo 5 -->
-        <img src="\logo (1).png" alt="Client 5" class="h-16 object-contain">
-
-        <!-- Client Logo 6 -->
-        <img src="\image (3).png" alt="Client 6" class="h-16 object-contain">
-
-        <!-- Client Logo 7 -->
-        <img src="logo4.png" alt="Client 7" class="h-16 object-contain">
-
-
+    <!-- Responsive Grid for Client Logos -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 place-items-center max-w-7xl mx-auto">
+        <img src="/logo.png" alt="Client 2" class="h-16 object-contain">
+        <img src="/logo (2).png" alt="Client 3" class="h-16 object-contain">
+        <img src="/image.jpeg" alt="Client 4" class="h-16 object-contain">
+        <img src="/logo (1).png" alt="Client 5" class="h-16 object-contain">
+        <img src="/image (3).png" alt="Client 6" class="h-16 object-contain">
+        <img src="/logo4.png" alt="Client 7" class="h-16 object-contain">
     </div>
 </div>
-
-
-
-
-
-
-
 <div class="flex flex-col lg:flex-row w-full items-center justify-between bg-[#2a5a7a] py-10 px-8 sm:px-12 rounded-lg mx-auto space-y-6 lg:space-y-0">
     <!-- Text Section -->
     <div class="text-center lg:text-left flex flex-col">
@@ -196,7 +175,7 @@ About Us
         <input type="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Enter your email">
         <a href="{{ route('contactus')}}" type="submit" class="bg-white px-6 py-3 font-semibold rounded-lg hover:border-[#2a5a7a] transition w-full sm:w-auto">
             Contact
-            </a>
+        </a>
     </form>
 </div>
 <!-- Styles -->
