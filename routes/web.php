@@ -45,9 +45,7 @@ Route::prefix("admin")->group(function(){
 
     Route::get("/support/tickets/{ticket}", function (Tickets $ticket) {
         return view("support.admin.viewTickets", ["ticket"=>$ticket]);
-    })->middleware('auth')->name('admin.support.ticket.view');
-
-    // Route::get("/support/tickets/{ticketId}", ViewTickets::class)->middleware('auth')->name('admin.support.ticket.view');
+    })->name('admin.support.ticket.view');
 
 });
 
