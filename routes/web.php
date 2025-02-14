@@ -36,11 +36,10 @@ Route::middleware('auth')->prefix("admin")->group(function () {
     })->middleware('auth');
 
     Route::get("/support/tickets/{ticket}", function (Tickets $ticket) {
-        return view("support.admin.viewTickets", ["ticket"=>$ticket]);
+        return view("support.admin.viewTickets", ["ticket" => $ticket]);
     })->name('admin.support.ticket.view');
-
-    });
 });
+
 Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
 Route::get('/footer', function () {
