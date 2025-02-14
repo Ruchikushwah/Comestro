@@ -12,7 +12,7 @@
             <form method="POST" action="{{ route('auth.sendOtp') }}" class="space-y-4">
                 @csrf
                 <input type="email" name="email" value="{{ old('email') }}" placeholder="Email address "
-                    class="w-full px-4 py-3 border rounded-lg" >
+                    class="w-full px-4 py-3 border rounded-lg">
                 @error('email') <span class="text-red-500 text-sm">{{ $message }}</span> @enderror
 
                 <button type="submit"
@@ -46,47 +46,26 @@
         </div>
     </div>
 </div>
+@if(session('otp_sent'))
+<div class="fixed inset-0 bg-gray-800 bg-opacity-50 flex justify-center items-center">
+    <div class="bg-white p-6 rounded-lg  w-96">
+        <h3 class="text-lg font-semibold mb-2">Enter OTP</h3>
+        <p>An OTP has been sent to <strong>{{ session('email') }}</strong>. Please enter it below.</p>
 
-<!-- OTP Modal -->
-<div id="otp-modal" class="hidden fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50 p-4">
-    <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-sm text-center">
-        <img src="/comestro.png" alt="Logo" class="mx-auto mb-4 w-16 md:w-20">
-        <h3 class="text-xl font-semibold text-gray-800">Enter OTP</h3>
-        <p class="text-sm text-gray-600 mb-4">An OTP has been sent to your email. Please enter it below:</p>
-
-        <form action="{{ route('auth.verify-otp') }}" method="POST" class="space-y-4">
+        <form action="{{ route('auth.verify-otp') }}" method="POST">
             @csrf
-            <input type="hidden" name="email" id="otp_email_hidden" value="{{ session('email') }}">
+            <input type="hidden" name="email" value="{{ session('email') }}">
+            <input type="text" name="otp" class="border p-2 w-full rounded mt-2" required>
 
-            <div class="relative">
-                <input type="text" name="otp" id="otp" required
-                    class="bg-gray-200 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 border border-gray-300 rounded py-3 px-4 w-full text-center tracking-widest text-lg"
-                    placeholder="● ● ● ● ● ●">
-                @error('otp')
-                <span class="text-red-500 text-xs">{{ $message }}</span>
-                @enderror
-            </div>
-
-            <button type="submit" class="w-full bg-blue-500 text-white font-bold py-2 rounded hover:bg-blue-600">
-                Verify
+            <button type="submit" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">
+                Verify OTP
             </button>
-
-            <p class="text-xs text-gray-500">You have not set a password for this account <a href="#" class="text-blue-500">Set password now.</a></p>
         </form>
+
+        <a href="{{ route('login') }}" class="mt-2 text-red-500 block text-center">Close</a>
     </div>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const otpModal = document.getElementById('otp-modal');
-        const otpHiddenField = document.getElementById('otp_email_hidden');
-
-        // Show OTP modal if session has otp_sent
-        @if(session('otp_sent'))
-        otpModal.classList.remove('hidden');
-        otpHiddenField.value = "{{ session('email') }}";
-        @endif
-    });
-</script>
+@endif
+</div>
 
 @endsection
