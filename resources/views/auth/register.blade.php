@@ -12,7 +12,7 @@
         <!-- Form Section -->
         <div class="md:w-1/2 p-8">
             <h2 class="text-xl font-semibold text-gray-800 mb-6 text-center">Sign Up</h2>
-            <form action="{{ route('auth.register') }}" method="POST" class="space-y-6">
+            <form action="{{ route('auth.register.post') }}" method="POST" class="space-y-6">
                 @csrf
                 <!-- Name Field -->
                 <div>
