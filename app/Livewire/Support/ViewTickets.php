@@ -16,11 +16,14 @@ class ViewTickets extends Component
     public function mount($id){
         $this->ticketId = $id;
         $this->loadTicket();
-        // $this->loadMessages();
-    }
-
+        $this->loadMessages();
+    } 
+    
     public function loadTicket(){
         $this->ticket = Tickets::findOrFail($this->ticketId);
+    }
+
+    public function loadMessages(){
         $this->messages = Messages::where('ticket_id', $this->ticketId)
             ->orderBy('created_at', 'asc')
             ->get();
