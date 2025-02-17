@@ -213,7 +213,7 @@
                     data:{_token: "{{ csrf_token() }}"},
                     success:function(response){
                         alert(response.msg);
-
+                        
                         let button = $(`button[data-id=${ticketId}]`);
                         button.text("Closed").prop("disabled", true).removeClass("text-red-500").addClass("text-gray-500");
 

@@ -19,12 +19,12 @@
 
     <hr class="my-4 border-gray-300">
 
-    <h3 class="text-lg font-semibold">Messages</h3>
-    <div class="messages-box bg-white p-4 rounded shadow">
+    <h3 class="text-lg font-semibold px-3 py-2">Messages</h3>
+    <div class="messages-box bg-white p-4 rounded">
         @foreach ($messages as $message)
-            <div class="p-3 my-2 rounded {{ $message->sender_id === auth()->id() ? 'bg-blue-100' : 'bg-gray-200' }}">
-                <p><strong></strong> {{ $message->message }}</p>
-                <small class="text-gray-500">{{ $message->created_at->diffForHumans() }}</small>
+            <div class="p-3 my-2 rounded {{ $message->sender_type === 'admin' ? 'bg-red-500' : 'bg-green-500' }}">
+                <p><strong>{{ $message->sender_type === 'admin' ? 'Admin' : 'Client' }}:</strong> {{ $message->message }}</p>
+                <small class="text-white">{{ $message->created_at->diffForHumans() }}</small>
             </div>
         @endforeach
     </div>
