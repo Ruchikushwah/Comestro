@@ -7,7 +7,6 @@ use App\Models\Tickets;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use PHPUnit\Framework\Attributes\Ticket;
 
 class MessageApiController extends Controller
 {

@@ -41,7 +41,7 @@
                         {{ $ticket->formatted_created_at }}
                     </td>
                     <td class="px-6 py-4">
-                        <a href="{{route('create-contact.edit', $ticket->id)}}" wire:navigate class="font-medium text-slate-100 bg-yellow-500 px-2 py-1 rounded">View</a>
+                        <a href="{{route('admin.support.ticket.view', $ticket->id)}}" wire:navigate class="font-medium text-slate-100 bg-yellow-500 px-2 py-1 rounded">View</a>
                     </td>
                 </tr>
                 @empty
